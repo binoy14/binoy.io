@@ -901,17 +901,17 @@ export type StringFilter = {
 export type GetNavigationQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetNavigationQuery = { __typename?: 'RootQuery', allNavigation: Array<{ __typename?: 'Navigation', title?: string | null | undefined, links?: Array<{ __typename?: 'NavigationLink', text?: string | null | undefined, link?: { __typename?: 'Slug', current?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined }> };
+export type GetNavigationQuery = { __typename?: 'RootQuery', allNavigation: Array<{ __typename?: 'Navigation', title?: string | null, links?: Array<{ __typename?: 'NavigationLink', text?: string | null, link?: { __typename?: 'Slug', current?: string | null } | null } | null> | null }> };
 
 export type GetPagesRoutesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPagesRoutesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null | undefined } | null | undefined } | null | undefined }> };
+export type GetPagesRoutesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null }> };
 
 export type GetPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPagesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', title?: string | null | undefined, slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null | undefined } | null | undefined } | null | undefined, content?: Array<{ __typename?: 'Section', header?: string | null | undefined, subtext?: string | null | undefined } | null | undefined> | null | undefined }> };
+export type GetPagesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', title?: string | null, slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null, content?: Array<{ __typename?: 'Section', header?: string | null, subtext?: string | null } | null> | null }> };
 
 
 export const GetNavigationDocument = gql`

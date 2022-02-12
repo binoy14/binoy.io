@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GetNavigationQuery } from "@binoy14/cms-types";
+import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
-import { classnames } from "tailwindcss-classnames";
 
 export interface UiProps {
   links: GetNavigationQuery["allNavigation"][0]["links"];
@@ -18,20 +18,6 @@ export function Navigation({ links, title }: UiProps) {
   const onClick = () => setNavOpen((prev) => !prev);
 
   const linkClasses = classnames("hover:underline", "hover:text-yellow-400");
-  const mbUlClasses = classnames(
-    "flex",
-    "flex-col",
-    "items-center",
-    "sm:hidden",
-    "bg-black",
-    "text-white",
-    "transition-all",
-    {
-      "max-h-52": navOpen === true,
-      "pb-4": navOpen === true,
-      "max-h-0": navOpen === false,
-    }
-  );
 
   return (
     <>
@@ -45,11 +31,13 @@ export function Navigation({ links, title }: UiProps) {
               const { current = "" } = link || {};
               const href = `/${current}`;
 
-              const styles = classnames(linkClasses, "mr-6", {
-                "text-yellow-400": asPath === href,
-              });
               return (
-                <li key={href} className={styles}>
+                <li
+                  key={href}
+                  className={classnames(linkClasses, "mr-6", {
+                    "text-yellow-400": asPath === href,
+                  })}
+                >
                   <Link href={href}>
                     <a>{text}</a>
                   </Link>
@@ -72,7 +60,22 @@ export function Navigation({ links, title }: UiProps) {
           </div>
         </div>
       </nav>
-      <ul className={mbUlClasses}>
+      <ul
+        className={classnames(
+          "flex",
+          "flex-col",
+          "items-center",
+          "sm:hidden",
+          "bg-black",
+          "text-white",
+          "transition-all",
+          {
+            "max-h-52": navOpen === true,
+            "pb-4": navOpen === true,
+            "max-h-0": navOpen === false,
+          }
+        )}
+      >
         {navOpen &&
           links?.map((navLink) => {
             const { text = "", link } = navLink || {};

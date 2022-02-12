@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-import { TTailwindString } from "tailwindcss-classnames";
 
 export interface BaseProps {
-  classNames?: TTailwindString;
+  classNames?: string;
 }
 
 export interface BasePropsPropsWithChildren extends BaseProps {
