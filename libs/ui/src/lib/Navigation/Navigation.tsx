@@ -22,8 +22,8 @@ export function Navigation({ links, title }: UiProps) {
   return (
     <>
       <nav>
-        <div className="bg-black w-full h-24 flex items-center pl-4 pr-4 text-white transition-all sm:h-36">
-          <h1 className="text-4xl flex-1">{title}</h1>
+        <div className="flex h-24 w-full items-center bg-black pl-4 pr-4 text-white transition-all sm:h-36">
+          <h1 className="flex-1 text-4xl">{title}</h1>
           {/* Desktop Nav */}
           <ul className="hidden sm:flex">
             {links?.map((navLink) => {
@@ -49,7 +49,7 @@ export function Navigation({ links, title }: UiProps) {
           <div className="sm:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-yellow-400"
+              className="inline-flex items-center justify-center rounded-md p-2 text-white hover:text-yellow-400"
               aria-controls="mobile-menu"
               aria-expanded="false"
               onClick={onClick}

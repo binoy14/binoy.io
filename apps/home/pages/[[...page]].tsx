@@ -13,7 +13,7 @@ export function Index({ navData }: Props) {
     <Layout navData={navData}>
       <div>
         <Section type="light" classNames={classnames("h-40")}>
-          <h1 className="text-3xl mb-1">Hey 👋, I&apos;m Binoy</h1>
+          <h1 className="mb-1 text-3xl">Hey 👋, I&apos;m Binoy</h1>
           <span>Web Developer, React Groupie and GraphQL Enthusiast</span>
         </Section>
       </div>
