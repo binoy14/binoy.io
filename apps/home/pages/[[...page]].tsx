@@ -1,21 +1,19 @@
 import { getSdk } from "@binoy14/cms-types";
 import { Section } from "@binoy14/ui";
+import classnames from "classnames";
 import { GraphQLClient } from "graphql-request";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { classnames } from "tailwindcss-classnames";
 
 import { Layout, LayoutProps } from "../components/Layout";
 
 type Props = LayoutProps;
 
 export function Index({ navData }: Props) {
-  const styles = classnames("h-40");
-
   return (
     <Layout navData={navData}>
       <div>
-        <Section type="light" classNames={styles}>
-          <h1 className="text-3xl mb-1">Hey 👋, I&apos;m Binoy</h1>
+        <Section type="light" classNames={classnames("h-40")}>
+          <h1 className="mb-1 text-3xl">Hey 👋, I&apos;m Binoy</h1>
           <span>Web Developer, React Groupie and GraphQL Enthusiast</span>
         </Section>
       </div>

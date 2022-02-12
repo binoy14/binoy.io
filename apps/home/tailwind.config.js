@@ -1,19 +1,16 @@
 const { createGlobPatternsForDependencies } = require("@nrwl/next/tailwind");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const { join } = require("path");
 
 module.exports = {
   presets: [require("../../tailwind-workspace-preset.js")],
-  purge: createGlobPatternsForDependencies(__dirname),
-  darkMode: false, // or 'media' or 'class'
+  content: [join(__dirname, "**/!(*.stories|*.spec).{ts,tsx,html}"), ...createGlobPatternsForDependencies(__dirname)],
   theme: {
     extend: {
       fontFamily: {
         sans: ["Fira Code", ...defaultTheme.fontFamily.sans],
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
