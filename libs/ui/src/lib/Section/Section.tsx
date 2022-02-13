@@ -12,7 +12,6 @@ export function Section({ children, type, className = "" }: SectionProps) {
     <div
       className={classnames(
         "py-6",
-        "px-10",
         {
           "text-white": type === "dark",
           "bg-black": type === "dark",
@@ -22,7 +21,7 @@ export function Section({ children, type, className = "" }: SectionProps) {
         className
       )}
     >
-      {children}
+      <div className="container">{children}</div>
     </div>
   );
 }

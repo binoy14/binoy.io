@@ -1,0 +1,20 @@
+query getProjectBySlug($slug: String!) {
+  allProject(where: { slug: { current: { eq: $slug } } }) {
+    _id
+    title
+    description
+    slug {
+      current
+    }
+    projectImages {
+      _id
+      image {
+        alt
+        asset {
+          url
+        }
+        caption
+      }
+    }
+  }
+}
