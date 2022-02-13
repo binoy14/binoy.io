@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface BaseProps {
-  classNames?: string;
+  className?: string;
 }
 
 export interface BasePropsPropsWithChildren extends BaseProps {
