@@ -1,4 +1,4 @@
-import { Navigation, NavLinks } from "@binoy14/ui";
+import { Footer, Navigation, NavLinks } from "@binoy14/ui";
 import React from "react";
 
 const links: NavLinks[] = [
@@ -13,6 +13,7 @@ export const Layout: React.FC = ({ children }) => {
     <>
       <Navigation title="Binoy Patel" links={links} />
       <main>{children}</main>
+      <Footer />
     </>
   );
 };
