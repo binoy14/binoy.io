@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "sanity-schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Schema name",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "export": {
+      "type": "boolean",
+      "description": "Add schema to Sanity schemas",
+      "default": true,
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      }
+    }
+  },
+  "required": ["name"]
+}
