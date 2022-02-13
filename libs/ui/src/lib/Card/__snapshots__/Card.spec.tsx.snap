@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render successfully 1`] = `
+<body>
+  <div>
+    <div
+      class="min-w-[450px] rounded-lg bg-white p-5 text-black shadow"
+    >
+      Hello World
+    </div>
+  </div>
+</body>
+`;

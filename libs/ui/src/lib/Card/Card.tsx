@@ -7,5 +7,3 @@ export interface CardProps {
 export function Card({ children }: CardProps) {
   return <div className="min-w-[450px] rounded-lg bg-white p-5 text-black shadow">{children}</div>;
 }
-
-export default Card;
