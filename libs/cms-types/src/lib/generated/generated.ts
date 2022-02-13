@@ -207,171 +207,18 @@ export type IntFilter = {
   neq?: InputMaybe<Scalars['Int']>;
 };
 
-export type Navigation = Document & {
-  __typename?: 'Navigation';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  links?: Maybe<Array<Maybe<NavigationLink>>>;
-  /** Navigation Title */
-  title?: Maybe<Scalars['String']>;
-};
-
-export type NavigationFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  title?: InputMaybe<StringFilter>;
-};
-
-export type NavigationLink = Document & {
-  __typename?: 'NavigationLink';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  link?: Maybe<Slug>;
-  /** Title of the link */
-  text?: Maybe<Scalars['String']>;
-};
-
-export type NavigationLinkFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  link?: InputMaybe<SlugFilter>;
-  text?: InputMaybe<StringFilter>;
-};
-
-export type NavigationLinkSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  link?: InputMaybe<SlugSorting>;
-  text?: InputMaybe<SortOrder>;
-};
-
-export type NavigationSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  title?: InputMaybe<SortOrder>;
-};
-
-export type Page = Document & {
-  __typename?: 'Page';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  content?: Maybe<Array<Maybe<Section>>>;
-  /** Id of the page */
-  id?: Maybe<Scalars['String']>;
-  slug?: Maybe<NavigationLink>;
-  /** Title of the page */
-  title?: Maybe<Scalars['String']>;
-};
-
-export type PageFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  id?: InputMaybe<StringFilter>;
-  slug?: InputMaybe<NavigationLinkFilter>;
-  title?: InputMaybe<StringFilter>;
-};
-
-export type PageSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  id?: InputMaybe<SortOrder>;
-  title?: InputMaybe<SortOrder>;
-};
-
 export type RootQuery = {
   __typename?: 'RootQuery';
   Document?: Maybe<Document>;
-  Navigation?: Maybe<Navigation>;
-  NavigationLink?: Maybe<NavigationLink>;
-  Page?: Maybe<Page>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
-  Section?: Maybe<Section>;
-  TextBlock?: Maybe<TextBlock>;
   allDocument: Array<Document>;
-  allNavigation: Array<Navigation>;
-  allNavigationLink: Array<NavigationLink>;
-  allPage: Array<Page>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
-  allSection: Array<Section>;
-  allTextBlock: Array<TextBlock>;
 };
 
 
 export type RootQueryDocumentArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryNavigationArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryNavigationLinkArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -386,45 +233,11 @@ export type RootQuerySanityImageAssetArgs = {
 };
 
 
-export type RootQuerySectionArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryTextBlockArgs = {
-  id: Scalars['ID'];
-};
-
-
 export type RootQueryAllDocumentArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<DocumentSorting>>;
   where?: InputMaybe<DocumentFilter>;
-};
-
-
-export type RootQueryAllNavigationArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<NavigationSorting>>;
-  where?: InputMaybe<NavigationFilter>;
-};
-
-
-export type RootQueryAllNavigationLinkArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<NavigationLinkSorting>>;
-  where?: InputMaybe<NavigationLinkFilter>;
-};
-
-
-export type RootQueryAllPageArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<PageSorting>>;
-  where?: InputMaybe<PageFilter>;
 };
 
 
@@ -441,22 +254,6 @@ export type RootQueryAllSanityImageAssetArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<SanityImageAssetSorting>>;
   where?: InputMaybe<SanityImageAssetFilter>;
-};
-
-
-export type RootQueryAllSectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<SectionSorting>>;
-  where?: InputMaybe<SectionFilter>;
-};
-
-
-export type RootQueryAllTextBlockArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<TextBlockSorting>>;
-  where?: InputMaybe<TextBlockFilter>;
 };
 
 export type SanityAssetSourceData = {
@@ -831,50 +628,6 @@ export type Sanity_DocumentFilter = {
   references?: InputMaybe<Scalars['ID']>;
 };
 
-export type Section = Document & {
-  __typename?: 'Section';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  content?: Maybe<Array<Maybe<TextBlock>>>;
-  /** Only used for display, not actually used in app */
-  name?: Maybe<Scalars['String']>;
-  /** Decides the color of the section */
-  type?: Maybe<Scalars['String']>;
-};
-
-export type SectionFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  name?: InputMaybe<StringFilter>;
-  type?: InputMaybe<StringFilter>;
-};
-
-export type SectionSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  name?: InputMaybe<SortOrder>;
-  type?: InputMaybe<SortOrder>;
-};
-
 export type Slug = {
   __typename?: 'Slug';
   _key?: Maybe<Scalars['String']>;
@@ -920,113 +673,16 @@ export type StringFilter = {
   nin?: InputMaybe<Array<Scalars['String']>>;
 };
 
-export type TextBlock = Document & {
-  __typename?: 'TextBlock';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  header?: Maybe<Scalars['String']>;
-  subtext?: Maybe<Scalars['String']>;
-};
-
-export type TextBlockFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  header?: InputMaybe<StringFilter>;
-  subtext?: InputMaybe<StringFilter>;
-};
-
-export type TextBlockSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  header?: InputMaybe<SortOrder>;
-  subtext?: InputMaybe<SortOrder>;
-};
-
-export type GetNavigationQueryVariables = Exact<{ [key: string]: never; }>;
+export type TemporaryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetNavigationQuery = { __typename?: 'RootQuery', allNavigation: Array<{ __typename?: 'Navigation', title?: string | null, links?: Array<{ __typename?: 'NavigationLink', text?: string | null, link?: { __typename?: 'Slug', current?: string | null } | null } | null> | null }> };
-
-export type GetPagesRoutesQueryVariables = Exact<{ [key: string]: never; }>;
+export type TemporaryQuery = { __typename?: 'RootQuery', allDocument: Array<{ __typename?: 'SanityFileAsset', _id?: string | null } | { __typename?: 'SanityImageAsset', _id?: string | null }> };
 
 
-export type GetPagesRoutesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null }> };
-
-export type GetPagesQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-export type GetPagesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', title?: string | null, slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null, content?: Array<{ __typename?: 'Section', _type?: string | null, _id?: string | null, type?: string | null, content?: Array<{ __typename?: 'TextBlock', _type?: string | null, _id?: string | null, header?: string | null, subtext?: string | null } | null> | null } | null> | null }> };
-
-
-export const GetNavigationDocument = gql`
-    query getNavigation {
-  allNavigation {
-    title
-    links {
-      text
-      link {
-        current
-      }
-    }
-  }
-}
-    `;
-export const GetPagesRoutesDocument = gql`
-    query getPagesRoutes {
-  allPage {
-    slug {
-      link {
-        current
-      }
-    }
-  }
-}
-    `;
-export const GetPagesDocument = gql`
-    query getPages($id: String!) {
-  allPage(where: {id: {eq: $id}}) {
-    title
-    slug {
-      link {
-        current
-      }
-    }
-    content {
-      ... on Section {
-        _type
-        _id
-        type
-        content {
-          ... on TextBlock {
-            _type
-            _id
-            header
-            subtext
-          }
-        }
-      }
-    }
+export const TemporaryDocument = gql`
+    query temporary {
+  allDocument {
+    _id
   }
 }
     `;
@@ -1035,19 +691,11 @@ export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, str
 
 
 const defaultWrapper: SdkFunctionWrapper = (action, _operationName) => action();
-const GetNavigationDocumentString = print(GetNavigationDocument);
-const GetPagesRoutesDocumentString = print(GetPagesRoutesDocument);
-const GetPagesDocumentString = print(GetPagesDocument);
+const TemporaryDocumentString = print(TemporaryDocument);
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    getNavigation(variables?: GetNavigationQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetNavigationQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetNavigationQuery>(GetNavigationDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getNavigation');
-    },
-    getPagesRoutes(variables?: GetPagesRoutesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetPagesRoutesQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetPagesRoutesQuery>(GetPagesRoutesDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPagesRoutes');
-    },
-    getPages(variables: GetPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetPagesQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetPagesQuery>(GetPagesDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPages');
+    temporary(variables?: TemporaryQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: TemporaryQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<TemporaryQuery>(TemporaryDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'temporary');
     }
   };
 }
