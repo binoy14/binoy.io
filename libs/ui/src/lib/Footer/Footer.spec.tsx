@@ -9,7 +9,7 @@ describe("Footer", () => {
       <body>
         <div>
           <footer
-            class="bg-black px-10 py-2 text-white"
+            class="container mt-10 bg-black py-4 text-white"
           >
             © 
             2022
