@@ -1,5 +1,5 @@
-query getPages {
-  allPage {
+query getPages($id: String!) {
+  allPage(where: { id: { eq: $id } }) {
     title
     slug {
       link {
@@ -8,8 +8,17 @@ query getPages {
     }
     content {
       ... on Section {
-        header
-        subtext
+        _type
+        _id
+        type
+        content {
+          ... on TextBlock {
+            _type
+            _id
+            header
+            subtext
+          }
+        }
       }
     }
   }

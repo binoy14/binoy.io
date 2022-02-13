@@ -2,15 +2,17 @@ import classnames from "classnames";
 
 import { BasePropsPropsWithChildren } from "../types";
 
+export type SectionType = "dark" | "light";
 export interface SectionProps extends BasePropsPropsWithChildren {
-  type: "dark" | "light";
+  type: SectionType;
 }
 
 export function Section({ children, type, classNames = "" }: SectionProps) {
   return (
     <div
       className={classnames(
-        "p-6",
+        "py-6",
+        "px-10",
         {
           "text-white": type === "dark",
           "bg-black": type === "dark",

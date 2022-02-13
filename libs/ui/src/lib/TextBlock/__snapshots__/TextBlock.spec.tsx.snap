@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextBlock should render successfully 1`] = `
+<body>
+  <div>
+    <div
+      class="my-5"
+    >
+      <h1
+        class="mb-1 text-3xl"
+      >
+        test
+      </h1>
+      <span>
+        sub header
+      </span>
+    </div>
+  </div>
+</body>
+`;

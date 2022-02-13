@@ -1,13 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { GetNavigationQuery } from "@binoy14/cms-types";
 import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 
+export interface NavLinks {
+  text: string;
+  link: string;
+}
+
 export interface UiProps {
-  links: GetNavigationQuery["allNavigation"][0]["links"];
+  links: NavLinks[];
   title?: string;
 }
 
@@ -23,13 +27,12 @@ export function Navigation({ links, title }: UiProps) {
     <>
       <nav>
         <div className="flex h-24 w-full items-center bg-black pl-4 pr-4 text-white transition-all sm:h-36">
-          <h1 className="flex-1 text-4xl">{title}</h1>
+          <h1 className="ml-6 flex-1 text-4xl">{title}</h1>
           {/* Desktop Nav */}
           <ul className="hidden sm:flex">
-            {links?.map((navLink) => {
-              const { text = "", link } = navLink || {};
-              const { current = "" } = link || {};
-              const href = `/${current}`;
+            {links.map((navLink) => {
+              const { text, link } = navLink;
+              const href = `/${link}`;
 
               return (
                 <li
@@ -78,9 +81,8 @@ export function Navigation({ links, title }: UiProps) {
       >
         {navOpen &&
           links?.map((navLink) => {
-            const { text = "", link } = navLink || {};
-            const { current = "" } = link || {};
-            const href = `/${current}`;
+            const { text, link } = navLink;
+            const href = `/${link}`;
 
             return (
               <li key={href} className={`mb-6 ${linkClasses}`}>

@@ -1,16 +1,18 @@
-import { GetNavigationQuery } from "@binoy14/cms-types";
-import { Navigation } from "@binoy14/ui";
+import { Navigation, NavLinks } from "@binoy14/ui";
 import React from "react";
 
-export interface LayoutProps {
-  navData: GetNavigationQuery["allNavigation"][0];
-}
+const links: NavLinks[] = [
+  {
+    text: "Home",
+    link: "",
+  },
+];
 
-export const Layout: React.FC<LayoutProps> = ({ navData, children }) => {
+export const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <Navigation title={navData.title} links={navData.links} />
-      {children}
+      <Navigation title="Binoy Patel" links={links} />
+      <main>{children}</main>
     </>
   );
 };

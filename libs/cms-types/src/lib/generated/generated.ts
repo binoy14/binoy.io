@@ -303,6 +303,8 @@ export type Page = Document & {
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
   content?: Maybe<Array<Maybe<Section>>>;
+  /** Id of the page */
+  id?: Maybe<Scalars['String']>;
   slug?: Maybe<NavigationLink>;
   /** Title of the page */
   title?: Maybe<Scalars['String']>;
@@ -317,6 +319,7 @@ export type PageFilter = {
   _rev?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
+  id?: InputMaybe<StringFilter>;
   slug?: InputMaybe<NavigationLinkFilter>;
   title?: InputMaybe<StringFilter>;
 };
@@ -328,6 +331,7 @@ export type PageSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
+  id?: InputMaybe<SortOrder>;
   title?: InputMaybe<SortOrder>;
 };
 
@@ -340,6 +344,7 @@ export type RootQuery = {
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   Section?: Maybe<Section>;
+  TextBlock?: Maybe<TextBlock>;
   allDocument: Array<Document>;
   allNavigation: Array<Navigation>;
   allNavigationLink: Array<NavigationLink>;
@@ -347,6 +352,7 @@ export type RootQuery = {
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSection: Array<Section>;
+  allTextBlock: Array<TextBlock>;
 };
 
 
@@ -381,6 +387,11 @@ export type RootQuerySanityImageAssetArgs = {
 
 
 export type RootQuerySectionArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryTextBlockArgs = {
   id: Scalars['ID'];
 };
 
@@ -438,6 +449,14 @@ export type RootQueryAllSectionArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<SectionSorting>>;
   where?: InputMaybe<SectionFilter>;
+};
+
+
+export type RootQueryAllTextBlockArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<TextBlockSorting>>;
+  where?: InputMaybe<TextBlockFilter>;
 };
 
 export type SanityAssetSourceData = {
@@ -825,8 +844,11 @@ export type Section = Document & {
   _type?: Maybe<Scalars['String']>;
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
-  header?: Maybe<Scalars['String']>;
-  subtext?: Maybe<Scalars['String']>;
+  content?: Maybe<Array<Maybe<TextBlock>>>;
+  /** Only used for display, not actually used in app */
+  name?: Maybe<Scalars['String']>;
+  /** Decides the color of the section */
+  type?: Maybe<Scalars['String']>;
 };
 
 export type SectionFilter = {
@@ -838,8 +860,8 @@ export type SectionFilter = {
   _rev?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
-  header?: InputMaybe<StringFilter>;
-  subtext?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
+  type?: InputMaybe<StringFilter>;
 };
 
 export type SectionSorting = {
@@ -849,8 +871,8 @@ export type SectionSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
-  header?: InputMaybe<SortOrder>;
-  subtext?: InputMaybe<SortOrder>;
+  name?: InputMaybe<SortOrder>;
+  type?: InputMaybe<SortOrder>;
 };
 
 export type Slug = {
@@ -898,6 +920,47 @@ export type StringFilter = {
   nin?: InputMaybe<Array<Scalars['String']>>;
 };
 
+export type TextBlock = Document & {
+  __typename?: 'TextBlock';
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  _key?: Maybe<Scalars['String']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  header?: Maybe<Scalars['String']>;
+  subtext?: Maybe<Scalars['String']>;
+};
+
+export type TextBlockFilter = {
+  /** Apply filters on document level */
+  _?: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt?: InputMaybe<DatetimeFilter>;
+  _id?: InputMaybe<IdFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _rev?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _updatedAt?: InputMaybe<DatetimeFilter>;
+  header?: InputMaybe<StringFilter>;
+  subtext?: InputMaybe<StringFilter>;
+};
+
+export type TextBlockSorting = {
+  _createdAt?: InputMaybe<SortOrder>;
+  _id?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _rev?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _updatedAt?: InputMaybe<SortOrder>;
+  header?: InputMaybe<SortOrder>;
+  subtext?: InputMaybe<SortOrder>;
+};
+
 export type GetNavigationQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -908,10 +971,12 @@ export type GetPagesRoutesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetPagesRoutesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null }> };
 
-export type GetPagesQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPagesQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
 
 
-export type GetPagesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', title?: string | null, slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null, content?: Array<{ __typename?: 'Section', header?: string | null, subtext?: string | null } | null> | null }> };
+export type GetPagesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', title?: string | null, slug?: { __typename?: 'NavigationLink', link?: { __typename?: 'Slug', current?: string | null } | null } | null, content?: Array<{ __typename?: 'Section', _type?: string | null, _id?: string | null, type?: string | null, content?: Array<{ __typename?: 'TextBlock', _type?: string | null, _id?: string | null, header?: string | null, subtext?: string | null } | null> | null } | null> | null }> };
 
 
 export const GetNavigationDocument = gql`
@@ -939,8 +1004,8 @@ export const GetPagesRoutesDocument = gql`
 }
     `;
 export const GetPagesDocument = gql`
-    query getPages {
-  allPage {
+    query getPages($id: String!) {
+  allPage(where: {id: {eq: $id}}) {
     title
     slug {
       link {
@@ -949,8 +1014,17 @@ export const GetPagesDocument = gql`
     }
     content {
       ... on Section {
-        header
-        subtext
+        _type
+        _id
+        type
+        content {
+          ... on TextBlock {
+            _type
+            _id
+            header
+            subtext
+          }
+        }
       }
     }
   }
@@ -972,7 +1046,7 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     getPagesRoutes(variables?: GetPagesRoutesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetPagesRoutesQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
         return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetPagesRoutesQuery>(GetPagesRoutesDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPagesRoutes');
     },
-    getPages(variables?: GetPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetPagesQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+    getPages(variables: GetPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetPagesQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
         return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetPagesQuery>(GetPagesDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPages');
     }
   };
