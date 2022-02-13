@@ -7,7 +7,7 @@ export interface SectionProps extends BasePropsPropsWithChildren {
   type: SectionType;
 }
 
-export function Section({ children, type, classNames = "" }: SectionProps) {
+export function Section({ children, type, className = "" }: SectionProps) {
   return (
     <div
       className={classnames(
@@ -19,7 +19,7 @@ export function Section({ children, type, classNames = "" }: SectionProps) {
           "bg-white": type === "light",
           "text-black": type === "light",
         },
-        classNames
+        className
       )}
     >
       {children}
