@@ -25,9 +25,9 @@ export function Navigation({ links, title }: UiProps) {
 
   return (
     <>
-      <nav>
-        <div className="flex h-24 w-full items-center bg-black pl-4 pr-4 text-white transition-all sm:h-36">
-          <h1 className="ml-6 flex-1 text-4xl">{title}</h1>
+      <nav className="container">
+        <div className="flex h-24 w-full items-center bg-black pr-4 text-white transition-all sm:h-36">
+          <h2 className="flex-1 text-4xl">{title}</h2>
           {/* Desktop Nav */}
           <ul className="hidden sm:flex">
             {links.map((navLink) => {

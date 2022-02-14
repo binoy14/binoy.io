@@ -1,5 +1,0 @@
-query temporary {
-  allDocument {
-    _id
-  }
-}

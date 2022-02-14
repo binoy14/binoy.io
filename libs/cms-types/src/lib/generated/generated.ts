@@ -99,6 +99,36 @@ export type DocumentSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
 };
 
+export type FeaturedImage = {
+  __typename?: 'FeaturedImage';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+  asset?: Maybe<SanityImageAsset>;
+  caption?: Maybe<Scalars['String']>;
+  crop?: Maybe<SanityImageCrop>;
+  hotspot?: Maybe<SanityImageHotspot>;
+};
+
+export type FeaturedImageFilter = {
+  _key?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  alt?: InputMaybe<StringFilter>;
+  asset?: InputMaybe<SanityImageAssetFilter>;
+  caption?: InputMaybe<StringFilter>;
+  crop?: InputMaybe<SanityImageCropFilter>;
+  hotspot?: InputMaybe<SanityImageHotspotFilter>;
+};
+
+export type FeaturedImageSorting = {
+  _key?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  alt?: InputMaybe<SortOrder>;
+  caption?: InputMaybe<SortOrder>;
+  crop?: InputMaybe<SanityImageCropSorting>;
+  hotspot?: InputMaybe<SanityImageHotspotSorting>;
+};
+
 export type File = {
   __typename?: 'File';
   _key?: Maybe<Scalars['String']>;
@@ -207,18 +237,151 @@ export type IntFilter = {
   neq?: InputMaybe<Scalars['Int']>;
 };
 
+export type Project = Document & {
+  __typename?: 'Project';
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  _key?: Maybe<Scalars['String']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  description?: Maybe<Scalars['String']>;
+  featuredDescription?: Maybe<Scalars['String']>;
+  featuredImage?: Maybe<FeaturedImage>;
+  projectImages?: Maybe<Array<Maybe<ProjectImageDocument>>>;
+  slug?: Maybe<Slug>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type ProjectFilter = {
+  /** Apply filters on document level */
+  _?: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt?: InputMaybe<DatetimeFilter>;
+  _id?: InputMaybe<IdFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _rev?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _updatedAt?: InputMaybe<DatetimeFilter>;
+  description?: InputMaybe<StringFilter>;
+  featuredDescription?: InputMaybe<StringFilter>;
+  featuredImage?: InputMaybe<FeaturedImageFilter>;
+  slug?: InputMaybe<SlugFilter>;
+  title?: InputMaybe<StringFilter>;
+};
+
+export type ProjectImage = {
+  __typename?: 'ProjectImage';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+  asset?: Maybe<SanityImageAsset>;
+  caption?: Maybe<Scalars['String']>;
+  crop?: Maybe<SanityImageCrop>;
+  hotspot?: Maybe<SanityImageHotspot>;
+};
+
+export type ProjectImageDocument = Document & {
+  __typename?: 'ProjectImageDocument';
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  _key?: Maybe<Scalars['String']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  image?: Maybe<ProjectImage>;
+};
+
+export type ProjectImageDocumentFilter = {
+  /** Apply filters on document level */
+  _?: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt?: InputMaybe<DatetimeFilter>;
+  _id?: InputMaybe<IdFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _rev?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _updatedAt?: InputMaybe<DatetimeFilter>;
+  image?: InputMaybe<ProjectImageFilter>;
+};
+
+export type ProjectImageDocumentSorting = {
+  _createdAt?: InputMaybe<SortOrder>;
+  _id?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _rev?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _updatedAt?: InputMaybe<SortOrder>;
+  image?: InputMaybe<ProjectImageSorting>;
+};
+
+export type ProjectImageFilter = {
+  _key?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  alt?: InputMaybe<StringFilter>;
+  asset?: InputMaybe<SanityImageAssetFilter>;
+  caption?: InputMaybe<StringFilter>;
+  crop?: InputMaybe<SanityImageCropFilter>;
+  hotspot?: InputMaybe<SanityImageHotspotFilter>;
+};
+
+export type ProjectImageSorting = {
+  _key?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  alt?: InputMaybe<SortOrder>;
+  caption?: InputMaybe<SortOrder>;
+  crop?: InputMaybe<SanityImageCropSorting>;
+  hotspot?: InputMaybe<SanityImageHotspotSorting>;
+};
+
+export type ProjectSorting = {
+  _createdAt?: InputMaybe<SortOrder>;
+  _id?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _rev?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _updatedAt?: InputMaybe<SortOrder>;
+  description?: InputMaybe<SortOrder>;
+  featuredDescription?: InputMaybe<SortOrder>;
+  featuredImage?: InputMaybe<FeaturedImageSorting>;
+  slug?: InputMaybe<SlugSorting>;
+  title?: InputMaybe<SortOrder>;
+};
+
 export type RootQuery = {
   __typename?: 'RootQuery';
   Document?: Maybe<Document>;
+  Project?: Maybe<Project>;
+  ProjectImageDocument?: Maybe<ProjectImageDocument>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   allDocument: Array<Document>;
+  allProject: Array<Project>;
+  allProjectImageDocument: Array<ProjectImageDocument>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
 };
 
 
 export type RootQueryDocumentArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryProjectArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryProjectImageDocumentArgs = {
   id: Scalars['ID'];
 };
 
@@ -238,6 +401,22 @@ export type RootQueryAllDocumentArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<DocumentSorting>>;
   where?: InputMaybe<DocumentFilter>;
+};
+
+
+export type RootQueryAllProjectArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<ProjectSorting>>;
+  where?: InputMaybe<ProjectFilter>;
+};
+
+
+export type RootQueryAllProjectImageDocumentArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<ProjectImageDocumentSorting>>;
+  where?: InputMaybe<ProjectImageDocumentFilter>;
 };
 
 
@@ -673,16 +852,81 @@ export type StringFilter = {
   nin?: InputMaybe<Array<Scalars['String']>>;
 };
 
-export type TemporaryQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetProjectBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
 
 
-export type TemporaryQuery = { __typename?: 'RootQuery', allDocument: Array<{ __typename?: 'SanityFileAsset', _id?: string | null } | { __typename?: 'SanityImageAsset', _id?: string | null }> };
+export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, projectImages?: Array<{ __typename?: 'ProjectImageDocument', _id?: string | null, image?: { __typename?: 'ProjectImage', alt?: string | null, caption?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+
+export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export const TemporaryDocument = gql`
-    query temporary {
-  allDocument {
+export type GetProjectsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, featuredDescription?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, featuredImage?: { __typename?: 'FeaturedImage', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, projectImages?: Array<{ __typename?: 'ProjectImageDocument', image?: { __typename?: 'ProjectImage', alt?: string | null, caption?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+
+export type GetProjectsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetProjectsSlugsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null }> };
+
+
+export const GetProjectBySlugDocument = gql`
+    query getProjectBySlug($slug: String!) {
+  allProject(where: {slug: {current: {eq: $slug}}}) {
     _id
+    title
+    description
+    slug {
+      current
+    }
+    projectImages {
+      _id
+      image {
+        alt
+        asset {
+          url
+        }
+        caption
+      }
+    }
+  }
+}
+    `;
+export const GetProjectsDocument = gql`
+    query getProjects {
+  allProject {
+    _id
+    title
+    description
+    featuredDescription
+    slug {
+      current
+    }
+    featuredImage {
+      alt
+      asset {
+        url
+      }
+    }
+    projectImages {
+      image {
+        alt
+        asset {
+          url
+        }
+        caption
+      }
+    }
+  }
+}
+    `;
+export const GetProjectsSlugsDocument = gql`
+    query getProjectsSlugs {
+  allProject {
+    _id
+    slug {
+      current
+    }
   }
 }
     `;
@@ -691,11 +935,19 @@ export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, str
 
 
 const defaultWrapper: SdkFunctionWrapper = (action, _operationName) => action();
-const TemporaryDocumentString = print(TemporaryDocument);
+const GetProjectBySlugDocumentString = print(GetProjectBySlugDocument);
+const GetProjectsDocumentString = print(GetProjectsDocument);
+const GetProjectsSlugsDocumentString = print(GetProjectsSlugsDocument);
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    temporary(variables?: TemporaryQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: TemporaryQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<TemporaryQuery>(TemporaryDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'temporary');
+    getProjectBySlug(variables: GetProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetProjectBySlugQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectBySlugQuery>(GetProjectBySlugDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectBySlug');
+    },
+    getProjects(variables?: GetProjectsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetProjectsQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsQuery>(GetProjectsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjects');
+    },
+    getProjectsSlugs(variables?: GetProjectsSlugsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetProjectsSlugsQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsSlugsQuery>(GetProjectsSlugsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectsSlugs');
     }
   };
 }

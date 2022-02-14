@@ -1,0 +1,26 @@
+query getProjects {
+  allProject {
+    _id
+    title
+    description
+    featuredDescription
+    slug {
+      current
+    }
+    featuredImage {
+      alt
+      asset {
+        url
+      }
+    }
+    projectImages {
+      image {
+        alt
+        asset {
+          url
+        }
+        caption
+      }
+    }
+  }
+}
