@@ -1,6 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
 import * as Dom from 'graphql-request/dist/types.dom';
-import { GraphQLError } from 'graphql-request/dist/types';
 import { print } from 'graphql'
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
@@ -15,9 +14,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Date: any;
-  /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: any;
 };
 
@@ -931,23 +928,23 @@ export const GetProjectsSlugsDocument = gql`
 }
     `;
 
-export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
+export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
 
-const defaultWrapper: SdkFunctionWrapper = (action, _operationName) => action();
+const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType) => action();
 const GetProjectBySlugDocumentString = print(GetProjectBySlugDocument);
 const GetProjectsDocumentString = print(GetProjectsDocument);
 const GetProjectsSlugsDocumentString = print(GetProjectsSlugsDocument);
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    getProjectBySlug(variables: GetProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetProjectBySlugQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectBySlugQuery>(GetProjectBySlugDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectBySlug');
+    getProjectBySlug(variables: GetProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data: GetProjectBySlugQuery; extensions?: any; headers: Dom.Headers; status: number; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectBySlugQuery>(GetProjectBySlugDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectBySlug', 'query');
     },
-    getProjects(variables?: GetProjectsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetProjectsQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsQuery>(GetProjectsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjects');
+    getProjects(variables?: GetProjectsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data: GetProjectsQuery; extensions?: any; headers: Dom.Headers; status: number; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsQuery>(GetProjectsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjects', 'query');
     },
-    getProjectsSlugs(variables?: GetProjectsSlugsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data?: GetProjectsSlugsQuery | undefined; extensions?: any; headers: Dom.Headers; status: number; errors?: GraphQLError[] | undefined; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsSlugsQuery>(GetProjectsSlugsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectsSlugs');
+    getProjectsSlugs(variables?: GetProjectsSlugsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data: GetProjectsSlugsQuery; extensions?: any; headers: Dom.Headers; status: number; }> {
+        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsSlugsQuery>(GetProjectsSlugsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectsSlugs', 'query');
     }
   };
 }
