@@ -26,7 +26,7 @@ export default {
   ],
   preview: {
     select: {
-      title: "name",
+      title: "caption",
       media: "image.asset.url",
     },
     prepare(selection) {
