@@ -8,12 +8,12 @@ query getProjectBySlug($slug: String!) {
     }
     projectImages {
       _id
+      alt
+      caption
       image {
-        alt
         asset {
           url
         }
-        caption
       }
     }
   }

@@ -6,9 +6,16 @@ export default {
   type: "document",
   fields: [
     {
-      name: "name",
-      title: "Name",
+      name: "alt",
+      title: "Alt",
       type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "caption",
+      title: "Caption",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "image",

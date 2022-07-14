@@ -3,6 +3,7 @@ import { GraphQLClient } from "graphql-request";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import { Layout } from "../../components/Layout";
+import { imageBuilder } from "../../utils/sanityClientCdn";
 
 interface Props {
   project?: GetProjectBySlugQuery["allProject"][0];
@@ -14,12 +15,19 @@ function Project({ project }: Props) {
       <div className="container mb-10 grid gap-5">
         <h1 className="text-2xl font-bold">{project?.title}</h1>
         <p>{project?.description}</p>
-        {project?.projectImages?.map((projectImage) => (
-          <div key={projectImage?._id} className="grid justify-center gap-5">
-            <h3 className="text-lg font-bold">{projectImage?.image?.caption}</h3>
-            <img className="h-96" src={projectImage?.image?.asset?.url ?? ""} alt={projectImage?.image?.alt || ""} />
-          </div>
-        ))}
+        {project?.projectImages?.map((projectImage) => {
+          const imgUrl = projectImage?.image
+            ? imageBuilder.image(projectImage?.image).auto("format").quality(100).width(800).url() ?? ""
+            : null;
+
+          return (
+            <div key={projectImage?._id} className="grid justify-center gap-5">
+              <h3 className="text-lg font-bold">{projectImage?.caption}</h3>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              {imgUrl && <img className="h-96" src={imgUrl} alt={projectImage?.alt || ""} />}
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );

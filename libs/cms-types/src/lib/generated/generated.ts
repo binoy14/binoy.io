@@ -96,36 +96,6 @@ export type DocumentSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
 };
 
-export type FeaturedImage = {
-  __typename?: 'FeaturedImage';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['String']>;
-  asset?: Maybe<SanityImageAsset>;
-  caption?: Maybe<Scalars['String']>;
-  crop?: Maybe<SanityImageCrop>;
-  hotspot?: Maybe<SanityImageHotspot>;
-};
-
-export type FeaturedImageFilter = {
-  _key?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  alt?: InputMaybe<StringFilter>;
-  asset?: InputMaybe<SanityImageAssetFilter>;
-  caption?: InputMaybe<StringFilter>;
-  crop?: InputMaybe<SanityImageCropFilter>;
-  hotspot?: InputMaybe<SanityImageHotspotFilter>;
-};
-
-export type FeaturedImageSorting = {
-  _key?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  alt?: InputMaybe<SortOrder>;
-  caption?: InputMaybe<SortOrder>;
-  crop?: InputMaybe<SanityImageCropSorting>;
-  hotspot?: InputMaybe<SanityImageHotspotSorting>;
-};
-
 export type File = {
   __typename?: 'File';
   _key?: Maybe<Scalars['String']>;
@@ -212,6 +182,36 @@ export type ImageFilter = {
   hotspot?: InputMaybe<SanityImageHotspotFilter>;
 };
 
+export type ImageInfo = {
+  __typename?: 'ImageInfo';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+  asset?: Maybe<SanityImageAsset>;
+  caption?: Maybe<Scalars['String']>;
+  crop?: Maybe<SanityImageCrop>;
+  hotspot?: Maybe<SanityImageHotspot>;
+};
+
+export type ImageInfoFilter = {
+  _key?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  alt?: InputMaybe<StringFilter>;
+  asset?: InputMaybe<SanityImageAssetFilter>;
+  caption?: InputMaybe<StringFilter>;
+  crop?: InputMaybe<SanityImageCropFilter>;
+  hotspot?: InputMaybe<SanityImageHotspotFilter>;
+};
+
+export type ImageInfoSorting = {
+  _key?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  alt?: InputMaybe<SortOrder>;
+  caption?: InputMaybe<SortOrder>;
+  crop?: InputMaybe<SanityImageCropSorting>;
+  hotspot?: InputMaybe<SanityImageHotspotSorting>;
+};
+
 export type ImageSorting = {
   _key?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
@@ -249,8 +249,8 @@ export type Project = Document & {
   _updatedAt?: Maybe<Scalars['DateTime']>;
   description?: Maybe<Scalars['String']>;
   featuredDescription?: Maybe<Scalars['String']>;
-  featuredImage?: Maybe<FeaturedImage>;
-  projectImages?: Maybe<Array<Maybe<ProjectImageDocument>>>;
+  featuredImage?: Maybe<ImageInfo>;
+  projectImages?: Maybe<Array<Maybe<ProjectImage>>>;
   slug?: Maybe<Slug>;
   title?: Maybe<Scalars['String']>;
 };
@@ -266,24 +266,13 @@ export type ProjectFilter = {
   _updatedAt?: InputMaybe<DatetimeFilter>;
   description?: InputMaybe<StringFilter>;
   featuredDescription?: InputMaybe<StringFilter>;
-  featuredImage?: InputMaybe<FeaturedImageFilter>;
+  featuredImage?: InputMaybe<ImageInfoFilter>;
   slug?: InputMaybe<SlugFilter>;
   title?: InputMaybe<StringFilter>;
 };
 
-export type ProjectImage = {
+export type ProjectImage = Document & {
   __typename?: 'ProjectImage';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['String']>;
-  asset?: Maybe<SanityImageAsset>;
-  caption?: Maybe<Scalars['String']>;
-  crop?: Maybe<SanityImageCrop>;
-  hotspot?: Maybe<SanityImageHotspot>;
-};
-
-export type ProjectImageDocument = Document & {
-  __typename?: 'ProjectImageDocument';
   /** Date the document was created */
   _createdAt?: Maybe<Scalars['DateTime']>;
   /** Document ID */
@@ -295,10 +284,12 @@ export type ProjectImageDocument = Document & {
   _type?: Maybe<Scalars['String']>;
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
-  image?: Maybe<ProjectImage>;
+  alt?: Maybe<Scalars['String']>;
+  caption?: Maybe<Scalars['String']>;
+  image?: Maybe<Image>;
 };
 
-export type ProjectImageDocumentFilter = {
+export type ProjectImageFilter = {
   /** Apply filters on document level */
   _?: InputMaybe<Sanity_DocumentFilter>;
   _createdAt?: InputMaybe<DatetimeFilter>;
@@ -307,36 +298,21 @@ export type ProjectImageDocumentFilter = {
   _rev?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
-  image?: InputMaybe<ProjectImageFilter>;
+  alt?: InputMaybe<StringFilter>;
+  caption?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
-export type ProjectImageDocumentSorting = {
+export type ProjectImageSorting = {
   _createdAt?: InputMaybe<SortOrder>;
   _id?: InputMaybe<SortOrder>;
   _key?: InputMaybe<SortOrder>;
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
-  image?: InputMaybe<ProjectImageSorting>;
-};
-
-export type ProjectImageFilter = {
-  _key?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  alt?: InputMaybe<StringFilter>;
-  asset?: InputMaybe<SanityImageAssetFilter>;
-  caption?: InputMaybe<StringFilter>;
-  crop?: InputMaybe<SanityImageCropFilter>;
-  hotspot?: InputMaybe<SanityImageHotspotFilter>;
-};
-
-export type ProjectImageSorting = {
-  _key?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
   alt?: InputMaybe<SortOrder>;
   caption?: InputMaybe<SortOrder>;
-  crop?: InputMaybe<SanityImageCropSorting>;
-  hotspot?: InputMaybe<SanityImageHotspotSorting>;
+  image?: InputMaybe<ImageSorting>;
 };
 
 export type ProjectSorting = {
@@ -348,7 +324,7 @@ export type ProjectSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
   description?: InputMaybe<SortOrder>;
   featuredDescription?: InputMaybe<SortOrder>;
-  featuredImage?: InputMaybe<FeaturedImageSorting>;
+  featuredImage?: InputMaybe<ImageInfoSorting>;
   slug?: InputMaybe<SlugSorting>;
   title?: InputMaybe<SortOrder>;
 };
@@ -357,12 +333,12 @@ export type RootQuery = {
   __typename?: 'RootQuery';
   Document?: Maybe<Document>;
   Project?: Maybe<Project>;
-  ProjectImageDocument?: Maybe<ProjectImageDocument>;
+  ProjectImage?: Maybe<ProjectImage>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   allDocument: Array<Document>;
   allProject: Array<Project>;
-  allProjectImageDocument: Array<ProjectImageDocument>;
+  allProjectImage: Array<ProjectImage>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
 };
@@ -378,7 +354,7 @@ export type RootQueryProjectArgs = {
 };
 
 
-export type RootQueryProjectImageDocumentArgs = {
+export type RootQueryProjectImageArgs = {
   id: Scalars['ID'];
 };
 
@@ -409,11 +385,11 @@ export type RootQueryAllProjectArgs = {
 };
 
 
-export type RootQueryAllProjectImageDocumentArgs = {
+export type RootQueryAllProjectImageArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<ProjectImageDocumentSorting>>;
-  where?: InputMaybe<ProjectImageDocumentFilter>;
+  sort?: InputMaybe<Array<ProjectImageSorting>>;
+  where?: InputMaybe<ProjectImageFilter>;
 };
 
 
@@ -854,12 +830,12 @@ export type GetProjectBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, projectImages?: Array<{ __typename?: 'ProjectImageDocument', _id?: string | null, image?: { __typename?: 'ProjectImage', alt?: string | null, caption?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, projectImages?: Array<{ __typename?: 'ProjectImage', _id?: string | null, alt?: string | null, caption?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, featuredDescription?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, featuredImage?: { __typename?: 'FeaturedImage', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, projectImages?: Array<{ __typename?: 'ProjectImageDocument', image?: { __typename?: 'ProjectImage', alt?: string | null, caption?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+export type GetProjectsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, featuredDescription?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, projectImages?: Array<{ __typename?: 'ProjectImage', alt?: string | null, caption?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
 
 export type GetProjectsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -878,12 +854,12 @@ export const GetProjectBySlugDocument = gql`
     }
     projectImages {
       _id
+      alt
+      caption
       image {
-        alt
         asset {
           url
         }
-        caption
       }
     }
   }
@@ -906,12 +882,12 @@ export const GetProjectsDocument = gql`
       }
     }
     projectImages {
+      alt
+      caption
       image {
-        alt
         asset {
           url
         }
-        caption
       }
     }
   }

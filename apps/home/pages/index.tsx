@@ -21,6 +21,7 @@ function Index({ projects }: Props) {
       </Section>
       <div className="container">
         <h2 className="mt-10 text-xl font-bold">Projects</h2>
+
         <Section type="dark" className="sm:grid-cols-cards mt-5 sm:grid sm:gap-10">
           {projects?.map((project) => {
             const imgUrl = project.featuredImage
@@ -28,27 +29,24 @@ function Index({ projects }: Props) {
               : null;
 
             return (
-              <>
-                <Card key={project._id}>
-                  <div className="flex flex-col">
-                    {imgUrl && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        className="rounded border border-gray-100"
-                        src={imgUrl}
-                        alt={project?.featuredImage?.alt || ""}
-                      />
-                    )}
-                    <div className="my-4">
+              <Card key={project._id}>
+                <div className="flex flex-col">
+                  {imgUrl && (
+                    <Link href={`/project/${project.slug?.current}`}>
+                      <a>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={imgUrl} alt={project?.featuredImage?.alt || ""} />
+                      </a>
+                    </Link>
+                  )}
+                  <Link href={`/project/${project.slug?.current}`}>
+                    <a className="my-4">
                       <h3 className="text-lg font-bold">{project.title}</h3>
                       <p>{project.featuredDescription}</p>
-                    </div>
-                    <Link href={`/project/${project.slug?.current}`}>
-                      <a>View Details</a>
-                    </Link>
-                  </div>
-                </Card>
-              </>
+                    </a>
+                  </Link>
+                </div>
+              </Card>
             );
           })}
         </Section>
