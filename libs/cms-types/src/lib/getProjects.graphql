@@ -14,12 +14,12 @@ query getProjects {
       }
     }
     projectImages {
+      alt
+      caption
       image {
-        alt
         asset {
           url
         }
-        caption
       }
     }
   }
