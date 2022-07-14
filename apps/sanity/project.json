@@ -1,5 +1,5 @@
 {
-  "root": "apps/sanity",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/sanity/src",
   "projectType": "application",
   "targets": {

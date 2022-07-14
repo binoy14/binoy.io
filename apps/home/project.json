@@ -1,5 +1,5 @@
 {
-  "root": "apps/home",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/home",
   "projectType": "application",
   "targets": {
@@ -12,7 +12,8 @@
         "outputPath": "dist/apps/home"
       },
       "configurations": {
-        "production": {}
+        "production": {},
+        "development": {}
       }
     },
     "serve": {
@@ -25,8 +26,13 @@
         "production": {
           "buildTarget": "home:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "home:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -38,7 +44,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/home"],
       "options": {
-        "jestConfig": "apps/home/jest.config.js",
+        "jestConfig": "apps/home/jest.config.ts",
         "passWithNoTests": true
       }
     },

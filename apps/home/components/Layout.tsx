@@ -1,6 +1,8 @@
 import { Footer, Navigation, NavLinks } from "@binoy14/ui";
 import React from "react";
 
+import { ChildProps } from "./types";
+
 const links: NavLinks[] = [
   {
     text: "Home",
@@ -8,7 +10,7 @@ const links: NavLinks[] = [
   },
 ];
 
-export const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC<ChildProps> = ({ children }) => {
   return (
     <>
       <Navigation title="Binoy Patel" links={links} />
