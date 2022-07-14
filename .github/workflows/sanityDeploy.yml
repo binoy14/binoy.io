@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "apps/sanity"
+      - "apps/sanity/**"
       - "sanity.json"
 
 jobs:
