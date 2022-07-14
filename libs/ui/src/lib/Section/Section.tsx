@@ -13,15 +13,13 @@ export function Section({ children, type, className = "" }: SectionProps) {
       className={classnames(
         "py-6",
         {
-          "text-white": type === "dark",
-          "bg-black": type === "dark",
-          "bg-white": type === "light",
-          "text-black": type === "light",
+          "bg-black text-white": type === "dark",
+          "bg-white text-black": type === "light",
         },
         className
       )}
     >
-      <div className="container">{children}</div>
+      {children}
     </div>
   );
 }

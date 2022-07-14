@@ -1,6 +1,6 @@
 export default {
-  name: "featuredImage",
-  title: "Featured Image",
+  name: "imageInfo",
+  title: "Image Info",
   type: "image",
   fields: [
     {

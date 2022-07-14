@@ -29,7 +29,7 @@ export default {
     {
       name: "featuredImage",
       title: "Featured Image",
-      type: "featuredImage",
+      type: "imageInfo",
       validation: (Rule) => Rule.required(),
     },
     {
@@ -42,7 +42,7 @@ export default {
       name: "projectImages",
       title: "Project Images",
       type: "array",
-      of: [{ type: "reference", to: [{ type: "projectImageDocument" }] }],
+      of: [{ type: "reference", to: [{ type: "projectImage" }] }],
     },
   ],
   preview: {

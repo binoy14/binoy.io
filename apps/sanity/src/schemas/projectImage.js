@@ -1,17 +1,34 @@
+import React from "react";
+
 export default {
   name: "projectImage",
   title: "Project Image",
-  type: "image",
+  type: "document",
   fields: [
     {
-      name: "alt",
-      title: "alt",
+      name: "name",
+      title: "Name",
       type: "string",
     },
     {
-      name: "caption",
-      title: "caption",
-      type: "string",
+      name: "image",
+      title: "Image",
+      type: "image",
+      validation: (rule) => rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: "name",
+      media: "image.asset.url",
+    },
+    prepare(selection) {
+      const { title, media } = selection;
+
+      return {
+        title,
+        media: <img src={media} alt="Featured" />,
+      };
+    },
+  },
 };
