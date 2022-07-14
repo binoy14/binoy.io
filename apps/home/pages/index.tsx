@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 
 import { Layout } from "../components/Layout";
+import { imageBuilder } from "../utils/sanityClientCdn";
 
 interface Props {
   projects?: GetProjectsQuery["allProject"];
@@ -14,27 +15,42 @@ function Index({ projects }: Props) {
   return (
     <Layout>
       <Section type="light">
-        <TextBlock header="Hey 👋, I'm Binoy" subtext="Full Stack Developer, React Groupie and GraphQL Enthusiast" />
+        <div className="container">
+          <TextBlock header="Hey 👋, I'm Binoy" subtext="Full Stack Developer, React Groupie and GraphQL Enthusiast" />
+        </div>
       </Section>
       <div className="container">
         <h2 className="mt-10 text-xl font-bold">Projects</h2>
-        <Section type="dark" className="grid-cols-cards mt-5 grid gap-10">
-          {projects?.map((project) => (
-            <Card key={project._id}>
-              <div className="grid min-h-[300px] grid-cols-2 items-center gap-4">
-                {project?.featuredImage?.asset?.url && (
-                  <img src={project.featuredImage.asset?.url} alt={project.featuredImage.alt || ""} />
-                )}
-                <span>
-                  <h3 className="text-lg font-bold">{project.title}</h3>
-                  <p>{project.featuredDescription}</p>
-                </span>
-              </div>
-              <Link href={`/project/${project.slug?.current}`}>
-                <a>View Details</a>
-              </Link>
-            </Card>
-          ))}
+        <Section type="dark" className="sm:grid-cols-cards mt-5 sm:grid sm:gap-10">
+          {projects?.map((project) => {
+            const imgUrl = project.featuredImage
+              ? imageBuilder.image(project.featuredImage).auto("format").quality(100).width(600).url()
+              : null;
+
+            return (
+              <>
+                <Card key={project._id}>
+                  <div className="flex flex-col">
+                    {imgUrl && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        className="rounded border border-gray-100"
+                        src={imgUrl}
+                        alt={project?.featuredImage?.alt || ""}
+                      />
+                    )}
+                    <div className="my-4">
+                      <h3 className="text-lg font-bold">{project.title}</h3>
+                      <p>{project.featuredDescription}</p>
+                    </div>
+                    <Link href={`/project/${project.slug?.current}`}>
+                      <a>View Details</a>
+                    </Link>
+                  </div>
+                </Card>
+              </>
+            );
+          })}
         </Section>
       </div>
     </Layout>

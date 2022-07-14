@@ -1,7 +1,5 @@
-import { Footer, Navigation, NavLinks } from "@binoy14/ui";
+import { BasePropsPropsWithChildren, Footer, Navigation, NavLinks } from "@binoy14/ui";
 import React from "react";
-
-import { ChildProps } from "./types";
 
 const links: NavLinks[] = [
   {
@@ -10,7 +8,7 @@ const links: NavLinks[] = [
   },
 ];
 
-export const Layout: React.FC<ChildProps> = ({ children }) => {
+export const Layout: React.FC<BasePropsPropsWithChildren> = ({ children }) => {
   return (
     <>
       <Navigation title="Binoy Patel" links={links} />
