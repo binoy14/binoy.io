@@ -6,6 +6,10 @@ const links: NavLinks[] = [
     text: "Home",
     link: "",
   },
+  {
+    text: "Blogs",
+    link: "blogs",
+  },
 ];
 
 export const Layout: React.FC<BasePropsPropsWithChildren> = ({ children }) => {

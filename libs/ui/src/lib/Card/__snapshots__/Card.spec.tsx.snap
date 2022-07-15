@@ -4,7 +4,7 @@ exports[`Card should render successfully 1`] = `
 <body>
   <div>
     <div
-      class="mb-8 rounded-lg bg-white p-5 text-black shadow sm:mb-0"
+      class="mb-8 rounded-lg bg-white p-5 text-black shadow sm:mb-0 "
     >
       Hello World
     </div>

@@ -4,7 +4,6 @@ import { GraphQLClient } from "graphql-request";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 
-import { Layout } from "../components/Layout";
 import { imageBuilder } from "../utils/sanityClientCdn";
 
 interface Props {
@@ -13,7 +12,7 @@ interface Props {
 
 function Index({ projects }: Props) {
   return (
-    <Layout>
+    <>
       <Section type="light">
         <div className="container">
           <TextBlock header="Hey 👋, I'm Binoy" subtext="Full Stack Developer, React Groupie and GraphQL Enthusiast" />
@@ -51,7 +50,7 @@ function Index({ projects }: Props) {
           })}
         </Section>
       </div>
-    </Layout>
+    </>
   );
 }
 

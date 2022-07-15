@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
+import { BasePropsPropsWithChildren } from "../types";
 
-export interface CardProps {
-  children: ReactNode;
-}
-
-export function Card({ children }: CardProps) {
-  return <div className="mb-8 rounded-lg bg-white p-5 text-black shadow sm:mb-0">{children}</div>;
+export function Card({ children, className = "" }: BasePropsPropsWithChildren) {
+  return <div className={`mb-8 rounded-lg bg-white p-5 text-black shadow sm:mb-0 ${className}`}>{children}</div>;
 }
