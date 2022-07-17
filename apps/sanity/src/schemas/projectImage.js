@@ -1,8 +1,10 @@
 import React from "react";
+import { MdImage } from "react-icons/md";
 
 export default {
   name: "projectImage",
   title: "Project Image",
+  icon: MdImage,
   type: "document",
   fields: [
     {

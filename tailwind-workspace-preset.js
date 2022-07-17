@@ -8,7 +8,8 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        cards: "repeat(auto-fill, minmax(350px, 1fr));",
+        projects: "repeat(auto-fit, minmax(450px, 1fr));",
+        projectContent: "250px 1fr",
       },
     },
   },

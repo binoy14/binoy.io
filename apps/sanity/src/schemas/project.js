@@ -1,9 +1,11 @@
 import React from "react";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
 export default {
   name: "project",
   title: "Project",
   type: "document",
+  icon: AiOutlineFundProjectionScreen,
   fields: [
     {
       name: "title",
