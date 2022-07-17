@@ -1,26 +1,23 @@
 query getProjects {
-  allProject {
+  Projects(id: "b56396f8-93ad-42d9-9c6a-0c9d7431b5e5") {
+    ...ProjectsFragment
+  }
+}
+
+fragment ProjectsFragment on Projects {
+  projects {
     _id
-    title
-    description
-    featuredDescription
-    slug {
-      current
-    }
     featuredImage {
-      alt
       asset {
         url
       }
-    }
-    projectImages {
       alt
-      caption
-      image {
-        asset {
-          url
-        }
-      }
+    }
+    featuredDescription
+    title
+    description
+    slug {
+      current
     }
   }
 }

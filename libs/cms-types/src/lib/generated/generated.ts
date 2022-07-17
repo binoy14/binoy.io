@@ -329,16 +329,54 @@ export type ProjectSorting = {
   title?: InputMaybe<SortOrder>;
 };
 
+export type Projects = Document & {
+  __typename?: 'Projects';
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  _key?: Maybe<Scalars['String']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  projects?: Maybe<Array<Maybe<Project>>>;
+};
+
+export type ProjectsFilter = {
+  /** Apply filters on document level */
+  _?: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt?: InputMaybe<DatetimeFilter>;
+  _id?: InputMaybe<IdFilter>;
+  _key?: InputMaybe<StringFilter>;
+  _rev?: InputMaybe<StringFilter>;
+  _type?: InputMaybe<StringFilter>;
+  _updatedAt?: InputMaybe<DatetimeFilter>;
+};
+
+export type ProjectsSorting = {
+  _createdAt?: InputMaybe<SortOrder>;
+  _id?: InputMaybe<SortOrder>;
+  _key?: InputMaybe<SortOrder>;
+  _rev?: InputMaybe<SortOrder>;
+  _type?: InputMaybe<SortOrder>;
+  _updatedAt?: InputMaybe<SortOrder>;
+};
+
 export type RootQuery = {
   __typename?: 'RootQuery';
   Document?: Maybe<Document>;
   Project?: Maybe<Project>;
   ProjectImage?: Maybe<ProjectImage>;
+  Projects?: Maybe<Projects>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   allDocument: Array<Document>;
   allProject: Array<Project>;
   allProjectImage: Array<ProjectImage>;
+  allProjects: Array<Projects>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
 };
@@ -355,6 +393,11 @@ export type RootQueryProjectArgs = {
 
 
 export type RootQueryProjectImageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryProjectsArgs = {
   id: Scalars['ID'];
 };
 
@@ -390,6 +433,14 @@ export type RootQueryAllProjectImageArgs = {
   offset?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<ProjectImageSorting>>;
   where?: InputMaybe<ProjectImageFilter>;
+};
+
+
+export type RootQueryAllProjectsArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<ProjectsSorting>>;
+  where?: InputMaybe<ProjectsFilter>;
 };
 
 
@@ -835,14 +886,34 @@ export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Arra
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, featuredDescription?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, projectImages?: Array<{ __typename?: 'ProjectImage', alt?: string | null, caption?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+export type GetProjectsQuery = { __typename?: 'RootQuery', Projects?: { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, description?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null } | null };
+
+export type ProjectsFragmentFragment = { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, description?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null };
 
 export type GetProjectsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetProjectsSlugsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null }> };
 
-
+export const ProjectsFragmentFragmentDoc = gql`
+    fragment ProjectsFragment on Projects {
+  projects {
+    _id
+    featuredImage {
+      asset {
+        url
+      }
+      alt
+    }
+    featuredDescription
+    title
+    description
+    slug {
+      current
+    }
+  }
+}
+    `;
 export const GetProjectBySlugDocument = gql`
     query getProjectBySlug($slug: String!) {
   allProject(where: {slug: {current: {eq: $slug}}}) {
@@ -867,32 +938,11 @@ export const GetProjectBySlugDocument = gql`
     `;
 export const GetProjectsDocument = gql`
     query getProjects {
-  allProject {
-    _id
-    title
-    description
-    featuredDescription
-    slug {
-      current
-    }
-    featuredImage {
-      alt
-      asset {
-        url
-      }
-    }
-    projectImages {
-      alt
-      caption
-      image {
-        asset {
-          url
-        }
-      }
-    }
+  Projects(id: "b56396f8-93ad-42d9-9c6a-0c9d7431b5e5") {
+    ...ProjectsFragment
   }
 }
-    `;
+    ${ProjectsFragmentFragmentDoc}`;
 export const GetProjectsSlugsDocument = gql`
     query getProjectsSlugs {
   allProject {
