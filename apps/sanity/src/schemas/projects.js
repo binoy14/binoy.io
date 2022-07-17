@@ -14,4 +14,11 @@ export default {
       of: [{ type: "reference", to: [{ type: "project" }] }],
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: "Projects",
+      };
+    },
+  },
 };
