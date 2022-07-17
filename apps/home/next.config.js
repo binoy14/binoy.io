@@ -13,6 +13,22 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  // Added redirect in support for old site
+  // not permanent temporarily
+  async redirects() {
+    return [
+      {
+        source: "/blog",
+        destination: "/blogs",
+        permanent: false,
+      },
+      {
+        source: "/blog/:slug",
+        destination: "/blogs/:slug",
+        permanent: false,
+      },
+    ];
+  },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 };
 
