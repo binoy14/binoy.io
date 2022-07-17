@@ -1,7 +1,7 @@
 import { GetProjectsQuery, getSdk } from "@binoy14/cms-types";
 import { Card, Section, TextBlock } from "@binoy14/ui";
 import { GraphQLClient } from "graphql-request";
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 import { imageBuilder } from "../utils/sanityClientCdn";
@@ -10,7 +10,7 @@ interface Props {
   projects?: GetProjectsQuery["allProject"];
 }
 
-function Index({ projects }: Props) {
+const Index: NextPage<Props> = ({ projects }) => {
   return (
     <>
       <Section type="light">
@@ -39,7 +39,7 @@ function Index({ projects }: Props) {
                     </Link>
                   )}
                   <Link href={`/project/${project.slug?.current}`}>
-                    <a className="my-4">
+                    <a className="my-8">
                       <h3 className="text-lg font-bold">{project.title}</h3>
                       <p>{project.featuredDescription}</p>
                     </a>
@@ -52,7 +52,7 @@ function Index({ projects }: Props) {
       </div>
     </>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const client = new GraphQLClient(process.env.SANITY_GRAPHQL_URL, {

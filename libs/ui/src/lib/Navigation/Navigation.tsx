@@ -26,7 +26,7 @@ export function Navigation({ links, title }: UiProps) {
   return (
     <>
       <nav className="container">
-        <div className="flex h-24 w-full items-center bg-black pr-4 text-white transition-all sm:h-36">
+        <div className="flex h-24 w-full items-center bg-black text-white transition-all sm:h-36">
           <Link href="/">
             <a className="flex-1">
               <h2 className="text-4xl">{title}</h2>
@@ -41,7 +41,7 @@ export function Navigation({ links, title }: UiProps) {
               return (
                 <li
                   key={href}
-                  className={classnames(linkClasses, "mr-6", {
+                  className={classnames(linkClasses, "mr-6", "last:mr-0", {
                     "text-yellow-400": asPath === href,
                   })}
                 >
