@@ -21,7 +21,7 @@ const Index: NextPage<Props> = ({ projects }) => {
       <div className="container">
         <h2 className="mt-10 text-xl font-bold">Projects</h2>
 
-        <Section type="dark" className="sm:grid-cols-cards mt-5 sm:grid sm:gap-10">
+        <Section type="dark" className="sm:grid-cols-projects mt-5 sm:grid sm:gap-10">
           {projects?.map((project) => {
             const imgUrl = project.featuredImage
               ? imageBuilder.image(project.featuredImage).auto("format").quality(100).width(600).url()
@@ -29,12 +29,16 @@ const Index: NextPage<Props> = ({ projects }) => {
 
             return (
               <Card key={project._id}>
-                <div className="flex flex-col">
+                <div className="sm:grid-cols-projectContent flex h-full flex-col items-center sm:grid">
                   {imgUrl && (
                     <Link href={`/project/${project.slug?.current}`}>
-                      <a>
+                      <a className="sm:mr-8">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={imgUrl} alt={project?.featuredImage?.alt || ""} />
+                        <img
+                          className="max-h-[350px] w-full object-contain"
+                          src={imgUrl}
+                          alt={project?.featuredImage?.alt || ""}
+                        />
                       </a>
                     </Link>
                   )}
