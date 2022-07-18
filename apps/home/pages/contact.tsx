@@ -31,9 +31,9 @@ const ContactPage: NextPage = () => {
     <div className="container">
       <Card>
         <h1 className="text-2xl font-bold">Say Hello!</h1>
-        <div className="my-10 flex justify-center">
+        <div className="my-10 flex flex-wrap justify-center">
           {Links.map(({ link, Icon }) => (
-            <a href={link} key={link} target="_blank" rel="noreferrer noopener" className="mr-8">
+            <a href={link} key={link} target="_blank" rel="noreferrer noopener" className="ml-8 mb-8 first:ml-0">
               <Icon size={50} />
             </a>
           ))}
