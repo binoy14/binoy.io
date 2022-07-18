@@ -2,6 +2,7 @@ import { Card } from "@binoy14/ui";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import readingTime from "reading-time";
 
@@ -21,29 +22,34 @@ interface Props {
 
 const BlogsPage: NextPage<Props> = ({ pages }) => {
   return (
-    <div className="container">
-      {pages.map((page) => {
-        const formattedDate = new Date(page.date).toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        });
+    <>
+      <Head>
+        <title>Blogs - Binoy Patel</title>
+      </Head>
+      <div className="container">
+        {pages.map((page) => {
+          const formattedDate = new Date(page.date).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          });
 
-        return (
-          <Card key={page.title} className="my-10 py-10 px-10 first:mt-0">
-            <Link href={`/blogs/${page.slug}`}>
-              <a>
-                <h1 className="text-xl font-bold">{page.title}</h1>
-              </a>
-            </Link>
-            <h4 className="mt-2">
-              {formattedDate} - {page.readingTime}
-            </h4>
-            <p className="mt-4 text-lg">{page.description}</p>
-          </Card>
-        );
-      })}
-    </div>
+          return (
+            <Card key={page.title} className="my-10 py-10 px-10 first:mt-0">
+              <Link href={`/blogs/${page.slug}`}>
+                <a>
+                  <h1 className="text-xl font-bold">{page.title}</h1>
+                </a>
+              </Link>
+              <h4 className="mt-2">
+                {formattedDate} - {page.readingTime}
+              </h4>
+              <p className="mt-4 text-lg">{page.description}</p>
+            </Card>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
