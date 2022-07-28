@@ -16,6 +16,7 @@ export type Scalars = {
   Float: number;
   Date: any;
   DateTime: any;
+  JSON: any;
 };
 
 export type Block = {
@@ -247,7 +248,7 @@ export type Project = Document & {
   _type?: Maybe<Scalars['String']>;
   /** Date the document was last modified */
   _updatedAt?: Maybe<Scalars['DateTime']>;
-  description?: Maybe<Scalars['String']>;
+  descriptionRaw?: Maybe<Scalars['JSON']>;
   featuredDescription?: Maybe<Scalars['String']>;
   featuredImage?: Maybe<ImageInfo>;
   projectImages?: Maybe<Array<Maybe<ProjectImage>>>;
@@ -264,7 +265,6 @@ export type ProjectFilter = {
   _rev?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   _updatedAt?: InputMaybe<DatetimeFilter>;
-  description?: InputMaybe<StringFilter>;
   featuredDescription?: InputMaybe<StringFilter>;
   featuredImage?: InputMaybe<ImageInfoFilter>;
   slug?: InputMaybe<SlugFilter>;
@@ -322,7 +322,6 @@ export type ProjectSorting = {
   _rev?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _updatedAt?: InputMaybe<SortOrder>;
-  description?: InputMaybe<SortOrder>;
   featuredDescription?: InputMaybe<SortOrder>;
   featuredImage?: InputMaybe<ImageInfoSorting>;
   slug?: InputMaybe<SlugSorting>;
@@ -881,14 +880,14 @@ export type GetProjectBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, description?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null, projectImages?: Array<{ __typename?: 'ProjectImage', _id?: string | null, alt?: string | null, caption?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, descriptionRaw?: any | null, slug?: { __typename?: 'Slug', current?: string | null } | null, projectImages?: Array<{ __typename?: 'ProjectImage', _id?: string | null, alt?: string | null, caption?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'RootQuery', Projects?: { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, description?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null } | null };
+export type GetProjectsQuery = { __typename?: 'RootQuery', Projects?: { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null } | null };
 
-export type ProjectsFragmentFragment = { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, description?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null };
+export type ProjectsFragmentFragment = { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null };
 
 export type GetProjectsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -907,7 +906,6 @@ export const ProjectsFragmentFragmentDoc = gql`
     }
     featuredDescription
     title
-    description
     slug {
       current
     }
@@ -919,7 +917,7 @@ export const GetProjectBySlugDocument = gql`
   allProject(where: {slug: {current: {eq: $slug}}}) {
     _id
     title
-    description
+    descriptionRaw
     slug {
       current
     }

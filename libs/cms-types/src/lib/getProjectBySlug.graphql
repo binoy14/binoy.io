@@ -2,7 +2,7 @@ query getProjectBySlug($slug: String!) {
   allProject(where: { slug: { current: { eq: $slug } } }) {
     _id
     title
-    description
+    descriptionRaw
     slug {
       current
     }

@@ -2,6 +2,7 @@ import { GetProjectBySlugQuery, getSdk } from "@binoy14/cms-types";
 import { GraphQLClient } from "graphql-request";
 import { GetStaticPaths, GetStaticProps } from "next";
 
+import { BlockContent } from "../../components/BlockContent";
 import { imageBuilder } from "../../utils/sanityClientCdn";
 
 interface Props {
@@ -12,7 +13,7 @@ function Project({ project }: Props) {
   return (
     <div className="container mb-10 grid gap-5">
       <h1 className="text-2xl font-bold">{project?.title}</h1>
-      <p>{project?.description}</p>
+      <BlockContent value={project?.descriptionRaw} />
       {project?.projectImages?.map((projectImage) => {
         const imgUrl = projectImage?.image
           ? imageBuilder.image(projectImage?.image).auto("format").quality(100).width(800).url() ?? ""
