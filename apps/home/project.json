@@ -55,6 +55,18 @@
         "lintFilePatterns": ["apps/home/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "cms-generate": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "yarn graphql-codegen --config apps/home/codegen.yml"
+      }
+    },
+    "cms-generate-watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "yarn graphql-codegen --config apps/home/codegen.yml --watch"
+      }
+    },
     "type-check": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
@@ -66,7 +78,7 @@
       "options": {
         "commands": [
           "yarn nx run home:serve",
-          "yarn nx run cms-types:cms-generate-watch",
+          "yarn nx run home:cms-generate-watch",
           "yarn nx run sanity:serve",
           "yarn nx run ui:storybook"
         ],

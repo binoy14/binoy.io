@@ -1,7 +1,7 @@
-import { GraphQLClient } from 'graphql-request';
-import * as Dom from 'graphql-request/dist/types.dom';
-import { print } from 'graphql'
-import gql from 'graphql-tag';
+import { GraphQLClient } from "graphql-request";
+import * as Dom from "graphql-request/dist/types.dom";
+import { print } from "graphql";
+import gql from "graphql-tag";
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -20,63 +20,63 @@ export type Scalars = {
 };
 
 export type Block = {
-  __typename?: 'Block';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
+  __typename?: "Block";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
   children?: Maybe<Array<Maybe<Span>>>;
-  list?: Maybe<Scalars['String']>;
-  style?: Maybe<Scalars['String']>;
+  list?: Maybe<Scalars["String"]>;
+  style?: Maybe<Scalars["String"]>;
 };
 
 export type BooleanFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['Boolean']>;
+  eq?: InputMaybe<Scalars["Boolean"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['Boolean']>;
+  neq?: InputMaybe<Scalars["Boolean"]>;
 };
 
 export type DateFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['Date']>;
+  eq?: InputMaybe<Scalars["Date"]>;
   /** Checks if the value is greater than the given input. */
-  gt?: InputMaybe<Scalars['Date']>;
+  gt?: InputMaybe<Scalars["Date"]>;
   /** Checks if the value is greater than or equal to the given input. */
-  gte?: InputMaybe<Scalars['Date']>;
+  gte?: InputMaybe<Scalars["Date"]>;
   /** Checks if the value is lesser than the given input. */
-  lt?: InputMaybe<Scalars['Date']>;
+  lt?: InputMaybe<Scalars["Date"]>;
   /** Checks if the value is lesser than or equal to the given input. */
-  lte?: InputMaybe<Scalars['Date']>;
+  lte?: InputMaybe<Scalars["Date"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['Date']>;
+  neq?: InputMaybe<Scalars["Date"]>;
 };
 
 export type DatetimeFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['DateTime']>;
+  eq?: InputMaybe<Scalars["DateTime"]>;
   /** Checks if the value is greater than the given input. */
-  gt?: InputMaybe<Scalars['DateTime']>;
+  gt?: InputMaybe<Scalars["DateTime"]>;
   /** Checks if the value is greater than or equal to the given input. */
-  gte?: InputMaybe<Scalars['DateTime']>;
+  gte?: InputMaybe<Scalars["DateTime"]>;
   /** Checks if the value is lesser than the given input. */
-  lt?: InputMaybe<Scalars['DateTime']>;
+  lt?: InputMaybe<Scalars["DateTime"]>;
   /** Checks if the value is lesser than or equal to the given input. */
-  lte?: InputMaybe<Scalars['DateTime']>;
+  lte?: InputMaybe<Scalars["DateTime"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['DateTime']>;
+  neq?: InputMaybe<Scalars["DateTime"]>;
 };
 
 /** A Sanity document */
 export type Document = {
   /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
+  _createdAt?: Maybe<Scalars["DateTime"]>;
   /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
+  _id?: Maybe<Scalars["ID"]>;
   /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
+  _rev?: Maybe<Scalars["String"]>;
   /** Document type */
-  _type?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars["String"]>;
   /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
+  _updatedAt?: Maybe<Scalars["DateTime"]>;
 };
 
 export type DocumentFilter = {
@@ -98,9 +98,9 @@ export type DocumentSorting = {
 };
 
 export type File = {
-  __typename?: 'File';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
+  __typename?: "File";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
   asset?: Maybe<SanityFileAsset>;
 };
 
@@ -117,26 +117,26 @@ export type FileSorting = {
 
 export type FloatFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['Float']>;
+  eq?: InputMaybe<Scalars["Float"]>;
   /** Checks if the value is greater than the given input. */
-  gt?: InputMaybe<Scalars['Float']>;
+  gt?: InputMaybe<Scalars["Float"]>;
   /** Checks if the value is greater than or equal to the given input. */
-  gte?: InputMaybe<Scalars['Float']>;
+  gte?: InputMaybe<Scalars["Float"]>;
   /** Checks if the value is lesser than the given input. */
-  lt?: InputMaybe<Scalars['Float']>;
+  lt?: InputMaybe<Scalars["Float"]>;
   /** Checks if the value is lesser than or equal to the given input. */
-  lte?: InputMaybe<Scalars['Float']>;
+  lte?: InputMaybe<Scalars["Float"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['Float']>;
+  neq?: InputMaybe<Scalars["Float"]>;
 };
 
 export type Geopoint = {
-  __typename?: 'Geopoint';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['Float']>;
-  lat?: Maybe<Scalars['Float']>;
-  lng?: Maybe<Scalars['Float']>;
+  __typename?: "Geopoint";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  alt?: Maybe<Scalars["Float"]>;
+  lat?: Maybe<Scalars["Float"]>;
+  lng?: Maybe<Scalars["Float"]>;
 };
 
 export type GeopointFilter = {
@@ -157,19 +157,19 @@ export type GeopointSorting = {
 
 export type IdFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['ID']>;
-  in?: InputMaybe<Array<Scalars['ID']>>;
+  eq?: InputMaybe<Scalars["ID"]>;
+  in?: InputMaybe<Array<Scalars["ID"]>>;
   /** Checks if the value matches the given word/words. */
-  matches?: InputMaybe<Scalars['ID']>;
+  matches?: InputMaybe<Scalars["ID"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['ID']>;
-  nin?: InputMaybe<Array<Scalars['ID']>>;
+  neq?: InputMaybe<Scalars["ID"]>;
+  nin?: InputMaybe<Array<Scalars["ID"]>>;
 };
 
 export type Image = {
-  __typename?: 'Image';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
+  __typename?: "Image";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
   asset?: Maybe<SanityImageAsset>;
   crop?: Maybe<SanityImageCrop>;
   hotspot?: Maybe<SanityImageHotspot>;
@@ -184,12 +184,12 @@ export type ImageFilter = {
 };
 
 export type ImageInfo = {
-  __typename?: 'ImageInfo';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['String']>;
+  __typename?: "ImageInfo";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  alt?: Maybe<Scalars["String"]>;
   asset?: Maybe<SanityImageAsset>;
-  caption?: Maybe<Scalars['String']>;
+  caption?: Maybe<Scalars["String"]>;
   crop?: Maybe<SanityImageCrop>;
   hotspot?: Maybe<SanityImageHotspot>;
 };
@@ -222,38 +222,38 @@ export type ImageSorting = {
 
 export type IntFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['Int']>;
+  eq?: InputMaybe<Scalars["Int"]>;
   /** Checks if the value is greater than the given input. */
-  gt?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars["Int"]>;
   /** Checks if the value is greater than or equal to the given input. */
-  gte?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars["Int"]>;
   /** Checks if the value is lesser than the given input. */
-  lt?: InputMaybe<Scalars['Int']>;
+  lt?: InputMaybe<Scalars["Int"]>;
   /** Checks if the value is lesser than or equal to the given input. */
-  lte?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars["Int"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['Int']>;
+  neq?: InputMaybe<Scalars["Int"]>;
 };
 
 export type Project = Document & {
-  __typename?: 'Project';
+  __typename?: "Project";
   /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
+  _createdAt?: Maybe<Scalars["DateTime"]>;
   /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
+  _id?: Maybe<Scalars["ID"]>;
+  _key?: Maybe<Scalars["String"]>;
   /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
+  _rev?: Maybe<Scalars["String"]>;
   /** Document type */
-  _type?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars["String"]>;
   /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  descriptionRaw?: Maybe<Scalars['JSON']>;
-  featuredDescription?: Maybe<Scalars['String']>;
+  _updatedAt?: Maybe<Scalars["DateTime"]>;
+  descriptionRaw?: Maybe<Scalars["JSON"]>;
+  featuredDescription?: Maybe<Scalars["String"]>;
   featuredImage?: Maybe<ImageInfo>;
   projectImages?: Maybe<Array<Maybe<ProjectImage>>>;
   slug?: Maybe<Slug>;
-  title?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars["String"]>;
 };
 
 export type ProjectFilter = {
@@ -272,20 +272,20 @@ export type ProjectFilter = {
 };
 
 export type ProjectImage = Document & {
-  __typename?: 'ProjectImage';
+  __typename?: "ProjectImage";
   /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
+  _createdAt?: Maybe<Scalars["DateTime"]>;
   /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
+  _id?: Maybe<Scalars["ID"]>;
+  _key?: Maybe<Scalars["String"]>;
   /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
+  _rev?: Maybe<Scalars["String"]>;
   /** Document type */
-  _type?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars["String"]>;
   /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  alt?: Maybe<Scalars['String']>;
-  caption?: Maybe<Scalars['String']>;
+  _updatedAt?: Maybe<Scalars["DateTime"]>;
+  alt?: Maybe<Scalars["String"]>;
+  caption?: Maybe<Scalars["String"]>;
   image?: Maybe<Image>;
 };
 
@@ -329,18 +329,18 @@ export type ProjectSorting = {
 };
 
 export type Projects = Document & {
-  __typename?: 'Projects';
+  __typename?: "Projects";
   /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
+  _createdAt?: Maybe<Scalars["DateTime"]>;
   /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
+  _id?: Maybe<Scalars["ID"]>;
+  _key?: Maybe<Scalars["String"]>;
   /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
+  _rev?: Maybe<Scalars["String"]>;
   /** Document type */
-  _type?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars["String"]>;
   /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
+  _updatedAt?: Maybe<Scalars["DateTime"]>;
   projects?: Maybe<Array<Maybe<Project>>>;
 };
 
@@ -365,7 +365,7 @@ export type ProjectsSorting = {
 };
 
 export type RootQuery = {
-  __typename?: 'RootQuery';
+  __typename?: "RootQuery";
   Document?: Maybe<Document>;
   Project?: Maybe<Project>;
   ProjectImage?: Maybe<ProjectImage>;
@@ -380,94 +380,82 @@ export type RootQuery = {
   allSanityImageAsset: Array<SanityImageAsset>;
 };
 
-
 export type RootQueryDocumentArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type RootQueryProjectArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type RootQueryProjectImageArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type RootQueryProjectsArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type RootQuerySanityFileAssetArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
-
 
 export type RootQuerySanityImageAssetArgs = {
-  id: Scalars['ID'];
+  id: Scalars["ID"];
 };
 
-
 export type RootQueryAllDocumentArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  offset?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<Array<DocumentSorting>>;
   where?: InputMaybe<DocumentFilter>;
 };
 
-
 export type RootQueryAllProjectArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  offset?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<Array<ProjectSorting>>;
   where?: InputMaybe<ProjectFilter>;
 };
 
-
 export type RootQueryAllProjectImageArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  offset?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<Array<ProjectImageSorting>>;
   where?: InputMaybe<ProjectImageFilter>;
 };
 
-
 export type RootQueryAllProjectsArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  offset?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<Array<ProjectsSorting>>;
   where?: InputMaybe<ProjectsFilter>;
 };
 
-
 export type RootQueryAllSanityFileAssetArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  offset?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<Array<SanityFileAssetSorting>>;
   where?: InputMaybe<SanityFileAssetFilter>;
 };
 
-
 export type RootQueryAllSanityImageAssetArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars["Int"]>;
+  offset?: InputMaybe<Scalars["Int"]>;
   sort?: InputMaybe<Array<SanityImageAssetSorting>>;
   where?: InputMaybe<SanityImageAssetFilter>;
 };
 
 export type SanityAssetSourceData = {
-  __typename?: 'SanityAssetSourceData';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
+  __typename?: "SanityAssetSourceData";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
   /** The unique ID for the asset within the originating source so you can programatically find back to it */
-  id?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars["String"]>;
   /** A canonical name for the source this asset is originating from */
-  name?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars["String"]>;
   /** A URL to find more information about this asset in the originating source */
-  url?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars["String"]>;
 };
 
 export type SanityAssetSourceDataFilter = {
@@ -487,31 +475,31 @@ export type SanityAssetSourceDataSorting = {
 };
 
 export type SanityFileAsset = Document & {
-  __typename?: 'SanityFileAsset';
+  __typename?: "SanityFileAsset";
   /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
+  _createdAt?: Maybe<Scalars["DateTime"]>;
   /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
+  _id?: Maybe<Scalars["ID"]>;
+  _key?: Maybe<Scalars["String"]>;
   /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
+  _rev?: Maybe<Scalars["String"]>;
   /** Document type */
-  _type?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars["String"]>;
   /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  altText?: Maybe<Scalars['String']>;
-  assetId?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  extension?: Maybe<Scalars['String']>;
-  label?: Maybe<Scalars['String']>;
-  mimeType?: Maybe<Scalars['String']>;
-  originalFilename?: Maybe<Scalars['String']>;
-  path?: Maybe<Scalars['String']>;
-  sha1hash?: Maybe<Scalars['String']>;
-  size?: Maybe<Scalars['Float']>;
+  _updatedAt?: Maybe<Scalars["DateTime"]>;
+  altText?: Maybe<Scalars["String"]>;
+  assetId?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  extension?: Maybe<Scalars["String"]>;
+  label?: Maybe<Scalars["String"]>;
+  mimeType?: Maybe<Scalars["String"]>;
+  originalFilename?: Maybe<Scalars["String"]>;
+  path?: Maybe<Scalars["String"]>;
+  sha1hash?: Maybe<Scalars["String"]>;
+  size?: Maybe<Scalars["Float"]>;
   source?: Maybe<SanityAssetSourceData>;
-  title?: Maybe<Scalars['String']>;
-  url?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars["String"]>;
+  url?: Maybe<Scalars["String"]>;
 };
 
 export type SanityFileAssetFilter = {
@@ -561,33 +549,33 @@ export type SanityFileAssetSorting = {
 };
 
 export type SanityImageAsset = Document & {
-  __typename?: 'SanityImageAsset';
+  __typename?: "SanityImageAsset";
   /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
+  _createdAt?: Maybe<Scalars["DateTime"]>;
   /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
+  _id?: Maybe<Scalars["ID"]>;
+  _key?: Maybe<Scalars["String"]>;
   /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
+  _rev?: Maybe<Scalars["String"]>;
   /** Document type */
-  _type?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars["String"]>;
   /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  altText?: Maybe<Scalars['String']>;
-  assetId?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  extension?: Maybe<Scalars['String']>;
-  label?: Maybe<Scalars['String']>;
+  _updatedAt?: Maybe<Scalars["DateTime"]>;
+  altText?: Maybe<Scalars["String"]>;
+  assetId?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  extension?: Maybe<Scalars["String"]>;
+  label?: Maybe<Scalars["String"]>;
   metadata?: Maybe<SanityImageMetadata>;
-  mimeType?: Maybe<Scalars['String']>;
-  originalFilename?: Maybe<Scalars['String']>;
-  path?: Maybe<Scalars['String']>;
-  sha1hash?: Maybe<Scalars['String']>;
-  size?: Maybe<Scalars['Float']>;
+  mimeType?: Maybe<Scalars["String"]>;
+  originalFilename?: Maybe<Scalars["String"]>;
+  path?: Maybe<Scalars["String"]>;
+  sha1hash?: Maybe<Scalars["String"]>;
+  size?: Maybe<Scalars["Float"]>;
   source?: Maybe<SanityAssetSourceData>;
-  title?: Maybe<Scalars['String']>;
-  uploadId?: Maybe<Scalars['String']>;
-  url?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars["String"]>;
+  uploadId?: Maybe<Scalars["String"]>;
+  url?: Maybe<Scalars["String"]>;
 };
 
 export type SanityImageAssetFilter = {
@@ -641,13 +629,13 @@ export type SanityImageAssetSorting = {
 };
 
 export type SanityImageCrop = {
-  __typename?: 'SanityImageCrop';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  bottom?: Maybe<Scalars['Float']>;
-  left?: Maybe<Scalars['Float']>;
-  right?: Maybe<Scalars['Float']>;
-  top?: Maybe<Scalars['Float']>;
+  __typename?: "SanityImageCrop";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  bottom?: Maybe<Scalars["Float"]>;
+  left?: Maybe<Scalars["Float"]>;
+  right?: Maybe<Scalars["Float"]>;
+  top?: Maybe<Scalars["Float"]>;
 };
 
 export type SanityImageCropFilter = {
@@ -669,12 +657,12 @@ export type SanityImageCropSorting = {
 };
 
 export type SanityImageDimensions = {
-  __typename?: 'SanityImageDimensions';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  aspectRatio?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  width?: Maybe<Scalars['Float']>;
+  __typename?: "SanityImageDimensions";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  aspectRatio?: Maybe<Scalars["Float"]>;
+  height?: Maybe<Scalars["Float"]>;
+  width?: Maybe<Scalars["Float"]>;
 };
 
 export type SanityImageDimensionsFilter = {
@@ -694,13 +682,13 @@ export type SanityImageDimensionsSorting = {
 };
 
 export type SanityImageHotspot = {
-  __typename?: 'SanityImageHotspot';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  height?: Maybe<Scalars['Float']>;
-  width?: Maybe<Scalars['Float']>;
-  x?: Maybe<Scalars['Float']>;
-  y?: Maybe<Scalars['Float']>;
+  __typename?: "SanityImageHotspot";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  height?: Maybe<Scalars["Float"]>;
+  width?: Maybe<Scalars["Float"]>;
+  x?: Maybe<Scalars["Float"]>;
+  y?: Maybe<Scalars["Float"]>;
 };
 
 export type SanityImageHotspotFilter = {
@@ -722,15 +710,15 @@ export type SanityImageHotspotSorting = {
 };
 
 export type SanityImageMetadata = {
-  __typename?: 'SanityImageMetadata';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  blurHash?: Maybe<Scalars['String']>;
+  __typename?: "SanityImageMetadata";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  blurHash?: Maybe<Scalars["String"]>;
   dimensions?: Maybe<SanityImageDimensions>;
-  hasAlpha?: Maybe<Scalars['Boolean']>;
-  isOpaque?: Maybe<Scalars['Boolean']>;
+  hasAlpha?: Maybe<Scalars["Boolean"]>;
+  isOpaque?: Maybe<Scalars["Boolean"]>;
   location?: Maybe<Geopoint>;
-  lqip?: Maybe<Scalars['String']>;
+  lqip?: Maybe<Scalars["String"]>;
   palette?: Maybe<SanityImagePalette>;
 };
 
@@ -759,9 +747,9 @@ export type SanityImageMetadataSorting = {
 };
 
 export type SanityImagePalette = {
-  __typename?: 'SanityImagePalette';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
+  __typename?: "SanityImagePalette";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
   darkMuted?: Maybe<SanityImagePaletteSwatch>;
   darkVibrant?: Maybe<SanityImagePaletteSwatch>;
   dominant?: Maybe<SanityImagePaletteSwatch>;
@@ -796,13 +784,13 @@ export type SanityImagePaletteSorting = {
 };
 
 export type SanityImagePaletteSwatch = {
-  __typename?: 'SanityImagePaletteSwatch';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  background?: Maybe<Scalars['String']>;
-  foreground?: Maybe<Scalars['String']>;
-  population?: Maybe<Scalars['Float']>;
-  title?: Maybe<Scalars['String']>;
+  __typename?: "SanityImagePaletteSwatch";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  background?: Maybe<Scalars["String"]>;
+  foreground?: Maybe<Scalars["String"]>;
+  population?: Maybe<Scalars["Float"]>;
+  title?: Maybe<Scalars["String"]>;
 };
 
 export type SanityImagePaletteSwatchFilter = {
@@ -825,16 +813,16 @@ export type SanityImagePaletteSwatchSorting = {
 
 export type Sanity_DocumentFilter = {
   /** All documents that are drafts. */
-  is_draft?: InputMaybe<Scalars['Boolean']>;
+  is_draft?: InputMaybe<Scalars["Boolean"]>;
   /** All documents referencing the given document ID. */
-  references?: InputMaybe<Scalars['ID']>;
+  references?: InputMaybe<Scalars["ID"]>;
 };
 
 export type Slug = {
-  __typename?: 'Slug';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  current?: Maybe<Scalars['String']>;
+  __typename?: "Slug";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  current?: Maybe<Scalars["String"]>;
 };
 
 export type SlugFilter = {
@@ -851,109 +839,164 @@ export type SlugSorting = {
 
 export enum SortOrder {
   /** Sorts on the value in ascending order. */
-  Asc = 'ASC',
+  Asc = "ASC",
   /** Sorts on the value in descending order. */
-  Desc = 'DESC'
+  Desc = "DESC",
 }
 
 export type Span = {
-  __typename?: 'Span';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  marks?: Maybe<Array<Maybe<Scalars['String']>>>;
-  text?: Maybe<Scalars['String']>;
+  __typename?: "Span";
+  _key?: Maybe<Scalars["String"]>;
+  _type?: Maybe<Scalars["String"]>;
+  marks?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  text?: Maybe<Scalars["String"]>;
 };
 
 export type StringFilter = {
   /** Checks if the value is equal to the given input. */
-  eq?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
+  eq?: InputMaybe<Scalars["String"]>;
+  in?: InputMaybe<Array<Scalars["String"]>>;
   /** Checks if the value matches the given word/words. */
-  matches?: InputMaybe<Scalars['String']>;
+  matches?: InputMaybe<Scalars["String"]>;
   /** Checks if the value is not equal to the given input. */
-  neq?: InputMaybe<Scalars['String']>;
-  nin?: InputMaybe<Array<Scalars['String']>>;
+  neq?: InputMaybe<Scalars["String"]>;
+  nin?: InputMaybe<Array<Scalars["String"]>>;
 };
 
 export type GetProjectBySlugQueryVariables = Exact<{
-  slug: Scalars['String'];
+  slug: Scalars["String"];
 }>;
 
+export type GetProjectBySlugQuery = {
+  __typename?: "RootQuery";
+  allProject: Array<{
+    __typename?: "Project";
+    _id?: string | null;
+    title?: string | null;
+    descriptionRaw?: any | null;
+    slug?: { __typename?: "Slug"; current?: string | null } | null;
+    projectImages?: Array<{
+      __typename?: "ProjectImage";
+      _id?: string | null;
+      alt?: string | null;
+      caption?: string | null;
+      image?: { __typename?: "Image"; asset?: { __typename?: "SanityImageAsset"; url?: string | null } | null } | null;
+    } | null> | null;
+  }>;
+};
 
-export type GetProjectBySlugQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, title?: string | null, descriptionRaw?: any | null, slug?: { __typename?: 'Slug', current?: string | null } | null, projectImages?: Array<{ __typename?: 'ProjectImage', _id?: string | null, alt?: string | null, caption?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null } | null> | null }> };
+export type GetProjectsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetProjectsQuery = {
+  __typename?: "RootQuery";
+  Projects?: {
+    __typename?: "Projects";
+    projects?: Array<{
+      __typename?: "Project";
+      _id?: string | null;
+      featuredDescription?: string | null;
+      title?: string | null;
+      featuredImage?: {
+        __typename?: "ImageInfo";
+        alt?: string | null;
+        asset?: { __typename?: "SanityImageAsset"; url?: string | null } | null;
+      } | null;
+      slug?: { __typename?: "Slug"; current?: string | null } | null;
+    } | null> | null;
+  } | null;
+};
 
+export type ProjectsFragmentFragment = {
+  __typename?: "Projects";
+  projects?: Array<{
+    __typename?: "Project";
+    _id?: string | null;
+    featuredDescription?: string | null;
+    title?: string | null;
+    featuredImage?: {
+      __typename?: "ImageInfo";
+      alt?: string | null;
+      asset?: { __typename?: "SanityImageAsset"; url?: string | null } | null;
+    } | null;
+    slug?: { __typename?: "Slug"; current?: string | null } | null;
+  } | null> | null;
+};
 
-export type GetProjectsQuery = { __typename?: 'RootQuery', Projects?: { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null } | null };
+export type GetProjectsSlugsQueryVariables = Exact<{ [key: string]: never }>;
 
-export type ProjectsFragmentFragment = { __typename?: 'Projects', projects?: Array<{ __typename?: 'Project', _id?: string | null, featuredDescription?: string | null, title?: string | null, featuredImage?: { __typename?: 'ImageInfo', alt?: string | null, asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null } | null> | null };
-
-export type GetProjectsSlugsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetProjectsSlugsQuery = { __typename?: 'RootQuery', allProject: Array<{ __typename?: 'Project', _id?: string | null, slug?: { __typename?: 'Slug', current?: string | null } | null }> };
+export type GetProjectsSlugsQuery = {
+  __typename?: "RootQuery";
+  allProject: Array<{
+    __typename?: "Project";
+    _id?: string | null;
+    slug?: { __typename?: "Slug"; current?: string | null } | null;
+  }>;
+};
 
 export const ProjectsFragmentFragmentDoc = gql`
-    fragment ProjectsFragment on Projects {
-  projects {
-    _id
-    featuredImage {
-      asset {
-        url
-      }
-      alt
-    }
-    featuredDescription
-    title
-    slug {
-      current
-    }
-  }
-}
-    `;
-export const GetProjectBySlugDocument = gql`
-    query getProjectBySlug($slug: String!) {
-  allProject(where: {slug: {current: {eq: $slug}}}) {
-    _id
-    title
-    descriptionRaw
-    slug {
-      current
-    }
-    projectImages {
+  fragment ProjectsFragment on Projects {
+    projects {
       _id
-      alt
-      caption
-      image {
+      featuredImage {
         asset {
           url
+        }
+        alt
+      }
+      featuredDescription
+      title
+      slug {
+        current
+      }
+    }
+  }
+`;
+export const GetProjectBySlugDocument = gql`
+  query getProjectBySlug($slug: String!) {
+    allProject(where: { slug: { current: { eq: $slug } } }) {
+      _id
+      title
+      descriptionRaw
+      slug {
+        current
+      }
+      projectImages {
+        _id
+        alt
+        caption
+        image {
+          asset {
+            url
+          }
         }
       }
     }
   }
-}
-    `;
+`;
 export const GetProjectsDocument = gql`
-    query getProjects {
-  Projects(id: "b56396f8-93ad-42d9-9c6a-0c9d7431b5e5") {
-    ...ProjectsFragment
-  }
-}
-    ${ProjectsFragmentFragmentDoc}`;
-export const GetProjectsSlugsDocument = gql`
-    query getProjectsSlugs {
-  allProject {
-    _id
-    slug {
-      current
+  query getProjects {
+    Projects(id: "b56396f8-93ad-42d9-9c6a-0c9d7431b5e5") {
+      ...ProjectsFragment
     }
   }
-}
-    `;
+  ${ProjectsFragmentFragmentDoc}
+`;
+export const GetProjectsSlugsDocument = gql`
+  query getProjectsSlugs {
+    allProject {
+      _id
+      slug {
+        current
+      }
+    }
+  }
+`;
 
-export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
-
+export type SdkFunctionWrapper = <T>(
+  action: (requestHeaders?: Record<string, string>) => Promise<T>,
+  operationName: string,
+  operationType?: string
+) => Promise<T>;
 
 const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType) => action();
 const GetProjectBySlugDocumentString = print(GetProjectBySlugDocument);
@@ -961,15 +1004,48 @@ const GetProjectsDocumentString = print(GetProjectsDocument);
 const GetProjectsSlugsDocumentString = print(GetProjectsSlugsDocument);
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    getProjectBySlug(variables: GetProjectBySlugQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data: GetProjectBySlugQuery; extensions?: any; headers: Dom.Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectBySlugQuery>(GetProjectBySlugDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectBySlug', 'query');
+    getProjectBySlug(
+      variables: GetProjectBySlugQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<{ data: GetProjectBySlugQuery; extensions?: any; headers: Dom.Headers; status: number }> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.rawRequest<GetProjectBySlugQuery>(GetProjectBySlugDocumentString, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "getProjectBySlug",
+        "query"
+      );
     },
-    getProjects(variables?: GetProjectsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data: GetProjectsQuery; extensions?: any; headers: Dom.Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsQuery>(GetProjectsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjects', 'query');
+    getProjects(
+      variables?: GetProjectsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<{ data: GetProjectsQuery; extensions?: any; headers: Dom.Headers; status: number }> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.rawRequest<GetProjectsQuery>(GetProjectsDocumentString, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "getProjects",
+        "query"
+      );
     },
-    getProjectsSlugs(variables?: GetProjectsSlugsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<{ data: GetProjectsSlugsQuery; extensions?: any; headers: Dom.Headers; status: number; }> {
-        return withWrapper((wrappedRequestHeaders) => client.rawRequest<GetProjectsSlugsQuery>(GetProjectsSlugsDocumentString, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getProjectsSlugs', 'query');
-    }
+    getProjectsSlugs(
+      variables?: GetProjectsSlugsQueryVariables,
+      requestHeaders?: Dom.RequestInit["headers"]
+    ): Promise<{ data: GetProjectsSlugsQuery; extensions?: any; headers: Dom.Headers; status: number }> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.rawRequest<GetProjectsSlugsQuery>(GetProjectsSlugsDocumentString, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders,
+          }),
+        "getProjectsSlugs",
+        "query"
+      );
+    },
   };
 }
 export type Sdk = ReturnType<typeof getSdk>;

@@ -1,9 +1,9 @@
-import { getSdk, ProjectsFragmentFragment } from "@binoy14/cms-types";
 import { Card, Section, TextBlock } from "@binoy14/ui";
 import { GraphQLClient } from "graphql-request";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
+import { getSdk, ProjectsFragmentFragment } from "../utils/graphql";
 import { imageBuilder } from "../utils/sanityClientCdn";
 
 interface Props {

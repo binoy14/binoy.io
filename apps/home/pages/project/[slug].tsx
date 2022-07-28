@@ -1,8 +1,8 @@
-import { GetProjectBySlugQuery, getSdk } from "@binoy14/cms-types";
 import { GraphQLClient } from "graphql-request";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import { BlockContent } from "../../components/BlockContent";
+import { GetProjectBySlugQuery, getSdk } from "../../utils/graphql";
 import { imageBuilder } from "../../utils/sanityClientCdn";
 
 interface Props {
