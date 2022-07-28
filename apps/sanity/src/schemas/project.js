@@ -37,7 +37,7 @@ export default {
     {
       name: "description",
       title: "Description",
-      type: "string",
+      type: "description",
       validation: (Rule) => Rule.required(),
     },
     {
@@ -50,7 +50,7 @@ export default {
   preview: {
     select: {
       title: "title",
-      subtitle: "description",
+      subtitle: "featuredDescription",
       image: "featuredImage.asset.url",
     },
     prepare(selection) {
