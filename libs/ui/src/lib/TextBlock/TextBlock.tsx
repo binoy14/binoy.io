@@ -1,8 +1,6 @@
-import { Maybe } from "@binoy14/cms-types";
-
 export interface TextBlockProps {
   header: string;
-  subtext?: Maybe<string>;
+  subtext?: string | null;
 }
 
 export function TextBlock({ header, subtext }: TextBlockProps) {
