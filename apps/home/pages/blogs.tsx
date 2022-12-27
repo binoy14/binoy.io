@@ -37,9 +37,7 @@ const BlogsPage: NextPage<Props> = ({ pages }) => {
           return (
             <Card key={page.title} className="my-10 py-10 px-10 first:mt-0">
               <Link href={`/blogs/${page.slug}`}>
-                <a>
-                  <h1 className="text-xl font-bold">{page.title}</h1>
-                </a>
+                <h1 className="text-xl font-bold">{page.title}</h1>
               </Link>
               <h4 className="mt-2">
                 {formattedDate} - {page.readingTime}

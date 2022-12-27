@@ -1,4 +1,5 @@
 {
+  "name": "home",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/home",
   "projectType": "application",
@@ -13,7 +14,9 @@
       },
       "configurations": {
         "production": {},
-        "development": {}
+        "development": {
+          "outputPath": "apps/home"
+        }
       }
     },
     "serve": {
@@ -42,7 +45,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/home"],
+      "outputs": ["{workspaceRoot}/coverage/apps/home"],
       "options": {
         "jestConfig": "apps/home/jest.config.ts",
         "passWithNoTests": true
@@ -56,25 +59,25 @@
       }
     },
     "cms-generate": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "yarn graphql-codegen --config apps/home/codegen.yml"
       }
     },
     "cms-generate-watch": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "yarn graphql-codegen --config apps/home/codegen.yml --watch"
       }
     },
     "type-check": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "yarn tsc -p apps/home/tsconfig.json --noEmit"
       }
     },
     "dev": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "yarn nx run home:serve",
