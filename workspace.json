@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "home": "apps/home",
-    "sanity": "apps/sanity",
-    "ui": "libs/ui"
-  },
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
-}

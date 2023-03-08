@@ -1,5 +1,6 @@
-import { Story, Meta } from "@storybook/react";
 import { Navigation, UiProps } from "./Navigation";
+
+import type { Story, Meta } from "@storybook/react";
 
 export default {
   component: Navigation,
@@ -12,19 +13,19 @@ export const Primary = Template.bind({});
 Primary.args = {
   links: [
     {
-      link: null,
+      link: "",
       text: "Home",
     },
     {
-      link: { current: "/about" },
+      link: "about",
       text: "About",
     },
     {
-      link: { current: "/blog" },
+      link: "blog",
       text: "Blog",
     },
     {
-      link: { current: "/contact" },
+      link: "contact",
       text: "Contact",
     },
   ],

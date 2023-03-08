@@ -7,7 +7,3 @@ export const parameters = {
     Provider: RouterContext.Provider,
   },
 };
-
-if (module.hot) {
-  module.hot.accept();
-}
