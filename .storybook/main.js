@@ -1,6 +1,7 @@
 module.exports = {
+  builder: "@storybook/builder-vite",
+  addons: ["storybook-addon-next-router", "@storybook/addon-backgrounds", "storybook-addon-swc"],
   stories: [],
-  addons: ["@storybook/addon-essentials", "storybook-addon-next-router", "@storybook/addon-backgrounds"],
   // uncomment the property below if you want to apply some webpack config globally
   // webpackFinal: async (config, { configType }) => {
   //   // Make whatever fine-grained changes you need that should apply to all storybook configs
