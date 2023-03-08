@@ -31,22 +31,18 @@ const Index: NextPage<Props> = ({ projects }) => {
               <Card key={project?._id}>
                 <div className="sm:grid-cols-projectContent flex h-full min-h-[390px] flex-col items-center sm:grid">
                   {imgUrl && (
-                    <Link href={`/project/${project?.slug?.current}`}>
-                      <a className="sm:mr-8">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          className="max-h-[350px] w-full object-contain"
-                          src={imgUrl}
-                          alt={project?.featuredImage?.alt || ""}
-                        />
-                      </a>
+                    <Link className="sm:mr-8" href={`/project/${project?.slug?.current}`}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        className="max-h-[350px] w-full object-contain"
+                        src={imgUrl}
+                        alt={project?.featuredImage?.alt || ""}
+                      />
                     </Link>
                   )}
-                  <Link href={`/project/${project?.slug?.current}`}>
-                    <a className="my-8">
-                      <h3 className="text-lg font-bold">{project?.title}</h3>
-                      <p>{project?.featuredDescription}</p>
-                    </a>
+                  <Link className="my-8" href={`/project/${project?.slug?.current}`}>
+                    <h3 className="text-lg font-bold">{project?.title}</h3>
+                    <p>{project?.featuredDescription}</p>
                   </Link>
                 </div>
               </Card>

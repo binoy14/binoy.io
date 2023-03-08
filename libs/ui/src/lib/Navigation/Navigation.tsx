@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -27,10 +26,8 @@ export function Navigation({ links, title }: UiProps) {
     <>
       <nav className="container">
         <div className="flex h-24 w-full items-center bg-black text-white transition-all sm:h-36">
-          <Link href="/">
-            <a className="flex-1">
-              <h2 className="text-4xl">{title}</h2>
-            </a>
+          <Link className="flex-1" href="/">
+            <h2 className="text-4xl">{title}</h2>
           </Link>
           {/* Desktop Nav */}
           <ul className="hidden sm:flex">
@@ -45,9 +42,7 @@ export function Navigation({ links, title }: UiProps) {
                     "text-yellow-400": asPath === href,
                   })}
                 >
-                  <Link href={href}>
-                    <a>{text}</a>
-                  </Link>
+                  <Link href={href}>{text}</Link>
                 </li>
               );
             })}
@@ -90,8 +85,8 @@ export function Navigation({ links, title }: UiProps) {
 
             return (
               <li key={href} className={`mb-6 ${linkClasses}`}>
-                <Link href={href}>
-                  <a className="text-xl">{text}</a>
+                <Link className="text-xl" href={href}>
+                  {text}
                 </Link>
               </li>
             );

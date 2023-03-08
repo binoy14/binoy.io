@@ -39,3 +39,7 @@ testem.log
 Thumbs.db
 
 .env.local
+
+# Next.js
+.next
+*.tsbuildinfo

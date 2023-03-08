@@ -1,22 +1,23 @@
 {
+  "name": "sanity",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/sanity/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "yarn sanity build dist/apps/sanity -y"
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "yarn sanity start"
       }
     },
     "deploy-graphql": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "yarn sanity graphql deploy"
       }

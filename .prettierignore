@@ -3,4 +3,4 @@
 /dist
 /coverage
 
-/libs/cms-types/src/lib/generated/**/*
+/apps/home/utils/graphql/generated/**/*
