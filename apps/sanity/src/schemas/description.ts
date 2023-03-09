@@ -1,4 +1,6 @@
-export default {
+import { defineField } from "sanity";
+
+export default defineField({
   name: "description",
   title: "Description",
   type: "array",
@@ -7,4 +9,4 @@ export default {
       type: "block",
     },
   ],
-};
+});

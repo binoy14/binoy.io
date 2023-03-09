@@ -1,18 +1,18 @@
-import React from "react";
 import { BiCollection } from "react-icons/bi";
+import { defineField, defineType } from "sanity";
 
-export default {
+export default defineType({
   name: "projects",
   title: "Projects",
   type: "document",
   icon: BiCollection,
   fields: [
-    {
+    defineField({
       name: "projects",
       title: "Projects",
       type: "array",
       of: [{ type: "reference", to: [{ type: "project" }] }],
-    },
+    }),
   ],
   preview: {
     prepare() {
@@ -21,4 +21,4 @@ export default {
       };
     },
   },
-};
+});

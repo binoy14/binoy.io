@@ -13,7 +13,7 @@
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn sanity start"
+        "command": "yarn sanity dev"
       }
     },
     "deploy-graphql": {
