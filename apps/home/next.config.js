@@ -31,6 +31,13 @@ const nextConfig = {
     ];
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  webpack(config) {
+    config.infrastructureLogging = {
+      level: "error",
+    };
+
+    return config;
+  },
 };
 
 const withMdx = require("@next/mdx")({
