@@ -11,7 +11,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "files": [],
-  "include": ["../../node_modules/@sanity/base/types/**/*.ts"],
+  "include": [],
   "references": [
     {
       "path": "./tsconfig.app.json"
