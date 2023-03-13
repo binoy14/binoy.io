@@ -4980,7 +4980,7 @@
     get-random-values-esm "^1.0.0"
     lodash "^4.17.21"
 
-"@sanity/cli@3.6.0":
+"@sanity/cli@3.6.0", "@sanity/cli@^3.6.0":
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-3.6.0.tgz#1267735c075756f2743a7d5a41a56e4c6faff553"
   integrity sha512-s9R57PnnQ9GN8zY0ySBvZGnw8pt4yFfy0Cym3fn2TDyQnvBzmqTGVV/1FiFQYV/u3DyWfmxtv73JHK6xYLBORw==
@@ -4991,11 +4991,6 @@
     esbuild-register "^3.4.1"
     get-it "^8.0.9"
     pkg-dir "^5.0.0"
-
-"@sanity/cli@^2.30.2":
-  version "2.30.2"
-  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.30.2.tgz#a91336f831c613c4e0f140af124ab7ced842e2ca"
-  integrity sha512-kS6xH38TWCH0yDpzhURghsacxjUcoDYN/R8xSutEkY70FvYm0x7/bfRuOiFYfdR4wrSE9LAu+50NsCmD3L39Ww==
 
 "@sanity/client@^3.4.1":
   version "3.4.1"

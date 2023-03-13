@@ -69,7 +69,7 @@
     "@nrwl/webpack": "15.8.5",
     "@nrwl/workspace": "15.8.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "@sanity/cli": "^2.30.2",
+    "@sanity/cli": "^3.6.0",
     "@storybook/addon-backgrounds": "^6.5.16",
     "@storybook/addon-essentials": "6.5.16",
     "@storybook/builder-vite": "^0.4.2",
