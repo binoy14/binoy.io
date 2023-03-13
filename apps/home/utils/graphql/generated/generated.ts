@@ -39,6 +39,7 @@ export type CrossDatasetReference = {
   __typename?: 'CrossDatasetReference';
   _dataset?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  _projectId?: Maybe<Scalars['String']>;
   _ref?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   _weak?: Maybe<Scalars['Boolean']>;
@@ -47,6 +48,7 @@ export type CrossDatasetReference = {
 export type CrossDatasetReferenceFilter = {
   _dataset?: InputMaybe<StringFilter>;
   _key?: InputMaybe<StringFilter>;
+  _projectId?: InputMaybe<StringFilter>;
   _ref?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   _weak?: InputMaybe<BooleanFilter>;
@@ -55,6 +57,7 @@ export type CrossDatasetReferenceFilter = {
 export type CrossDatasetReferenceSorting = {
   _dataset?: InputMaybe<SortOrder>;
   _key?: InputMaybe<SortOrder>;
+  _projectId?: InputMaybe<SortOrder>;
   _ref?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   _weak?: InputMaybe<SortOrder>;
@@ -860,18 +863,21 @@ export type Slug = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   current?: Maybe<Scalars['String']>;
+  source?: Maybe<Scalars['String']>;
 };
 
 export type SlugFilter = {
   _key?: InputMaybe<StringFilter>;
   _type?: InputMaybe<StringFilter>;
   current?: InputMaybe<StringFilter>;
+  source?: InputMaybe<StringFilter>;
 };
 
 export type SlugSorting = {
   _key?: InputMaybe<SortOrder>;
   _type?: InputMaybe<SortOrder>;
   current?: InputMaybe<SortOrder>;
+  source?: InputMaybe<SortOrder>;
 };
 
 export enum SortOrder {
