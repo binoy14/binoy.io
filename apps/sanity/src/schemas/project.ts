@@ -1,25 +1,25 @@
-import React from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { defineField, defineType } from "sanity";
 
-export default {
+export default defineType({
   name: "project",
   title: "Project",
   type: "document",
   icon: AiOutlineFundProjectionScreen,
   fields: [
-    {
+    defineField({
       name: "title",
       title: "Title",
       type: "string",
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "featuredDescription",
       title: "Featured Description",
       type: "string",
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -27,40 +27,40 @@ export default {
         source: "title",
       },
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "featuredImage",
       title: "Featured Image",
       type: "imageInfo",
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "description",
       title: "Description",
       type: "description",
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: "projectImages",
       title: "Project Images",
       type: "array",
       of: [{ type: "reference", to: [{ type: "projectImage" }] }],
-    },
+    }),
   ],
   preview: {
     select: {
       title: "title",
       subtitle: "featuredDescription",
-      image: "featuredImage.asset.url",
+      media: "featuredImage",
     },
     prepare(selection) {
-      const { title, subtitle, image } = selection;
+      const { title, subtitle, media } = selection;
 
       return {
         title,
         subtitle,
-        media: <img src={image} alt="Featured" />,
+        media,
       };
     },
   },
-};
+});
