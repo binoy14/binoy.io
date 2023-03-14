@@ -3,8 +3,8 @@ import { GraphQLClient } from "graphql-request";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
+import { Image } from "../components/Image";
 import { getSdk, ProjectsFragmentFragment } from "../utils/graphql";
-import { imageBuilder } from "../utils/sanityClientCdn";
 
 interface Props {
   projects?: ProjectsFragmentFragment["projects"];
@@ -23,23 +23,18 @@ const Index: NextPage<Props> = ({ projects }) => {
 
         <Section type="dark" className="sm:grid-cols-projects mt-5 sm:grid sm:gap-10">
           {projects?.map((project) => {
-            const imgUrl = project?.featuredImage
-              ? imageBuilder.image(project.featuredImage).auto("format").quality(100).width(600).url()
-              : null;
-
             return (
               <Card key={project?._id}>
                 <div className="sm:grid-cols-projectContent flex h-full min-h-[390px] flex-col items-center sm:grid">
-                  {imgUrl && (
-                    <Link className="sm:mr-8" href={`/project/${project?.slug?.current}`}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        className="max-h-[350px] w-full object-contain"
-                        src={imgUrl}
-                        alt={project?.featuredImage?.alt || ""}
-                      />
-                    </Link>
-                  )}
+                  <Link className="sm:mr-8" href={`/project/${project?.slug?.current}`}>
+                    <Image
+                      src={project?.featuredImage}
+                      alt={project?.featuredImage?.alt || ""}
+                      width={500}
+                      height={350}
+                      priority={false}
+                    />
+                  </Link>
                   <Link className="my-8" href={`/project/${project?.slug?.current}`}>
                     <h3 className="text-lg font-bold">{project?.title}</h3>
                     <p>{project?.featuredDescription}</p>
