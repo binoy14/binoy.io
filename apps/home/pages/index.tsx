@@ -1,13 +1,13 @@
 import { Card, Section, TextBlock } from "@binoy14/ui";
-import { GraphQLClient } from "graphql-request";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 import { Image } from "../components/Image";
-import { getSdk, ProjectsFragmentFragment } from "../utils/graphql";
+import { GetProjects, getProjects } from "../utils/groq/getProjects";
+import { sanityClient } from "../utils/sanityClientCdn";
 
 interface Props {
-  projects?: ProjectsFragmentFragment["projects"];
+  projects: GetProjects["projects"];
 }
 
 const Index: NextPage<Props> = ({ projects }) => {
@@ -50,18 +50,11 @@ const Index: NextPage<Props> = ({ projects }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = new GraphQLClient(process.env.SANITY_GRAPHQL_URL, {
-    headers: {
-      Authorization: `Bearer ${process.env.SANITY_READ_TOKEN}`,
-    },
-  });
-
-  const sdk = getSdk(client);
-  const { data } = await sdk.getProjects();
+  const { projects = [] } = await sanityClient.fetch<GetProjects>(getProjects, { id: "home" });
 
   return {
     props: {
-      projects: data.Projects?.projects || [],
+      projects,
     },
   };
 };

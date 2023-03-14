@@ -8,6 +8,12 @@ export default defineType({
   icon: BiCollection,
   fields: [
     defineField({
+      name: "id",
+      title: "ID",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "projects",
       title: "Projects",
       type: "array",
