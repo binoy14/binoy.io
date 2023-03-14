@@ -13,6 +13,7 @@ const nextConfig = {
   },
   images: {
     domains: ["cdn.sanity.io"],
+    loader: "custom",
   },
   // Added redirect in support for old site
   // not permanent temporarily
