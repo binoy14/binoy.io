@@ -67,6 +67,14 @@
     "dev": {
       "executor": "nx:run-commands",
       "options": {
+        "commands": ["yarn nx run home:serve", "yarn nx run sanity:serve"],
+        "parallel": true,
+        "color": true
+      }
+    },
+    "dev-all": {
+      "executor": "nx:run-commands",
+      "options": {
         "commands": ["yarn nx run home:serve", "yarn nx run sanity:serve", "yarn nx run ui:storybook"],
         "parallel": true,
         "color": true

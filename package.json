@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nx run home:dev",
+    "dev-all": "nx run home:dev-all",
     "start": "nx serve",
     "start:sanity": "nx run sanity:serve",
     "build": "nx build",
