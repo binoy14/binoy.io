@@ -1,8 +1,0 @@
-query getProjectsSlugs {
-  allProject {
-    _id
-    slug {
-      current
-    }
-  }
-}

@@ -1,2 +1,1 @@
 node_modules
-apps/home/utils/graphql/generated/**/*.{ts,tsx}

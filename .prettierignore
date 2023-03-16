@@ -2,5 +2,3 @@
 
 /dist
 /coverage
-
-/apps/home/utils/graphql/generated/**/*
