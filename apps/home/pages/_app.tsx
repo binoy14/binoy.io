@@ -1,5 +1,4 @@
 import "../public/global.css";
-import "../public/prism.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import { NextSeo } from "next-seo";

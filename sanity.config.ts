@@ -1,3 +1,4 @@
+import { codeInput } from "@sanity/code-input";
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
@@ -7,6 +8,7 @@ import { schemaTypes } from "./apps/sanity/src/schemas";
 const sharedSettings = {
   plugins: [
     deskTool(),
+    codeInput(),
     visionTool({
       defaultApiVersion: "v2021-10-21",
       defaultDataset: "production",
