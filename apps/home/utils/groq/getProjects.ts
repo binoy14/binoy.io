@@ -2,7 +2,7 @@ import groq from "groq";
 
 import type { Asset, Slug } from "./types";
 
-export const getProjects = groq`*[_type == "projects" && id == $id] {
+export const getProjects = groq`*[_type == "projects" && id == $id && !(_id in path("drafts.**"))] {
   "projects": projects[]-> {
     _id,
     featuredImage,
