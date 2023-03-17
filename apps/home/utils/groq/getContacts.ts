@@ -3,7 +3,7 @@ import groq from "groq";
 export const getContacts = groq`*[_type == "contact"] {
   link,
   title
-}`;
+} | order(title asc)`;
 
 export type GetContacts = GetContact[];
 
