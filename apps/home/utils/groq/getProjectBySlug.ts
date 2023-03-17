@@ -2,7 +2,7 @@ import { ArbitraryTypedObject, PortableTextBlock } from "@portabletext/types";
 import groq from "groq";
 
 import type { Asset, Slug } from "./types";
-export const getProjectBySlug = groq`*[_type == "project" && slug.current == $slug] {
+export const getProjectBySlug = groq`*[_type == "project" && slug.current == $slug && !(_id in path("drafts.**"))] {
   _id,
   title,
   description,

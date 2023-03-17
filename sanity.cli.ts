@@ -4,7 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineCliConfig({
   api: {
     projectId: "4t7pp8z5",
-    dataset: "development",
+    dataset: "production",
   },
   vite(config) {
     return {
