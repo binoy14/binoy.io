@@ -30,8 +30,8 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "description",
-      title: "Description",
+      name: "excerpt",
+      title: "Excerpt",
       type: "text",
       validation: (Rule) => Rule.required(),
     }),
@@ -41,4 +41,21 @@ export default defineType({
       type: "blogBody",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "publishedAt",
+    },
+    prepare(value) {
+      const { title, subtitle } = value;
+      return {
+        title,
+        subtitle: new Date(subtitle).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }),
+      };
+    },
+  },
 });

@@ -53,6 +53,7 @@ export default defineField({
                 name: "blank",
                 description: "Read https://css-tricks.com/use-target_blank/",
                 type: "boolean",
+                initialValue: true,
               },
             ],
           },
@@ -66,17 +67,6 @@ export default defineField({
           name: "alt",
           type: "string",
           title: "Alternative text",
-          options: {
-            isHighlighted: true,
-          },
-        },
-        {
-          name: "caption",
-          type: "string",
-          title: "Caption",
-          options: {
-            isHighlighted: true,
-          },
         },
       ],
       options: {

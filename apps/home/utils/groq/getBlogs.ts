@@ -4,16 +4,18 @@ import { Slug } from "./types";
 
 export const getBlogs = groq`*[_type == "blog"] {
   title,
-  description,
+  excerpt,
   slug,
   publishedAt,
-} | order(title asc)`;
+  "readingTime": round(length(pt::text(body)) / 5 / 200 )
+} | order(publishedAt desc)`;
 
 export type GetBlogs = GetBlog[];
 
 export interface GetBlog {
   title: string;
-  description: string;
+  excerpt: string;
   publishedAt: string;
   slug: Slug;
+  readingTime: number;
 }
