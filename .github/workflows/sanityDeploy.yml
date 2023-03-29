@@ -28,6 +28,6 @@ jobs:
         run: |
           SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" yarn sanity deploy
 
-      - name: Deploy Sanity GraphQL
-        run: |
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" yarn sanity graphql deploy
+      # - name: Deploy Sanity GraphQL
+      #   run: |
+      #     SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" yarn sanity graphql deploy
