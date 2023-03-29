@@ -31,7 +31,7 @@ const nextConfig = {
       },
     ];
   },
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md"],
   webpack(config) {
     config.infrastructureLogging = {
       level: "error",
@@ -41,13 +41,4 @@ const nextConfig = {
   },
 };
 
-const withMdx = require("@next/mdx")({
-  extension: /\.mdx?$/,
-  options: {
-    providerImportSource: "@mdx-js/react",
-    remarkPlugins: [require("remark-prism"), import("remark-frontmatter")],
-    rehypePlugins: [],
-  },
-});
-
-module.exports = withNx(withMdx(nextConfig));
+module.exports = withNx(nextConfig);
