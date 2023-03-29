@@ -19,7 +19,13 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: (
     <>
-      <h1 className="text-3xl">Hey 👋, I'm Binoy</h1>
+      <h1 className="text-3xl">
+        Hey{" "}
+        <span role="img" aria-label="Wave">
+          👋
+        </span>
+        , I'm Binoy
+      </h1>
       <span>Web Developer, React Groupie and GraphQL Enthusiast</span>
     </>
   ),
