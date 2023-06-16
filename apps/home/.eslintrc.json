@@ -16,8 +16,5 @@
       "files": ["*.js", "*.jsx"],
       "rules": {}
     }
-  ],
-  "env": {
-    "jest": true
-  }
+  ]
 }

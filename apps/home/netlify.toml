@@ -1,5 +1,0 @@
-[build]
-publish = "dist/apps/home"
-
-[[plugins]]
-package = "@netlify/plugin-nextjs"

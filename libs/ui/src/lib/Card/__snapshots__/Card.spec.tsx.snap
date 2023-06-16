@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Card should render successfully 1`] = `
+exports[`Card > should render successfully 1`] = `
 <body>
   <div>
     <div
