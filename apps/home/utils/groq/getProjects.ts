@@ -2,15 +2,14 @@ import groq from "groq";
 
 import type { Asset, Slug } from "./types";
 
-export const getProjects = groq`*[_type == "projects" && id == $id && !(_id in path("drafts.**"))] {
-  "projects": projects[]-> {
-    _id,
-    featuredImage,
-    featuredDescription,
-    title,
-    slug
-  }
-}[0]`;
+export const getProjects = groq`*[_type == "project" && !(_id in path("drafts.**"))] {
+  _id,
+  featuredImage,
+  featuredDescription,
+  title,
+  slug,
+  order
+} | order(order asc)`;
 
 export interface GetProjects {
   projects: Project[];
@@ -22,6 +21,7 @@ export interface Project {
   featuredImage: FeaturedImage;
   slug: Slug;
   title: string;
+  order: number;
 }
 
 export interface FeaturedImage {
