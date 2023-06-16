@@ -1,7 +1,6 @@
 import { PortableText, PortableTextProps } from "@portabletext/react";
 import Link from "next/link";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/nightOwl";
+import { Highlight, themes } from "prism-react-renderer";
 
 import { Image } from "../components/Image";
 
@@ -17,7 +16,7 @@ export const BlockContent: React.FC<PortableTextProps> = ({ value }) => {
             },
             code: (props) => {
               return (
-                <Highlight {...defaultProps} theme={theme} code={props.value.code} language={props.value.language}>
+                <Highlight theme={themes.vsDark} code={props.value.code} language={props.value.language}>
                   {({ className, style, tokens, getLineProps, getTokenProps }) => (
                     <pre className={className} style={style}>
                       {tokens.map((line, i) => (
