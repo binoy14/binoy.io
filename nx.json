@@ -13,7 +13,7 @@
     }
   },
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "style": "none",
         "linter": "eslint",
@@ -31,7 +31,7 @@
         "linter": "eslint"
       }
     },
-    "@nrwl/next": {
+    "@nx/next": {
       "application": {
         "linter": "eslint"
       }

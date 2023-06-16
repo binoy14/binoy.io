@@ -5,8 +5,8 @@ import {
   joinPathFragments,
   readProjectConfiguration,
   Tree,
-} from "@nrwl/devkit";
-import { addImport } from "@nrwl/react/src/utils/ast-utils";
+} from "@nx/devkit";
+import { addImport } from "@nx/react/src/utils/ast-utils";
 import * as ts from "typescript";
 
 import { NxSanitySchema } from "./schema";
