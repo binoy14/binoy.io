@@ -3,14 +3,16 @@ import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 import { Image } from "../components/Image";
-import { GetProjects, getProjects } from "../utils/groq/getProjects";
+import { getProjects, Project } from "../utils/groq/getProjects";
 import { sanityClient } from "../utils/sanityClientCdn";
 
 interface Props {
-  projects: GetProjects["projects"];
+  projects: Project[];
 }
 
-const Index: NextPage<Props> = ({ projects }) => {
+const Index: NextPage<Props> = (props) => {
+  const { projects } = props;
+
   return (
     <>
       <Section type="light">
@@ -50,7 +52,7 @@ const Index: NextPage<Props> = ({ projects }) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { projects = [] } = await sanityClient.fetch<GetProjects>(getProjects, { id: "home" });
+  const projects = await sanityClient.fetch<Project[]>(getProjects);
 
   return {
     props: {
