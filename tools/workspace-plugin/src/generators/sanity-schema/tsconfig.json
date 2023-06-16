@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.tools.json",
+  "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "strict": true
   },
