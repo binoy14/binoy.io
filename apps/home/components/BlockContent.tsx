@@ -12,7 +12,17 @@ export const BlockContent: React.FC<PortableTextProps> = ({ value }) => {
         components={{
           types: {
             image: (props) => {
-              return <Image src={props.value} alt={props.value.alt} width={600} height={400} className="m-auto" />;
+              return (
+                <Image
+                  src={props.value}
+                  alt={props.value.alt}
+                  width={600}
+                  height={400}
+                  className="m-auto"
+                  priority={false}
+                  placeholder="blur"
+                />
+              );
             },
             code: (props) => {
               return (

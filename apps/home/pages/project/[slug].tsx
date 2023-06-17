@@ -19,7 +19,14 @@ function Project({ project }: Props) {
         return (
           <div key={projectImage?._id} className="grid justify-center gap-5">
             <h3 className="text-lg font-bold">{projectImage?.caption}</h3>
-            <Image width={800} height={400} src={projectImage?.image} alt={projectImage?.alt || ""} />
+            <Image
+              width={800}
+              height={400}
+              src={projectImage?.image}
+              alt={projectImage?.alt || ""}
+              placeholder="blur"
+              priority={false}
+            />
           </div>
         );
       })}

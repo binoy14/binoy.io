@@ -1,7 +1,9 @@
 import { ArbitraryTypedObject, PortableTextBlock } from "@portabletext/types";
+import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import groq from "groq";
 
-import type { Asset, Slug } from "./types";
+import type { Slug } from "./types";
+
 export const getProjectBySlug = groq`*[_type == "project" && slug.current == $slug && !(_id in path("drafts.**"))] {
   _id,
   title,
@@ -11,7 +13,11 @@ export const getProjectBySlug = groq`*[_type == "project" && slug.current == $sl
     _id,
     alt,
     caption,
-    image
+    image {
+      asset->{
+        ...,
+      }
+    }
   }
 }[0]`;
 
@@ -35,6 +41,6 @@ export interface ProjectImage {
 export interface Image {
   _type: string;
   alt?: string;
-  asset: Asset;
+  asset: SanityAsset;
   caption?: string;
 }

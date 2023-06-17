@@ -6,6 +6,11 @@ export const getBlogBySlug = groq`*[_type == "blog" && slug.current == $slug] {
   publishedAt,
   body[]{
     ...,
+    _type == "image" => {
+      "asset": @.asset->{
+        ...
+      }
+    },
     markDefs[]{
       ...,
       _type == "internalLink" => {
