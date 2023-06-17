@@ -32,9 +32,10 @@ const Index: NextPage<Props> = (props) => {
                     <Image
                       src={project?.featuredImage}
                       alt={project?.featuredImage?.alt || ""}
-                      width={500}
+                      width={400}
                       height={350}
                       priority={false}
+                      placeholder="blur"
                     />
                   </Link>
                   <Link className="my-8" href={`/project/${project?.slug?.current}`}>

@@ -1,10 +1,14 @@
+import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import groq from "groq";
 
-import type { Asset, Slug } from "./types";
-
+import type { Slug } from "./types";
 export const getProjects = groq`*[_type == "project" && !(_id in path("drafts.**"))] {
   _id,
-  featuredImage,
+  featuredImage {
+    asset -> {
+      ...,
+    }
+  },
   featuredDescription,
   title,
   slug,
@@ -27,5 +31,5 @@ export interface Project {
 export interface FeaturedImage {
   _type: string;
   alt: string;
-  asset: Asset;
+  asset: SanityAsset;
 }
