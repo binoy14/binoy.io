@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Fira Code", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-fira-code)", ...defaultTheme.fontFamily.sans],
       },
     },
   },
