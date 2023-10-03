@@ -77,7 +77,7 @@
     "@vitest/coverage-c8": "0.32.2",
     "@vitest/ui": "0.32.2",
     "autoprefixer": "10.4.15",
-    "eslint": "8.46.0",
+    "eslint": "8.50.0",
     "eslint-config-next": "13.1.1",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.26.0",
