@@ -8,5 +8,6 @@
       "enabled": false
     }
   ],
-  "ignoreDeps": ["nx", "react", "react-dom", "next"]
+  "ignoreDeps": ["nx", "react", "react-dom", "next"],
+  "labels": ["🤖 bot", "📦 dependencies"]
 }
