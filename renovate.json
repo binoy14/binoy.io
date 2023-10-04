@@ -9,5 +9,6 @@
     }
   ],
   "ignoreDeps": ["nx", "react", "react-dom", "next"],
-  "labels": ["🤖 bot", "📦 dependencies"]
+  "labels": ["🤖 bot", "📦 dependencies"],
+  "rangeStrategy": "pin"
 }
