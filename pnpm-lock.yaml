@@ -27,8 +27,8 @@ dependencies:
     specifier: 2.3.2
     version: 2.3.2
   core-js:
-    specifier: 3.31.0
-    version: 3.31.0
+    specifier: 3.33.0
+    version: 3.33.0
   groq:
     specifier: 3.17.0
     version: 3.17.0
@@ -10620,8 +10620,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /core-js@3.31.0:
-    resolution: {integrity: sha512-NIp2TQSGfR6ba5aalZD+ZQ1fSxGhDo/s1w0nx3RYzf2pnJxt7YynxFlFScP6eV7+GZsKO95NSjGxyJsU3DZgeQ==}
+  /core-js@3.33.0:
+    resolution: {integrity: sha512-HoZr92+ZjFEKar5HS6MC776gYslNOKHt75mEBKWKnPeFDpZ6nH5OeF3S6HFT1mUAUZKrzkez05VboaX8myjSuw==}
     requiresBuild: true
     dev: false
 
