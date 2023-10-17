@@ -107,8 +107,8 @@ devDependencies:
     specifier: 0.5.11
     version: 0.5.11(react-refresh@0.14.0)(webpack@5.88.2)
   '@portabletext/types':
-    specifier: 2.0.7
-    version: 2.0.7
+    specifier: 2.0.8
+    version: 2.0.8
   '@sanity/cli':
     specifier: 3.18.0
     version: 3.18.0
@@ -5224,15 +5224,9 @@ packages:
       '@portabletext/types': 2.0.8
     dev: false
 
-  /@portabletext/types@2.0.7:
-    resolution: {integrity: sha512-kWjS2lguGKHYDsHeK83cXonuYQCIP4mfNwnTjCdDpIPf7CQ4eTuKjYKxJ2w2aksbsh1DwSk1h+xZ64ADiNdTGg==}
-    engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
-    dev: true
-
   /@portabletext/types@2.0.8:
     resolution: {integrity: sha512-eiq9/kMX2bYezS4/kLFk3xNnruCFjCDdw6aYEv5ECHVKkYROiuLd3/AsP5d7tWF3+kPPy6tB0Wq8aqDG/URHGA==}
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
-    dev: false
 
   /@radix-ui/number@1.0.1:
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}
