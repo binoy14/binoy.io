@@ -10,5 +10,6 @@
   ],
   "ignoreDeps": ["nx", "react", "react-dom", "next"],
   "labels": ["🤖 bot", "📦 dependencies"],
-  "rangeStrategy": "pin"
+  "rangeStrategy": "pin",
+  "prConcurrentLimit": 5
 }
