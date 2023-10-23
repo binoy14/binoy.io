@@ -9,8 +9,8 @@ dependencies:
     specifier: 3.0.11
     version: 3.0.11(react@18.2.0)
   '@sanity/client':
-    specifier: 6.6.0
-    version: 6.6.0
+    specifier: 6.7.0
+    version: 6.7.0
   '@sanity/code-input':
     specifier: 4.1.1
     version: 4.1.1(@babel/runtime@7.22.15)(@codemirror/lint@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.4)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.18.1)(styled-components@5.3.11)
@@ -5872,8 +5872,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@sanity/client@6.6.0:
-    resolution: {integrity: sha512-AZNtl1/BSRNOsjy5k/1q1feIHPuExugWsG0ZuNj4/etOddFMaXfUvCHHuv89pHb6l/3CWv+UPysvMNU0+qS2Ig==}
+  /@sanity/client@6.7.0:
+    resolution: {integrity: sha512-nQGIuXXhdtP5FDsdBjuPRpeV6jOHU6Eq5xr52KyUUi29SgC5h5XUzRIu7d1sF8N+ONqTngYueFuB8JDsdSo1Ng==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.0
@@ -6095,7 +6095,7 @@ packages:
   /@sanity/types@3.18.1:
     resolution: {integrity: sha512-EKtWxRiCsgCy1QDhBAbwHNt15wL0l+XYJc5VeQzdxb7RJnq0ZzfqV5uhtzqr1G5nDyhSHdgLO4UhysUn63SfuA==}
     dependencies:
-      '@sanity/client': 6.6.0
+      '@sanity/client': 6.7.0
       '@types/react': 18.2.31
     transitivePeerDependencies:
       - supports-color
@@ -17746,7 +17746,7 @@ packages:
       '@sanity/bifur-client': 0.3.1
       '@sanity/block-tools': 3.18.1
       '@sanity/cli': 3.18.1
-      '@sanity/client': 6.6.0
+      '@sanity/client': 6.7.0
       '@sanity/color': 2.2.5
       '@sanity/diff': 3.18.1
       '@sanity/diff-match-patch': 3.1.1
