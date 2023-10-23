@@ -19,7 +19,7 @@ function addExport(tree: Tree, schema: NxSanitySchema, schemaRoot: string) {
 
     const changes = applyChangesToString(
       schemaSource,
-      addImport(schemaSourceFile, `import ${schema.name} from "./${schema.name}";`)
+      addImport(schemaSourceFile, `import ${schema.name} from "./${schema.name}";`),
     );
 
     tree.write(schemaFilePath, changes);

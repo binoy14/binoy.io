@@ -16,7 +16,7 @@ export function Section({ children, type, className = "" }: SectionProps) {
           "bg-black text-white": type === "dark",
           "bg-white text-black": type === "light",
         },
-        className
+        className,
       )}
     >
       {children}
