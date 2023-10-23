@@ -75,7 +75,7 @@ export function Navigation({ links, title }: UiProps) {
             "max-h-52": navOpen === true,
             "pb-4": navOpen === true,
             "max-h-0": navOpen === false,
-          }
+          },
         )}
       >
         {navOpen &&
