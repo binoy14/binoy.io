@@ -68,10 +68,10 @@ dependencies:
 
 devDependencies:
   '@eslint/eslintrc':
-    specifier: ^2.1.1
+    specifier: 2.1.2
     version: 2.1.2
   '@eslint/js':
-    specifier: ~8.46.0
+    specifier: 8.46.0
     version: 8.46.0
   '@nx/devkit':
     specifier: 17.0.2

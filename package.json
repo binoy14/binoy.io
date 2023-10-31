@@ -39,8 +39,8 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^2.1.1",
-    "@eslint/js": "~8.46.0",
+    "@eslint/eslintrc": "2.1.2",
+    "@eslint/js": "8.46.0",
     "@nx/devkit": "17.0.2",
     "@nx/eslint": "17.0.2",
     "@nx/eslint-plugin": "17.0.2",
