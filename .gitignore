@@ -46,3 +46,5 @@ Thumbs.db
 
 # Sanity
 .sanity
+
+.nx/cache
