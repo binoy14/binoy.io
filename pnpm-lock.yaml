@@ -212,8 +212,8 @@ devDependencies:
     specifier: 22.1.0
     version: 22.1.0
   jsonc-eslint-parser:
-    specifier: 2.3.0
-    version: 2.3.0
+    specifier: 2.4.0
+    version: 2.4.0
   lint-staged:
     specifier: 15.0.2
     version: 15.0.2
@@ -4536,7 +4536,7 @@ packages:
       chalk: 4.1.2
       confusing-browser-globals: 1.0.11
       eslint-config-prettier: 9.0.0(eslint@8.52.0)
-      jsonc-eslint-parser: 2.3.0
+      jsonc-eslint-parser: 2.4.0
       semver: 7.5.3
       tslib: 2.6.2
     transitivePeerDependencies:
@@ -14732,8 +14732,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  /jsonc-eslint-parser@2.3.0:
-    resolution: {integrity: sha512-9xZPKVYp9DxnM3sd1yAsh/d59iIaswDkai8oTxbursfKYbg/ibjX0IzFt35+VZ8iEW453TVTXztnRvYUQlAfUQ==}
+  /jsonc-eslint-parser@2.4.0:
+    resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       acorn: 8.10.0
