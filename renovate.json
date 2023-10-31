@@ -4,11 +4,11 @@
   "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
-      "packagePatterns": ["^@nx/", "^@swc/", "^storybook", "^@storybook/"],
+      "packagePatterns": ["^@nx/", "^@swc/", "^storybook", "^@storybook/", "^@typescript-eslint/"],
       "enabled": false
     }
   ],
-  "ignoreDeps": ["nx", "react", "react-dom", "next"],
+  "ignoreDeps": ["nx", "react", "react-dom", "next", "@types/react", "@types/react-dom"],
   "labels": ["🤖 bot", "📦 dependencies"],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 5
