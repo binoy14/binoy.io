@@ -17,9 +17,7 @@
       "packagePatterns": ["^@nrwl/", "nx", "^@nx/"],
       "groupName": "NX workspace",
       "postUpgradeTasks": {
-        "commands": [
-          "npx nx migrate latest --run-migrations --create-commits --commit-message='chore(repo): update @nx dependencies'"
-        ],
+        "commands": ["npx nx migrate latest", "npx nx migrate --run-migrations"],
         "fileFilters": ["**/**"]
       }
     }
