@@ -4,27 +4,16 @@
   "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
-      "packagePatterns": ["^@swc/", "^storybook", "^@storybook/", "^@typescript-eslint/", "^@eslint/"],
+      "packagePatterns": ["^@nx/", "^@swc/", "^storybook", "^@storybook/", "^@typescript-eslint/", "^@eslint/"],
       "enabled": false
     },
     { "labels": ["📦 deps", "🤖 bot"], "matchPackagePatterns": ["*"] },
     {
       "labels": ["⚠️ major", "📦 deps", "🤖 bot"],
       "matchUpdateTypes": ["major"]
-    },
-    {
-      "packageNames": ["@nrwl/workspace"],
-      "packagePatterns": ["^@nrwl/", "nx", "^@nx/"],
-      "groupName": "NX workspace",
-      "postUpgradeTasks": {
-        "commands": [
-          "npx nx migrate latest --run-migrations --create-commits --commit-message='chore(repo): update @nx dependencies'"
-        ],
-        "fileFilters": ["**/**"]
-      }
     }
   ],
-  "ignoreDeps": ["react", "react-dom", "next", "@types/react", "@types/react-dom", "eslint"],
+  "ignoreDeps": ["nx", "react", "react-dom", "next", "@types/react", "@types/react-dom", "eslint"],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 5
 }
