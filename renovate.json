@@ -4,11 +4,16 @@
   "rebaseWhen": "behind-base-branch",
   "packageRules": [
     {
-      "packagePatterns": ["^@nx/", "^@swc/", "^storybook", "^@storybook/", "^@typescript-eslint/"],
+      "packagePatterns": ["^@nx/", "^@swc/", "^storybook", "^@storybook/", "^@typescript-eslint/", "^@eslint/"],
       "enabled": false
+    },
+    { "labels": ["📦 deps", "🤖 bot"], "matchPackagePatterns": ["*"] },
+    {
+      "labels": ["⚠️ major", "📦 deps", "🤖 bot"],
+      "matchUpdateTypes": ["major"]
     }
   ],
-  "ignoreDeps": ["nx", "react", "react-dom", "next", "@types/react", "@types/react-dom"],
+  "ignoreDeps": ["nx", "react", "react-dom", "next", "@types/react", "@types/react-dom", "eslint"],
   "labels": ["🤖 bot", "📦 dependencies"],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 5
