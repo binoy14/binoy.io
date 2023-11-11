@@ -11,6 +11,12 @@
     {
       "labels": ["⚠️ major", "📦 deps", "🤖 bot"],
       "matchUpdateTypes": ["major"]
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ],
   "ignoreDeps": ["nx", "react", "react-dom", "next", "@types/react", "@types/react-dom", "eslint"],
