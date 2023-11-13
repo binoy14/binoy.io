@@ -18,7 +18,7 @@
   "private": true,
   "dependencies": {
     "@portabletext/react": "3.0.11",
-    "@sanity/client": "6.8.0",
+    "@sanity/client": "6.8.5",
     "@sanity/code-input": "4.1.1",
     "@sanity/image-url": "1.0.2",
     "@sanity/vision": "3.19.2",
@@ -91,7 +91,7 @@
     "lint-staged": "15.1.0",
     "nx": "17.0.2",
     "postcss": "8.4.31",
-    "prettier": "3.0.3",
+    "prettier": "3.1.0",
     "prettier-plugin-tailwindcss": "0.5.7",
     "storybook": "7.5.2",
     "storybook-addon-swc": "^1.2.0",
