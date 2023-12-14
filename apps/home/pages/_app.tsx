@@ -1,6 +1,7 @@
 import "../public/global.css";
 
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextSeo } from "next-seo";
 import { Fira_Code } from "next/font/google";
 
@@ -41,6 +42,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </div>
       </Layout>
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
