@@ -12,7 +12,7 @@ describe("Footer", () => {
             class="container mt-10 bg-black py-4 text-white"
           >
             © 
-            2023
+            2024
              Tangential, LLC
           </footer>
         </div>
