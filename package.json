@@ -13,7 +13,7 @@
     "tsc": "tsc",
     "type-check": "nx run-many --target type-check --all",
     "lint": "nx affected --base=origin/main --target=lint",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
