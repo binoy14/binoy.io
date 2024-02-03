@@ -13,7 +13,7 @@
     "tsc": "tsc",
     "type-check": "nx run-many --target type-check --all",
     "lint": "nx affected --base=origin/main --target=lint",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -85,7 +85,7 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-storybook": "0.6.15",
-    "husky": "8.0.3",
+    "husky": "9.0.10",
     "jsdom": "24.0.0",
     "lint-staged": "15.2.1",
     "nx": "17.3.1",
