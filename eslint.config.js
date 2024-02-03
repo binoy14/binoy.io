@@ -36,9 +36,9 @@ module.exports = [
     files: ["**/*.js", "**/*.jsx"],
     rules: {},
   })),
-  ...compat.config({ parser: "jsonc-eslint-parser" }).map((config) => ({
+  ...compat.config({ env: { jest: true } }).map((config) => ({
     ...config,
-    files: ["**/*.json"],
+    files: ["**/*.spec.ts", "**/*.spec.tsx", "**/*.spec.js", "**/*.spec.jsx"],
     rules: {},
   })),
   { ignores: ["**/.next/**", "**/.storybook/**"] },
