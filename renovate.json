@@ -19,7 +19,16 @@
       "matchUpdateTypes": ["minor", "patch"]
     }
   ],
-  "ignoreDeps": ["nx", "react", "react-dom", "next", "@types/react", "@types/react-dom", "eslint"],
+  "ignoreDeps": [
+    "nx",
+    "react",
+    "react-dom",
+    "next",
+    "@types/react",
+    "@types/react-dom",
+    "eslint",
+    "vite-tsconfig-paths"
+  ],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 5
 }
