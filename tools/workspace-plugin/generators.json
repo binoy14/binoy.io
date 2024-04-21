@@ -1,9 +1,0 @@
-{
-  "generators": {
-    "sanity-schema": {
-      "implementation": "./src/generators/sanity-schema",
-      "schema": "./src/generators/sanity-schema/schema.json",
-      "description": "Generator sanity-schema"
-    }
-  }
-}
