@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@binoy14/ui": ["libs/ui/src/index.ts"],
-      "@binoy14/workspace-plugin": ["tools/workspace-plugin/src/index.ts"]
+      "@binoy14/ui": ["libs/ui/src/index.ts"]
     },
     "strict": true
   },
