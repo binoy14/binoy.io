@@ -51,4 +51,4 @@ jobs:
 
       # - name: Deploy Sanity GraphQL
       #   run: |
-      #     SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" yarn sanity graphql deploy
+      #     SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" pnpm sanity graphql deploy

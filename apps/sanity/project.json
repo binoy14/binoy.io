@@ -7,19 +7,19 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn sanity build dist/apps/sanity -y"
+        "command": "pnpm sanity build dist/apps/sanity -y"
       }
     },
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn sanity dev"
+        "command": "pnpm sanity dev"
       }
     },
     "deploy-graphql": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn sanity graphql deploy"
+        "command": "pnpm sanity graphql deploy"
       }
     },
     "lint": {
@@ -29,7 +29,7 @@
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn tsc -p apps/home/tsconfig.json --noEmit"
+        "command": "pnpm tsc -p apps/home/tsconfig.json --noEmit"
       }
     }
   },

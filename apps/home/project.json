@@ -56,13 +56,13 @@
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn tsc -p apps/home/tsconfig.json --noEmit"
+        "command": "pnpm tsc -p apps/home/tsconfig.json --noEmit"
       }
     },
     "dev": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn nx run home:serve", "yarn nx run sanity:serve"],
+        "commands": ["pnpm nx run home:serve", "pnpm nx run sanity:serve"],
         "parallel": true,
         "color": true
       }
@@ -70,7 +70,7 @@
     "dev-all": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn nx run home:serve", "yarn nx run sanity:serve", "yarn nx run ui:storybook"],
+        "commands": ["pnpm nx run home:serve", "pnpm nx run sanity:serve", "pnpm nx run ui:storybook"],
         "parallel": true,
         "color": true
       }
