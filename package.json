@@ -106,6 +106,6 @@
   },
   "packageManager": "pnpm@8.15.7",
   "engines": {
-    "pnpm": ">=8"
+    "pnpm": "9.0.4"
   }
 }
