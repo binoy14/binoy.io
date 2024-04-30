@@ -28,6 +28,8 @@
     "@types/react",
     "@types/react-dom",
     "eslint",
+    "pnpm",
+    "@swc-node/register",
     "vite-tsconfig-paths"
   ],
   "rangeStrategy": "pin",
