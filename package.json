@@ -40,8 +40,8 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "2.1.2",
-    "@eslint/js": "8.46.0",
+    "@eslint/eslintrc": "2.1.4",
+    "@eslint/js": "8.57.0",
     "@nx/devkit": "18.3.3",
     "@nx/eslint": "18.3.3",
     "@nx/eslint-plugin": "18.3.3",
@@ -52,7 +52,6 @@
     "@nx/storybook": "18.3.3",
     "@nx/vite": "18.3.3",
     "@nx/web": "18.3.3",
-    "@nx/webpack": "18.3.3",
     "@nx/workspace": "18.3.3",
     "@portabletext/types": "2.0.13",
     "@sanity/cli": "3.39.1",
