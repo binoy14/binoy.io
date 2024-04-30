@@ -28,7 +28,7 @@
     "classnames": "2.5.1",
     "core-js": "3.37.0",
     "groq": "3.39.1",
-    "next": "14.0.4",
+    "next": "14.2.3",
     "next-seo": "6.5.0",
     "prism-react-renderer": "2.3.1",
     "react": "18.2.0",
