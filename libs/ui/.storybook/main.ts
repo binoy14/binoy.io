@@ -8,9 +8,7 @@ export default {
   framework: {
     name: "@storybook/nextjs",
     options: {
-      builder: {
-        useSWC: true, // Enables SWC support
-      },
+      builder: {},
     },
   },
 };
