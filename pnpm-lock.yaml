@@ -9,8 +9,8 @@ dependencies:
     specifier: 3.0.18
     version: 3.0.18(react@18.2.0)
   '@sanity/client':
-    specifier: 6.15.20
-    version: 6.15.20
+    specifier: 6.17.0
+    version: 6.17.0
   '@sanity/code-input':
     specifier: 4.1.4
     version: 4.1.4(@babel/runtime@7.23.2)(@codemirror/lint@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.1.2)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.40.0)(styled-components@6.1.9)
@@ -96,7 +96,7 @@ devDependencies:
     version: 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)
   '@nx/vite':
     specifier: 18.3.4
-    version: 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.10)(vitest@1.5.3)
+    version: 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.11)(vitest@1.5.3)
   '@nx/web':
     specifier: 18.3.4
     version: 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)
@@ -162,7 +162,7 @@ devDependencies:
     version: 7.7.0(eslint@8.57.0)(typescript@5.4.5)
   '@vitejs/plugin-react-swc':
     specifier: 3.6.0
-    version: 3.6.0(@swc/helpers@0.5.2)(vite@5.2.10)
+    version: 3.6.0(@swc/helpers@0.5.2)(vite@5.2.11)
   '@vitest/coverage-v8':
     specifier: 1.5.3
     version: 1.5.3(vitest@1.5.3)
@@ -230,14 +230,14 @@ devDependencies:
     specifier: 4.1.1
     version: 4.1.1(webpack@5.88.2)
   vite:
-    specifier: 5.2.10
-    version: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+    specifier: 5.2.11
+    version: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
   vite-plugin-eslint:
     specifier: 1.8.1
-    version: 1.8.1(eslint@8.57.0)(vite@5.2.10)
+    version: 1.8.1(eslint@8.57.0)(vite@5.2.11)
   vite-tsconfig-paths:
     specifier: 4.2.3
-    version: 4.2.3(typescript@5.4.5)(vite@5.2.10)
+    version: 4.2.3(typescript@5.4.5)(vite@5.2.11)
   vitest:
     specifier: 1.5.3
     version: 1.5.3(@types/node@20.12.8)(@vitest/ui@1.5.3)(jsdom@24.0.0)(less@4.1.3)(stylus@0.59.0)
@@ -4114,10 +4114,10 @@ packages:
       - debug
     dev: true
 
-  /@nrwl/vite@18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.10)(vitest@1.5.3):
+  /@nrwl/vite@18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.11)(vitest@1.5.3):
     resolution: {integrity: sha512-0lUQqgui2oWFLUK9bT5XwyyC321tmiKetRxuSvzv+hJZQbMBz6LrYLAWXyEHtLkSVszBqeh8rt8hcrXcIxDfCA==}
     dependencies:
-      '@nx/vite': 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.10)(vitest@1.5.3)
+      '@nx/vite': 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.11)(vitest@1.5.3)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -4566,20 +4566,20 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/vite@18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.10)(vitest@1.5.3):
+  /@nx/vite@18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.11)(vitest@1.5.3):
     resolution: {integrity: sha512-ZEynabx+GVjUF7t3I4VlY5ivXA2mOTQ4t+pjN9SNs9JdnLTMK/b/rErkNV7Bn2oQK56Ks74Tfbx9r7Dc5S4exg==}
     peerDependencies:
       vite: ^5.0.0
       vitest: ^1.3.1
     dependencies:
-      '@nrwl/vite': 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.10)(vitest@1.5.3)
+      '@nrwl/vite': 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)(vite@5.2.11)(vitest@1.5.3)
       '@nx/devkit': 18.3.4(nx@18.3.4)
       '@nx/js': 18.3.4(@swc-node/register@1.8.0)(@swc/core@1.3.91)(@types/node@20.12.8)(nx@18.3.4)(typescript@5.4.5)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.4.5)
       '@swc/helpers': 0.5.2
       enquirer: 2.3.6
       tsconfig-paths: 4.2.0
-      vite: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
       vitest: 1.5.3(@types/node@20.12.8)(@vitest/ui@1.5.3)(jsdom@24.0.0)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -4999,7 +4999,7 @@ packages:
     hasBin: true
     dependencies:
       '@babel/traverse': 7.24.1
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/codegen': 3.40.0
       '@sanity/telemetry': 0.7.7
       '@sanity/util': 3.40.0(debug@4.3.4)
@@ -5019,8 +5019,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@sanity/client@6.15.20:
-    resolution: {integrity: sha512-0RTrIxle2S/2FWnwVb/R16S6iqYTh8KPZc5JN6xgXYFwt5A6O/npZK3fA/F/2LJuRjTZXoqP0mQHFngsyKYRIQ==}
+  /@sanity/client@6.17.0:
+    resolution: {integrity: sha512-VSFzUqrtfe+RhbQqIhjhQ8tdHT+V1jsSjmbF6QCpcjLpMR19sPvOEacZByB9jT8832y7O5efFWBa9BaLwQdx5w==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.2
@@ -5030,8 +5030,8 @@ packages:
       - debug
     dev: false
 
-  /@sanity/client@6.15.20(debug@3.2.7):
-    resolution: {integrity: sha512-0RTrIxle2S/2FWnwVb/R16S6iqYTh8KPZc5JN6xgXYFwt5A6O/npZK3fA/F/2LJuRjTZXoqP0mQHFngsyKYRIQ==}
+  /@sanity/client@6.17.0(debug@3.2.7):
+    resolution: {integrity: sha512-VSFzUqrtfe+RhbQqIhjhQ8tdHT+V1jsSjmbF6QCpcjLpMR19sPvOEacZByB9jT8832y7O5efFWBa9BaLwQdx5w==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.2
@@ -5041,8 +5041,8 @@ packages:
       - debug
     dev: false
 
-  /@sanity/client@6.15.20(debug@4.3.4):
-    resolution: {integrity: sha512-0RTrIxle2S/2FWnwVb/R16S6iqYTh8KPZc5JN6xgXYFwt5A6O/npZK3fA/F/2LJuRjTZXoqP0mQHFngsyKYRIQ==}
+  /@sanity/client@6.17.0(debug@4.3.4):
+    resolution: {integrity: sha512-VSFzUqrtfe+RhbQqIhjhQ8tdHT+V1jsSjmbF6QCpcjLpMR19sPvOEacZByB9jT8832y7O5efFWBa9BaLwQdx5w==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.2
@@ -5272,7 +5272,7 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       '@bjoerge/mutiny': 0.5.3
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/types': 3.40.0(debug@4.3.4)
       '@sanity/util': 3.40.0(debug@4.3.4)
       arrify: 2.0.1
@@ -5331,15 +5331,15 @@ packages:
       - supports-color
     dev: false
 
-  /@sanity/presentation@1.12.10(@sanity/client@6.15.20)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.9):
+  /@sanity/presentation@1.12.10(@sanity/client@6.17.0)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.9):
     resolution: {integrity: sha512-wMEs5sF5wyXVZm/EMpt/eWriZDcoaCyeBTRffJLxSU2y1oGe9FIYAoUNPMU9AIRR/ZkJxwymWcsMQBC+nSlF/Q==}
     engines: {node: '>=16.14'}
     peerDependencies:
       '@sanity/client': ^6.15.20
     dependencies:
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/icons': 2.11.8(react@18.2.0)
-      '@sanity/preview-url-secret': 1.6.11(@sanity/client@6.15.20)
+      '@sanity/preview-url-secret': 1.6.11(@sanity/client@6.17.0)
       '@sanity/ui': 2.1.4(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.9)
       '@sanity/uuid': 3.0.2
       '@types/lodash.isequal': 4.5.8
@@ -5357,13 +5357,13 @@ packages:
       - styled-components
     dev: false
 
-  /@sanity/preview-url-secret@1.6.11(@sanity/client@6.15.20):
+  /@sanity/preview-url-secret@1.6.11(@sanity/client@6.17.0):
     resolution: {integrity: sha512-MNgDxznespH8I+gkG46IJk+KsTJFNb3BzstWsbJwKURywpcv11vzr8CR2g4B8HNkYcy3EhLN3TRFHTjQNKo2Xw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@sanity/client': ^6.15.20
     dependencies:
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/uuid': 3.0.2
     dev: false
 
@@ -5412,7 +5412,7 @@ packages:
   /@sanity/types@3.37.2(debug@4.3.4):
     resolution: {integrity: sha512-1EfKkNlJ86wIDtc7oFHb79JI8lKDOxKDYrkmwhvuHgJY83GpSABc1kFdbwAtWZfrWVWyqVXUv/KlNwA3b99y/g==}
     dependencies:
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@types/react': 18.2.24
     transitivePeerDependencies:
       - debug
@@ -5421,7 +5421,7 @@ packages:
   /@sanity/types@3.40.0(debug@3.2.7):
     resolution: {integrity: sha512-DS2QhzLFtb8Xc5Ur3pV5lE8Tk9CGwDmjOJUDMPDtgH9ESgiZgaC2TVsUHNX4e0s1kN2jzxH7q4gfFKFxKrX9yw==}
     dependencies:
-      '@sanity/client': 6.15.20(debug@3.2.7)
+      '@sanity/client': 6.17.0(debug@3.2.7)
       '@types/react': 18.2.24
     transitivePeerDependencies:
       - debug
@@ -5430,7 +5430,7 @@ packages:
   /@sanity/types@3.40.0(debug@4.3.4):
     resolution: {integrity: sha512-DS2QhzLFtb8Xc5Ur3pV5lE8Tk9CGwDmjOJUDMPDtgH9ESgiZgaC2TVsUHNX4e0s1kN2jzxH7q4gfFKFxKrX9yw==}
     dependencies:
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@types/react': 18.2.24
     transitivePeerDependencies:
       - debug
@@ -5481,7 +5481,7 @@ packages:
     resolution: {integrity: sha512-hq0eLjyV2iaOm9ivtPw12YTQ4QsE3jnV/Ui0zhclEhu8Go5JiaEhFt2+WM2lLGRH6qcSA414QbsCNCcyhJL6rA==}
     engines: {node: '>=18'}
     dependencies:
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/types': 3.37.2(debug@4.3.4)
       get-random-values-esm: 1.0.2
       moment: 2.29.4
@@ -5494,7 +5494,7 @@ packages:
     resolution: {integrity: sha512-FfNxUfDfY2czVQnEDwDNMGaPgsxwZyh71De7KMQYs3GyZmPxlOdPipXkB18vlie2VycXnvm/i1gCSU3XxyxUAQ==}
     engines: {node: '>=18'}
     dependencies:
-      '@sanity/client': 6.15.20(debug@3.2.7)
+      '@sanity/client': 6.17.0(debug@3.2.7)
       '@sanity/types': 3.40.0(debug@3.2.7)
       get-random-values-esm: 1.0.2
       moment: 2.29.4
@@ -5507,7 +5507,7 @@ packages:
     resolution: {integrity: sha512-FfNxUfDfY2czVQnEDwDNMGaPgsxwZyh71De7KMQYs3GyZmPxlOdPipXkB18vlie2VycXnvm/i1gCSU3XxyxUAQ==}
     engines: {node: '>=18'}
     dependencies:
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/types': 3.40.0(debug@4.3.4)
       get-random-values-esm: 1.0.2
       moment: 2.29.4
@@ -7696,13 +7696,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@vitejs/plugin-react-swc@3.6.0(@swc/helpers@0.5.2)(vite@5.2.10):
+  /@vitejs/plugin-react-swc@3.6.0(@swc/helpers@0.5.2)(vite@5.2.11):
     resolution: {integrity: sha512-XFRbsGgpGxGzEV5i5+vRiro1bwcIaZDIdBRP16qwm+jP68ue/S8FJTBEgOeojtVDYrbSua3XFp71kC8VJE6v+g==}
     peerDependencies:
       vite: ^4 || ^5
     dependencies:
       '@swc/core': 1.3.107(@swc/helpers@0.5.2)
-      vite: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -16408,7 +16408,7 @@ packages:
       '@sanity/bifur-client': 0.3.1
       '@sanity/block-tools': 3.40.0
       '@sanity/cli': 3.40.0
-      '@sanity/client': 6.15.20(debug@4.3.4)
+      '@sanity/client': 6.17.0(debug@4.3.4)
       '@sanity/color': 3.0.6
       '@sanity/diff': 3.40.0
       '@sanity/diff-match-patch': 3.1.1
@@ -16421,7 +16421,7 @@ packages:
       '@sanity/migrate': 3.40.0
       '@sanity/mutator': 3.40.0
       '@sanity/portable-text-editor': 3.40.0(react-dom@18.2.0)(react@18.2.0)(rxjs@7.8.1)(styled-components@6.1.9)
-      '@sanity/presentation': 1.12.10(@sanity/client@6.15.20)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.9)
+      '@sanity/presentation': 1.12.10(@sanity/client@6.17.0)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.9)
       '@sanity/schema': 3.40.0(debug@4.3.4)
       '@sanity/telemetry': 0.7.7
       '@sanity/types': 3.40.0(debug@4.3.4)
@@ -18482,7 +18482,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -18494,7 +18494,7 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-eslint@1.8.1(eslint@8.57.0)(vite@5.2.10):
+  /vite-plugin-eslint@1.8.1(eslint@8.57.0)(vite@5.2.11):
     resolution: {integrity: sha512-PqdMf3Y2fLO9FsNPmMX+//2BF5SF8nEWspZdgl4kSt7UvHDRHVVfHvxsD7ULYzZrJDGRxR81Nq7TOFgwMnUang==}
     peerDependencies:
       eslint: '>=7'
@@ -18504,10 +18504,10 @@ packages:
       '@types/eslint': 8.40.2
       eslint: 8.57.0
       rollup: 2.79.1
-      vite: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
     dev: true
 
-  /vite-tsconfig-paths@4.2.3(typescript@5.4.5)(vite@5.2.10):
+  /vite-tsconfig-paths@4.2.3(typescript@5.4.5)(vite@5.2.11):
     resolution: {integrity: sha512-xVsA2xe6QSlzBujtWF8q2NYexh7PAUYfzJ4C8Axpe/7d2pcERYxuxGgph9F4f0iQO36g5tyGq6eBUYIssdUrVw==}
     peerDependencies:
       vite: '*'
@@ -18518,7 +18518,7 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.2(typescript@5.4.5)
-      vite: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -18562,8 +18562,8 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /vite@5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0):
-    resolution: {integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw==}
+  /vite@5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0):
+    resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -18645,7 +18645,7 @@ packages:
       strip-literal: 2.0.0
       tinybench: 2.6.0
       tinypool: 0.8.4
-      vite: 5.2.10(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
+      vite: 5.2.11(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
       vite-node: 1.5.3(@types/node@20.12.8)(less@4.1.3)(stylus@0.59.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
