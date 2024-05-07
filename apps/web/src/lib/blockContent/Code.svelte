@@ -12,6 +12,7 @@
 </script>
 
 <svelte:head>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html ashes}
 </svelte:head>
 

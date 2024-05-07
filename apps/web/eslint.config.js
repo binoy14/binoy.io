@@ -3,6 +3,7 @@ import customConfig from '@binoy/eslint-config';
 export default [
   {
     ignores: [
+      '**/dist',
       '.DS_Store',
       '**/node_modules',
       '**/build',

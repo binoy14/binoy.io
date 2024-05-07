@@ -5,6 +5,7 @@ export default [
     ignores: [
       '.DS_Store',
       '**/node_modules',
+      '**/dist',
       '**/build',
       '**/.svelte-kit',
       '**/package',

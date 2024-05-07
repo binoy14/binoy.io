@@ -1,6 +1,6 @@
 import groq from 'groq';
 
-import { Slug } from './types';
+import type { Slug } from './types';
 
 export const getBlogs = groq`*[_type == "blog"] {
   title,
