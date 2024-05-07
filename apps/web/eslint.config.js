@@ -8,7 +8,6 @@ export default [
       '**/build',
       '**/.svelte-kit',
       '**/package',
-      '**/.sanity',
       '.env',
       '.env.*',
       '!.env.example',
