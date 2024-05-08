@@ -2,7 +2,13 @@
   import { Footer } from '@binoy/ui';
   import '../app.css';
   import Navigation from '$lib/Navigation.svelte';
+  import { dev } from '$app/environment';
+  import { inject } from '@vercel/analytics';
+  import { injectSpeedInsights } from '@vercel/speed-insights';
   import type { NavLinks } from '$lib/navigationTypes';
+
+  inject({ mode: dev ? 'development' : 'production' });
+  injectSpeedInsights({});
 
   const links: NavLinks[] = [
     {

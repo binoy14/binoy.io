@@ -10,10 +10,6 @@
 
   $: ({ value, markType } = portableText);
   $: ({ href, blank, slug } = value);
-
-  $: {
-    console.log(portableText, href, blank);
-  }
 </script>
 
 {#if markType === 'internalLink'}

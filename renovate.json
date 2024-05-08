@@ -4,10 +4,6 @@
   "rebaseWhen": "behind-base-branch",
   "schedule": ["before 5am"],
   "packageRules": [
-    {
-      "packagePatterns": ["^@nx/", "^@swc/", "^storybook", "^@storybook/", "^@typescript-eslint/", "^@eslint/"],
-      "enabled": false
-    },
     { "labels": ["📦 deps", "🤖 bot"], "matchPackagePatterns": ["*"] },
     {
       "labels": ["⚠️ major", "📦 deps", "🤖 bot"],
@@ -19,18 +15,6 @@
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"]
     }
-  ],
-  "ignoreDeps": [
-    "nx",
-    "react",
-    "react-dom",
-    "next",
-    "@types/react",
-    "@types/react-dom",
-    "eslint",
-    "pnpm",
-    "@swc-node/register",
-    "vite-tsconfig-paths"
   ],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 5

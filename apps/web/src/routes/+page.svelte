@@ -21,7 +21,7 @@
     {#each data.projects as project}
       <Card>
         <div
-          class="sm:grid-cols-projectContent flex h-full min-h-[390px] flex-col items-center sm:grid"
+          class="flex h-full min-h-[390px] flex-col items-center sm:grid sm:grid-cols-projectContent"
         >
           <a href={`/project/${project.slug.current}`} class="sm:mr-8">
             <Image
