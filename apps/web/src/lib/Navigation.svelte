@@ -74,7 +74,7 @@
     {#each links as navLink}
       <li
         class={classnames(linkClasses, 'mb-6', {
-          // "text-yellow-400": asPath === href,
+          'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
         })}
       >
         <a class={`mb-6 ${linkClasses}`} href={`/${navLink.link}`}>{navLink.text}</a>

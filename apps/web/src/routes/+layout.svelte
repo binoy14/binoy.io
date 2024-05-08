@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Footer } from '@binoy/ui';
   import '../app.css';
+  import { Footer } from '@binoy/ui';
   import Navigation from '$lib/Navigation.svelte';
   import { dev } from '$app/environment';
   import { inject } from '@vercel/analytics';

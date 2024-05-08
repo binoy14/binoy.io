@@ -38,25 +38,5 @@
         </div>
       </Card>
     {/each}
-    <!-- {projects?.map((project) => {
-      return (
-        <Card key={project?._id}>
-          <div className="sm:grid-cols-projectContent flex h-full min-h-[390px] flex-col items-center sm:grid">
-            <Link className="sm:mr-8" to={`/project/${project?.slug?.current}`}>
-              <Image
-                src={project?.featuredImage}
-                alt={project?.featuredImage?.alt || ""}
-                width={400}
-                height={350}
-              />
-            </Link>
-            <Link className="my-8" to={`/project/${project?.slug?.current}`}>
-              <h3 className="text-lg font-bold">{project?.title}</h3>
-              <p>{project?.featuredDescription}</p>
-            </Link>
-          </div>
-        </Card>
-      );
-    })} -->
   </Section>
 </div>

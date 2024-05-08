@@ -31,9 +31,6 @@ export default [
         ...globals.node,
       },
     },
-    rules: {
-      'no-constant-binary-expression': 'off',
-    },
   },
   {
     files: ['**/*.svelte'],
