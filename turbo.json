@@ -7,6 +7,9 @@
     },
     "lint": {},
     "check": {},
+    "deploy": {
+      "dependsOn": ["^build"]
+    },
     "dev": {
       "cache": false,
       "persistent": true

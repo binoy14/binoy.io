@@ -1,8 +1,5 @@
 <script lang="ts">
-  import type { ListItemComponentProps } from '@portabletext/svelte';
-
-  // eslint-disable-next-line svelte/valid-compile
-  export let portableText: ListItemComponentProps<{ type: 'bullet' | 'number' }>;
+  export const portableText = null;
 </script>
 
 <li><slot /></li>

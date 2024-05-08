@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'apps/sanity/**'
+      - '.github/workflows/sanityDeploy.yml'
   workflow_dispatch:
 
 jobs:
@@ -47,8 +48,4 @@ jobs:
 
       - name: Deploy Sanity
         run: |
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" pnpm sanity deploy
-
-      # - name: Deploy Sanity GraphQL
-      #   run: |
-      #     SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" pnpm sanity graphql deploy
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" pnpm sanity:deploy
