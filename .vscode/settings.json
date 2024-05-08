@@ -1,5 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "typescriptHero.imports.organizeOnSave": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   "eslint.validate": ["json"]
 }

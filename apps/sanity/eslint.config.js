@@ -1,23 +1,24 @@
-const { FlatCompat } = require("@eslint/eslintrc");
-const baseConfig = require("../../eslint.config.js");
-const js = require("@eslint/js");
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-});
-module.exports = [
-  ...baseConfig,
-  ...compat.extends("plugin:@nx/react"),
+import customConfig from '@binoy/eslint-config';
+
+export default [
   {
-    files: ["apps/sanity/**/*.ts", "apps/sanity/**/*.tsx", "apps/sanity/**/*.js", "apps/sanity/**/*.jsx"],
-    rules: {},
+    ignores: [
+      '.DS_Store',
+      '**/node_modules',
+      '**/dist',
+      '**/build',
+      '**/.svelte-kit',
+      '**/package',
+      '**/.sanity',
+      '.env',
+      '.env.*',
+      '!.env.example',
+
+      // Ignore files for PNPM, NPM and YARN
+      'pnpm-lock.yaml',
+      'package-lock.json',
+      'yarn.lock',
+    ],
   },
-  {
-    files: ["apps/sanity/**/*.ts", "apps/sanity/**/*.tsx"],
-    rules: {},
-  },
-  {
-    files: ["apps/sanity/**/*.js", "apps/sanity/**/*.jsx"],
-    rules: {},
-  },
+  ...customConfig,
 ];

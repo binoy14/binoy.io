@@ -1,0 +1,42 @@
+<script lang="ts">
+  import Image from '$lib/Image.svelte';
+  import { Card, Section, TextBlock } from '@binoy/ui';
+
+  export let data;
+</script>
+
+<Section type="light">
+  <div class="container">
+    <TextBlock
+      header="Hey 👋, I'm Binoy"
+      subtext="Full Stack Developer, React Groupie and GraphQL Enthusiast"
+    />
+  </div>
+</Section>
+
+<div class="container">
+  <h2 class="mt-10 text-xl font-bold">Projects</h2>
+
+  <Section type="dark" className="sm:grid-cols-projects mt-5 sm:grid sm:gap-10">
+    {#each data.projects as project}
+      <Card>
+        <div
+          class="flex h-full min-h-[390px] flex-col items-center sm:grid sm:grid-cols-projectContent"
+        >
+          <a href={`/project/${project.slug.current}`} class="sm:mr-8">
+            <Image
+              src={project.featuredImage}
+              alt={project.featuredImage.alt || ''}
+              width={400}
+              height={350}
+            />
+          </a>
+          <a href={`/project/${project.slug.current}`} class="my-8">
+            <h3 class="text-lg font-bold">{project.title}</h3>
+            <p>{project.featuredDescription}</p>
+          </a>
+        </div>
+      </Card>
+    {/each}
+  </Section>
+</div>

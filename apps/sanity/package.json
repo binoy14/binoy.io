@@ -1,0 +1,30 @@
+{
+  "name": "sanity",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "preview": "sanity start",
+    "deploy": "sanity deploy",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@sanity/client": "6.17.0",
+    "@sanity/code-input": "4.1.4",
+    "@sanity/image-url": "1.0.2",
+    "@sanity/vision": "3.40.0",
+    "groq": "3.40.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-icons": "5.2.1",
+    "sanity": "3.40.0",
+    "styled-components": "6.1.8"
+  },
+  "devDependencies": {
+    "@binoy/eslint-config": "workspace:*",
+    "@sanity/cli": "3.40.0",
+    "@types/node": "20.12.10"
+  }
+}
