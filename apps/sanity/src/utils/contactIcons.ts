@@ -6,7 +6,7 @@ export const contactIcons = {
   Youtube: FaYoutube,
   Email: MdEmail,
   Github: FaGithub,
-  Linkedin: FaLinkedin
+  Linkedin: FaLinkedin,
 } as const;
 
 export const getIcon = (name: string) => contactIcons[name as keyof typeof contactIcons] ?? null;

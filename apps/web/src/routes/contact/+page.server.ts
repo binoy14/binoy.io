@@ -5,6 +5,6 @@ export async function load() {
   const contacts = await sanityClient.fetch<GetContacts>(getContacts);
 
   return {
-    contacts
+    contacts,
   };
 }

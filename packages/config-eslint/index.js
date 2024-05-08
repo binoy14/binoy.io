@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname
+  baseDirectory: __dirname,
 });
 
 export default [
@@ -28,12 +28,12 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.es2017,
-        ...globals.node
-      }
+        ...globals.node,
+      },
     },
     rules: {
-      'no-constant-binary-expression': 'off'
-    }
+      'no-constant-binary-expression': 'off',
+    },
   },
   {
     files: ['**/*.svelte'],
@@ -43,8 +43,8 @@ export default [
       parser: svelteParser,
       parserOptions: {
         parser: tsLint.parser,
-        extraFileExtensions: ['.svelte']
-      }
-    }
-  }
+        extraFileExtensions: ['.svelte'],
+      },
+    },
+  },
 ];

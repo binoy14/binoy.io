@@ -8,12 +8,12 @@ export default defineType({
     defineField({
       name: 'alt',
       title: 'alt',
-      type: 'string'
+      type: 'string',
     }),
     defineField({
       name: 'caption',
       title: 'caption',
-      type: 'string'
-    })
-  ]
+      type: 'string',
+    }),
+  ],
 });

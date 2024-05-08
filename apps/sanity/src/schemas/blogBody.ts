@@ -15,13 +15,13 @@ export default defineField({
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
-        { title: 'Quote', value: 'blockquote' }
+        { title: 'Quote', value: 'blockquote' },
       ],
       lists: [{ title: 'Bullet', value: 'bullet' }],
       marks: {
         decorators: [
           { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' }
+          { title: 'Emphasis', value: 'em' },
         ],
         annotations: [
           {
@@ -33,9 +33,9 @@ export default defineField({
               {
                 name: 'reference',
                 type: 'reference',
-                to: [{ type: 'blog' }]
-              }
-            ]
+                to: [{ type: 'blog' }],
+              },
+            ],
           },
           {
             name: 'link',
@@ -46,19 +46,19 @@ export default defineField({
               {
                 name: 'href',
                 type: 'url',
-                title: 'URL'
+                title: 'URL',
               },
               {
                 title: 'Open in new tab',
                 name: 'blank',
                 description: 'Read https://css-tricks.com/use-target_blank/',
                 type: 'boolean',
-                initialValue: true
-              }
-            ]
-          }
-        ]
-      }
+                initialValue: true,
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       type: 'image',
@@ -66,17 +66,17 @@ export default defineField({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative text'
-        }
+          title: 'Alternative text',
+        },
       ],
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       type: 'code',
-      title: 'Code'
-    }
+      title: 'Code',
+    },
   ],
-  validation: (Rule) => Rule.required()
+  validation: (Rule) => Rule.required(),
 });

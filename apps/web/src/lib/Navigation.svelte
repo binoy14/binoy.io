@@ -27,7 +27,7 @@
       {#each links as navLink}
         <li
           class={classnames(linkClasses, 'mr-6', 'last:mr-0', {
-            'text-yellow-400': $page.url.pathname === `/${navLink.link}`
+            'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
           })}
         >
           <a href={`/${navLink.link}`}>{navLink.text}</a>
@@ -66,8 +66,8 @@
     {
       'max-h-52': navOpen === true,
       'pb-4': navOpen === true,
-      'max-h-0': navOpen === false
-    }
+      'max-h-0': navOpen === false,
+    },
   )}
 >
   {#if navOpen}

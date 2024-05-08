@@ -3,10 +3,10 @@ import { sanityClient } from '$lib/sanityClient';
 
 export async function load({ params }) {
   const project = await sanityClient.fetch<GetProjectBySlug>(getProjectBySlug, {
-    slug: params.slug
+    slug: params.slug,
   });
 
   return {
-    project
+    project,
   };
 }

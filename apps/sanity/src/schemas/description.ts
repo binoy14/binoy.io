@@ -6,7 +6,7 @@ export default defineField({
   type: 'array',
   of: [
     {
-      type: 'block'
-    }
-  ]
+      type: 'block',
+    },
+  ],
 });

@@ -13,16 +13,16 @@
   const links: NavLinks[] = [
     {
       text: 'Home',
-      link: ''
+      link: '',
     },
     {
       text: 'Blogs',
-      link: 'blogs'
+      link: 'blogs',
     },
     {
       text: 'Contact',
-      link: 'contact'
-    }
+      link: 'contact',
+    },
   ];
 </script>
 

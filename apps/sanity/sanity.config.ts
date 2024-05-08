@@ -11,12 +11,12 @@ const sharedSettings = {
     codeInput(),
     visionTool({
       defaultApiVersion: 'v2021-10-21',
-      defaultDataset: 'production'
-    })
+      defaultDataset: 'production',
+    }),
   ],
   schema: {
-    types: schemaTypes
-  }
+    types: schemaTypes,
+  },
 };
 
 export default defineConfig([
@@ -26,7 +26,7 @@ export default defineConfig([
     projectId: '4t7pp8z5',
     dataset: 'production',
     basePath: '/production',
-    ...sharedSettings
+    ...sharedSettings,
   },
   {
     name: 'development',
@@ -34,6 +34,6 @@ export default defineConfig([
     projectId: '4t7pp8z5',
     dataset: 'development',
     basePath: '/development',
-    ...sharedSettings
-  }
+    ...sharedSettings,
+  },
 ]);

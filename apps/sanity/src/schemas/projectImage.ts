@@ -11,33 +11,33 @@ export default defineType({
       name: 'alt',
       title: 'Alt',
       type: 'string',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'caption',
       title: 'Caption',
       type: 'string',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
-      validation: (rule) => rule.required()
-    })
+      validation: (rule) => rule.required(),
+    }),
   ],
   preview: {
     select: {
       title: 'caption',
-      media: 'image'
+      media: 'image',
     },
     prepare(selection) {
       const { title, media } = selection;
 
       return {
         title,
-        media
+        media,
       };
-    }
-  }
+    },
+  },
 });

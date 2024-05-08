@@ -5,6 +5,6 @@ export async function load() {
   const blogs = await sanityClient.fetch<GetBlogs>(getBlogs);
 
   return {
-    blogs
+    blogs,
   };
 }

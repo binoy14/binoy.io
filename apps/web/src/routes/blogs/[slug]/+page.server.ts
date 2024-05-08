@@ -3,10 +3,10 @@ import { sanityClient } from '$lib/sanityClient';
 
 export async function load({ params }) {
   const blog = await sanityClient.fetch<GetBlogBySlug>(getBlogBySlug, {
-    slug: params.slug
+    slug: params.slug,
   });
 
   return {
-    blog
+    blog,
   };
 }

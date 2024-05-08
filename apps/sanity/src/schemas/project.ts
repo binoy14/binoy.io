@@ -11,53 +11,53 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'featuredDescription',
       title: 'Featured Description',
       type: 'string',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title'
+        source: 'title',
       },
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'featuredImage',
       title: 'Featured Image',
       type: 'imageInfo',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'description',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'projectImages',
       title: 'Project Images',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'projectImage' }] }]
+      of: [{ type: 'reference', to: [{ type: 'projectImage' }] }],
     }),
     defineField({
       name: 'order',
       title: 'Order',
       type: 'number',
-      validation: (Rule) => Rule.required().integer().positive()
-    })
+      validation: (Rule) => Rule.required().integer().positive(),
+    }),
   ],
   preview: {
     select: {
       title: 'title',
       subtitle: 'featuredDescription',
-      media: 'featuredImage'
+      media: 'featuredImage',
     },
     prepare(selection) {
       const { title, subtitle, media } = selection;
@@ -65,8 +65,8 @@ export default defineType({
       return {
         title,
         subtitle,
-        media
+        media,
       };
-    }
-  }
+    },
+  },
 });

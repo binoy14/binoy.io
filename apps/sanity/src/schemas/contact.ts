@@ -14,8 +14,8 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
       options: {
-        list: Object.keys(contactIcons)
-      }
+        list: Object.keys(contactIcons),
+      },
     }),
     defineField({
       name: 'link',
@@ -23,20 +23,20 @@ export default defineType({
       type: 'url',
       validation: (Rule) =>
         Rule.uri({
-          scheme: ['https', 'mailto']
-        }).required()
-    })
+          scheme: ['https', 'mailto'],
+        }).required(),
+    }),
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'link'
+      subtitle: 'link',
     },
     prepare({ title, subtitle }) {
       return {
         title,
-        subtitle
+        subtitle,
       };
-    }
-  }
+    },
+  },
 });

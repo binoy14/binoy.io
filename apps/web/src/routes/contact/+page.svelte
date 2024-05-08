@@ -11,7 +11,7 @@
     Youtube: FaYoutube,
     Email: MdEmail,
     Github: FaGithub,
-    Linkedin: FaLinkedin
+    Linkedin: FaLinkedin,
   } as const;
 
   function getIcon(title: string) {

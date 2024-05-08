@@ -11,7 +11,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -19,32 +19,32 @@ export default defineType({
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
+        maxLength: 96,
       },
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blogBody'
-    })
+      type: 'blogBody',
+    }),
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'publishedAt'
+      subtitle: 'publishedAt',
     },
     prepare(value) {
       const { title, subtitle } = value;
@@ -53,9 +53,9 @@ export default defineType({
         subtitle: new Date(subtitle).toLocaleDateString('en-US', {
           month: 'long',
           day: 'numeric',
-          year: 'numeric'
-        })
+          year: 'numeric',
+        }),
       };
-    }
-  }
+    },
+  },
 });

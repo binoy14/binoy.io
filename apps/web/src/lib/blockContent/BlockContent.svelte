@@ -15,16 +15,16 @@
       listItem: {
         bullet: ListItem,
         number: ListItem,
-        normal: ListItem
+        normal: ListItem,
       },
       types: {
         image: Image,
-        code: Code
+        code: Code,
       },
       marks: {
         internalLink: Link,
-        link: Link
-      }
+        link: Link,
+      },
     }}
     onMissingComponent={(component) => {
       console.warn('Missing component', component);

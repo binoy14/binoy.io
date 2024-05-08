@@ -6,15 +6,15 @@ export default defineConfig({
   plugins: [
     sveltekit(),
     Icons({
-      compiler: 'svelte'
-    })
+      compiler: 'svelte',
+    }),
   ],
   test: {
-    include: ['src/**/*.{test,spec}.{js,ts}']
+    include: ['src/**/*.{test,spec}.{js,ts}'],
   },
   build: {
     commonjsOptions: {
-      include: [/@binoy-ui/, /node_modules/]
-    }
-  }
+      include: [/@binoy-ui/, /node_modules/],
+    },
+  },
 });

@@ -5,7 +5,7 @@
     return new Date(publishedAt).toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
-      year: 'numeric'
+      year: 'numeric',
     });
   }
 
