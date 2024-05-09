@@ -8,7 +8,9 @@
     "build": "sanity build",
     "preview": "sanity start",
     "deploy": "sanity deploy",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "extract": "sanity schema extract --workspace website --path '../web/src/lib/groq/sanity-schema.json' --enforce-required-fields",
+    "typegen": "pnpm run extract && sanity typegen generate"
   },
   "dependencies": {
     "@sanity/client": "6.18.0",

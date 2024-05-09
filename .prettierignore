@@ -15,3 +15,7 @@ pnpm-lock.yaml
 pnpm-workspace.yaml
 package-lock.json
 yarn.lock
+
+# Generated files
+apps/web/src/lib/groq/sanity-schema.json
+apps/web/src/lib/groq/sanity.types.ts

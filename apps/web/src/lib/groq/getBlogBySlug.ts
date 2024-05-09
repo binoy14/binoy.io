@@ -1,4 +1,3 @@
-import { type InputValue } from '@portabletext/svelte';
 import groq from 'groq';
 
 export const getBlogBySlug = groq`*[_type == "blog" && slug.current == $slug] {
@@ -19,9 +18,3 @@ export const getBlogBySlug = groq`*[_type == "blog" && slug.current == $slug] {
     }
   }
 }[0]`;
-
-export interface GetBlogBySlug {
-  title: string;
-  publishedAt: string;
-  body: InputValue;
-}

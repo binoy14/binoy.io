@@ -26,7 +26,7 @@
           <a href={`/project/${project.slug.current}`} class="sm:mr-8">
             <Image
               src={project.featuredImage}
-              alt={project.featuredImage.alt || ''}
+              alt={project.featuredImage?.asset?.altText || ''}
               width={400}
               height={350}
             />

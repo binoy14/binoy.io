@@ -9,7 +9,8 @@
     });
   }
 
-  function getFormattedReadingTime(readingTime: number) {
+  // typegen doesn't support functions typing
+  function getFormattedReadingTime(readingTime: unknown) {
     return `${readingTime} min read`;
   }
 
