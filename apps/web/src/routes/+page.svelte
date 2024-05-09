@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Image from '$lib/Image.svelte';
   import { Card, Section, TextBlock } from '@binoy/ui';
+  import { Image } from '@unpic/svelte';
 
   export let data;
 </script>
@@ -24,12 +24,14 @@
           class="flex h-full min-h-[390px] flex-col items-center sm:grid sm:grid-cols-projectContent"
         >
           <a href={`/project/${project.slug.current}`} class="sm:mr-8">
-            <Image
-              src={project.featuredImage}
-              alt={project.featuredImage?.asset?.altText || ''}
-              width={400}
-              height={350}
-            />
+            {#if project.featuredImage.asset?.url}
+              <Image
+                src={project.featuredImage.asset?.url}
+                alt={project.featuredImage?.asset?.altText || ''}
+                layout="fullWidth"
+                background={project.featuredImage.asset.metadata?.lqip}
+              />
+            {/if}
           </a>
           <a href={`/project/${project.slug.current}`} class="my-8">
             <h3 class="text-lg font-bold">{project.title}</h3>

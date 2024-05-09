@@ -1,6 +1,7 @@
 <script lang="ts">
   import BlockContent from '$lib/blockContent/BlockContent.svelte';
-  import Image from '$lib/Image.svelte';
+  import { imageBuilder } from '$lib/sanityClient.js';
+  import { Image } from '@unpic/svelte';
 
   export let data;
 </script>
@@ -16,11 +17,14 @@
       <div class="grid justify-center gap-5">
         <h3 class="text-lg font-bold">{projectImage.caption}</h3>
         <Image
-          src={projectImage.image}
-          alt={projectImage.alt || ''}
           width={800}
-          height={400}
-          className="w-full"
+          height={600}
+          priority={false}
+          class="w-full"
+          layout="constrained"
+          src={imageBuilder.image(projectImage.image).url().toString()}
+          background={projectImage.image.asset?.metadata?.lqip}
+          alt={projectImage.alt || ''}
         />
       </div>
     {/each}

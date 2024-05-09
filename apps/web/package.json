@@ -20,6 +20,7 @@
     "@iconify-json/mdi": "1.1.66",
     "@sanity/client": "6.18.0",
     "@sanity/image-url": "1.0.2",
+    "@unpic/svelte": "0.0.53",
     "@vercel/analytics": "1.2.2",
     "@vercel/speed-insights": "1.0.10",
     "classnames": "2.5.1",
