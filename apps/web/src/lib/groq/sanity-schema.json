@@ -387,14 +387,14 @@
             }
           ]
         },
-        "optional": true
+        "optional": false
       },
       "link": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -438,14 +438,14 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "caption": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "image": {
         "type": "objectAttribute",
@@ -507,7 +507,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -551,14 +551,14 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "featuredDescription": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "slug": {
         "type": "objectAttribute",
@@ -566,7 +566,7 @@
           "type": "inline",
           "name": "slug"
         },
-        "optional": true
+        "optional": false
       },
       "featuredImage": {
         "type": "objectAttribute",
@@ -642,7 +642,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "description": {
         "type": "objectAttribute",
@@ -821,7 +821,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "projectImages": {
         "type": "objectAttribute",
@@ -872,7 +872,7 @@
         "value": {
           "type": "number"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -1499,7 +1499,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "slug": {
         "type": "objectAttribute",
@@ -1507,21 +1507,21 @@
           "type": "inline",
           "name": "slug"
         },
-        "optional": true
+        "optional": false
       },
       "publishedAt": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "excerpt": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "body": {
         "type": "objectAttribute",
@@ -1529,7 +1529,7 @@
           "type": "inline",
           "name": "blogBody"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -1888,7 +1888,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "source": {
           "type": "objectAttribute",

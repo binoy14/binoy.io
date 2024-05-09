@@ -74,8 +74,8 @@ export type Contact = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: 'Twitter' | 'Youtube' | 'Email' | 'Github' | 'Linkedin';
-  link?: string;
+  title: 'Twitter' | 'Youtube' | 'Email' | 'Github' | 'Linkedin';
+  link: string;
 };
 
 export type ProjectImage = {
@@ -84,9 +84,9 @@ export type ProjectImage = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  alt?: string;
-  caption?: string;
-  image?: {
+  alt: string;
+  caption: string;
+  image: {
     asset?: {
       _ref: string;
       _type: 'reference';
@@ -105,10 +105,10 @@ export type Project = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  featuredDescription?: string;
-  slug?: Slug;
-  featuredImage?: {
+  title: string;
+  featuredDescription: string;
+  slug: Slug;
+  featuredImage: {
     asset?: {
       _ref: string;
       _type: 'reference';
@@ -121,7 +121,7 @@ export type Project = {
     caption?: string;
     _type: 'imageInfo';
   };
-  description?: Array<{
+  description: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -146,7 +146,7 @@ export type Project = {
     _key: string;
     [internalGroqTypeReferenceTo]?: 'projectImage';
   }>;
-  order?: number;
+  order: number;
 };
 
 export type ImageInfo = {
@@ -238,11 +238,11 @@ export type Blog = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  slug?: Slug;
-  publishedAt?: string;
-  excerpt?: string;
-  body?: BlogBody;
+  title: string;
+  slug: Slug;
+  publishedAt: string;
+  excerpt: string;
+  body: BlogBody;
 };
 
 export type SanityImageCrop = {
@@ -304,7 +304,7 @@ export type SanityImageMetadata = {
 
 export type Slug = {
   _type: 'slug';
-  current?: string;
+  current: string;
   source?: string;
 };
 
@@ -316,3 +316,200 @@ export type Code = {
   highlightedLines?: Array<number>;
 };
 export declare const internalGroqTypeReferenceTo: unique symbol;
+
+
+// Source: ../web/src/lib/groq/getBlogBySlug.ts
+// Variable: getBlogBySlug
+// Query: *[_type == "blog" && slug.current == $slug] {  title,  publishedAt,  body[]{    ...,    _type == "image" => {      "asset": @.asset->{        ...      }    },    markDefs[]{      ...,      _type == "internalLink" => {        "slug": @.reference->slug      }    }  }}[0]
+export type GetBlogBySlugResult = {
+  title: string;
+  publishedAt: string;
+  body: Array<
+    | {
+        _key: string;
+        markDefs: null;
+      }
+    | {
+        asset: {
+          _id: string;
+          _type: 'sanity.imageAsset';
+          _createdAt: string;
+          _updatedAt: string;
+          _rev: string;
+          originalFilename?: string;
+          label?: string;
+          title?: string;
+          description?: string;
+          altText?: string;
+          sha1hash?: string;
+          extension?: string;
+          mimeType?: string;
+          size?: number;
+          assetId?: string;
+          uploadId?: string;
+          path?: string;
+          url?: string;
+          metadata?: SanityImageMetadata;
+          source?: SanityAssetSourceData;
+        } | null;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: 'image';
+        markDefs: null;
+      }
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
+        listItem?: 'bullet';
+        markDefs: Array<
+          | {
+              href?: string;
+              blank?: boolean;
+              _type: 'link';
+            }
+          | {
+              reference?: {
+                _ref: string;
+                _type: 'reference';
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: 'blog';
+              };
+              _type: 'internalLink';
+              slug: Slug | null;
+            }
+        > | null;
+        level?: number;
+        _type: 'block';
+      }
+  >;
+} | null;
+
+
+// Source: ../web/src/lib/groq/getBlogs.ts
+// Variable: getBlogs
+// Query: *[_type == "blog"] {  title,  excerpt,  slug,  publishedAt,  "readingTime": round(length(pt::text(body)) / 5 / 200 )} | order(publishedAt desc)
+export type GetBlogsResult = Array<{
+  title: string;
+  excerpt: string;
+  slug: Slug;
+  publishedAt: string;
+  readingTime: unknown;
+}>;
+
+
+// Source: ../web/src/lib/groq/getContacts.ts
+// Variable: getContacts
+// Query: *[_type == "contact" && !(_id in path("drafts.**"))] {  link,  title} | order(title asc)
+export type GetContactsResult = Array<{
+  link: string;
+  title: 'Email' | 'Github' | 'Linkedin' | 'Twitter' | 'Youtube';
+}>;
+
+
+// Source: ../web/src/lib/groq/getProjectBySlug.ts
+// Variable: getProjectBySlug
+// Query: *[_type == "project" && slug.current == $slug && !(_id in path("drafts.**"))] {  _id,  title,  description,  slug,  "projectImages": projectImages[]-> {    _id,    alt,    caption,    image {      asset->{        ...,      }    }  }}[0]
+export type GetProjectBySlugResult = {
+  _id: string;
+  title: string;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: 'span';
+      _key: string;
+    }>;
+    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      href?: string;
+      _type: 'link';
+      _key: string;
+    }>;
+    level?: number;
+    _type: 'block';
+    _key: string;
+  }>;
+  slug: Slug;
+  projectImages: Array<{
+    _id: string;
+    alt: string;
+    caption: string;
+    image: {
+      asset: {
+        _id: string;
+        _type: 'sanity.imageAsset';
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        originalFilename?: string;
+        label?: string;
+        title?: string;
+        description?: string;
+        altText?: string;
+        sha1hash?: string;
+        extension?: string;
+        mimeType?: string;
+        size?: number;
+        assetId?: string;
+        uploadId?: string;
+        path?: string;
+        url?: string;
+        metadata?: SanityImageMetadata;
+        source?: SanityAssetSourceData;
+      } | null;
+    };
+  }> | null;
+} | null;
+
+
+// Source: ../web/src/lib/groq/getProjects.ts
+// Variable: getProjects
+// Query: *[_type == "project" && !(_id in path("drafts.**"))] {  _id,  featuredImage {    asset -> {      ...,    }  },  featuredDescription,  title,  slug,  order} | order(order asc)
+export type GetProjectsResult = Array<{
+  _id: string;
+  featuredImage: {
+    asset: {
+      _id: string;
+      _type: 'sanity.imageAsset';
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      originalFilename?: string;
+      label?: string;
+      title?: string;
+      description?: string;
+      altText?: string;
+      sha1hash?: string;
+      extension?: string;
+      mimeType?: string;
+      size?: number;
+      assetId?: string;
+      uploadId?: string;
+      path?: string;
+      url?: string;
+      metadata?: SanityImageMetadata;
+      source?: SanityAssetSourceData;
+    } | null;
+  };
+  featuredDescription: string;
+  title: string;
+  slug: Slug;
+  order: number;
+}>;
+
+
+// Source: ../web/src/lib/groq/getProjectsSlugs.ts
+// Variable: getProjectSlugs
+// Query: *[_type == "project" && !(_id in path("drafts.**"))] {  slug}
+export type GetProjectSlugsResult = Array<{
+  slug: Slug;
+}>;
+
+

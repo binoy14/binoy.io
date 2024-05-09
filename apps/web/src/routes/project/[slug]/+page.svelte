@@ -11,16 +11,18 @@
     <BlockContent value={data.project.description} />
   {/if}
 
-  {#each data?.project?.projectImages as projectImage}
-    <div class="grid justify-center gap-5">
-      <h3 class="text-lg font-bold">{projectImage.caption}</h3>
-      <Image
-        src={projectImage.image}
-        alt={projectImage.alt || ''}
-        width={800}
-        height={400}
-        className="w-full"
-      />
-    </div>
-  {/each}
+  {#if data.project.projectImages}
+    {#each data?.project?.projectImages as projectImage}
+      <div class="grid justify-center gap-5">
+        <h3 class="text-lg font-bold">{projectImage.caption}</h3>
+        <Image
+          src={projectImage.image}
+          alt={projectImage.alt || ''}
+          width={800}
+          height={400}
+          className="w-full"
+        />
+      </div>
+    {/each}
+  {/if}
 </div>

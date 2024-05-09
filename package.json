@@ -6,7 +6,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write .",
-    "sanity:deploy": "turbo run deploy --filter='./apps/sanity'"
+    "sanity:deploy": "turbo run deploy --filter='./apps/sanity'",
+    "sanity:typegen": "turbo run typegen --filter='./apps/sanity'"
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",

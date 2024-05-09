@@ -30,7 +30,6 @@
     "@binoy/eslint-config": "workspace:*",
     "@playwright/test": "1.44.0",
     "@portabletext/svelte": "2.1.11",
-    "@portabletext/types": "2.0.13",
     "@sveltejs/adapter-auto": "3.2.0",
     "@sveltejs/kit": "2.5.7",
     "@sveltejs/vite-plugin-svelte": "3.1.0",
