@@ -19,6 +19,6 @@
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
     "prettier-plugin-tailwindcss": "0.5.14",
-    "svelte": "4.2.16"
+    "svelte": "4.2.17"
   }
 }
