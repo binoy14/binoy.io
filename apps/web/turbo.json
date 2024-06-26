@@ -3,6 +3,13 @@
   "extends": ["//"],
   "tasks": {
     "build": {
+      "outputs": [".svelte-kit/**", ".vercel/**"],
+      "env": ["PUBLIC_SANITY_PROJECT_ID", "PUBLIC_SANITY_DATASET"]
+    },
+    "lint": {
+      "env": ["PUBLIC_SANITY_PROJECT_ID", "PUBLIC_SANITY_DATASET"]
+    },
+    "check": {
       "env": ["PUBLIC_SANITY_PROJECT_ID", "PUBLIC_SANITY_DATASET"]
     }
   }
