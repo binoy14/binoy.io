@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "binoy-io",
+  "name": "binoy.io",
   "scripts": {
     "build": "turbo run build",
     "check": "turbo run check",
