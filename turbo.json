@@ -9,7 +9,7 @@
     "check": {},
     "sanity:typegen": {},
     "deploy": {
-      "env": ["SANITY_DEPLOY_TOKEN"],
+      "env": ["SANITY_AUTH_TOKEN"],
       "dependsOn": ["^build"]
     },
     "dev": {
