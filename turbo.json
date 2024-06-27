@@ -9,6 +9,7 @@
     "check": {},
     "sanity:typegen": {},
     "deploy": {
+      "env": ["SANITY_DEPLOY_TOKEN"],
       "dependsOn": ["^build"]
     },
     "dev": {
