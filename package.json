@@ -12,12 +12,12 @@
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "eslint": "9.5.0",
+    "eslint": "9.6.0",
     "husky": "9.0.11",
     "lint-staged": "15.2.7",
     "prettier": "3.3.2",
     "prettier-plugin-svelte": "3.2.5",
-    "turbo": "2.0.5"
+    "turbo": "2.0.6"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,json,html,md}": "prettier --write"
