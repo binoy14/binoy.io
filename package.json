@@ -12,17 +12,17 @@
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "eslint": "9.6.0",
-    "husky": "9.0.11",
+    "eslint": "9.8.0",
+    "husky": "9.1.4",
     "lint-staged": "15.2.7",
-    "prettier": "3.3.2",
-    "prettier-plugin-svelte": "3.2.5",
-    "turbo": "2.0.6"
+    "prettier": "3.3.3",
+    "prettier-plugin-svelte": "3.2.6",
+    "turbo": "2.0.11"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,json,html,md}": "prettier --write"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.6.0",
   "engines": {
     "pnpm": ">=9"
   }
