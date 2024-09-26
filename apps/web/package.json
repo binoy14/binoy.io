@@ -18,13 +18,13 @@
     "@binoy/ui": "workspace:*",
     "@iconify-json/fa": "1.2.0",
     "@iconify-json/mdi": "1.2.0",
-    "@sanity/client": "6.21.3",
+    "@sanity/client": "6.22.0",
     "@sanity/image-url": "1.0.2",
     "@unpic/svelte": "0.0.53",
     "@vercel/analytics": "1.3.1",
     "@vercel/speed-insights": "1.0.12",
     "classnames": "2.5.1",
-    "groq": "3.57.4",
+    "groq": "3.58.0",
     "unplugin-icons": "0.19.3"
   },
   "devDependencies": {
@@ -36,18 +36,18 @@
     "@sveltejs/vite-plugin-svelte": "3.1.2",
     "@tailwindcss/typography": "0.5.15",
     "autoprefixer": "10.4.20",
-    "eslint": "9.11.0",
+    "eslint": "9.11.1",
     "highlight.js": "11.10.0",
     "prettier": "3.3.3",
     "prettier-plugin-svelte": "3.2.6",
-    "prettier-plugin-tailwindcss": "0.6.6",
+    "prettier-plugin-tailwindcss": "0.6.8",
     "svelte": "4.2.19",
     "svelte-check": "4.0.2",
     "svelte-highlight": "7.7.0",
-    "tailwindcss": "3.4.12",
+    "tailwindcss": "3.4.13",
     "tslib": "2.7.0",
     "typescript": "5.6.2",
-    "vite": "5.4.7",
+    "vite": "5.4.8",
     "vitest": "2.1.1"
   }
 }
