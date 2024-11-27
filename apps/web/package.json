@@ -33,7 +33,7 @@
     "@portabletext/svelte": "2.1.11",
     "@sveltejs/adapter-vercel": "5.4.8",
     "@sveltejs/kit": "2.8.4",
-    "@sveltejs/vite-plugin-svelte": "3.1.2",
+    "@sveltejs/vite-plugin-svelte": "5.0.1",
     "@tailwindcss/typography": "0.5.15",
     "autoprefixer": "10.4.20",
     "eslint": "9.15.0",
