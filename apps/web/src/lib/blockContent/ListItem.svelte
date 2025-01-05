@@ -1,5 +1,12 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
+
+  interface Props {
+    children?: Snippet;
+  }
+
+  let { children }: Props = $props();
   export const portableText = null;
 </script>
 
-<li><slot /></li>
+<li>{@render children?.()}</li>

@@ -18,7 +18,7 @@
     return contactIcons[title as keyof typeof contactIcons];
   }
 
-  export let data;
+  let { data } = $props();
 </script>
 
 <div class="container">
@@ -26,8 +26,9 @@
     <h1 class="text-2xl font-bold">Say Hello!</h1>
     <div class="my-10 flex flex-wrap justify-center">
       {#each data.contacts as { link, title }}
+        {@const SvelteComponent = getIcon(title)}
         <a href={link} target="_blank" rel="noreferrer noopener" class="mb-8 ml-8 first:ml-0">
-          <svelte:component this={getIcon(title)} class="h-11 w-11" />
+          <SvelteComponent class="h-11 w-11" />
         </a>
       {/each}
     </div>

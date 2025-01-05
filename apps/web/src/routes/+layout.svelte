@@ -6,6 +6,11 @@
   import { inject } from '@vercel/analytics';
   import { injectSpeedInsights } from '@vercel/speed-insights';
   import type { NavLinks } from '$lib/navigationTypes';
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 
   inject({ mode: dev ? 'development' : 'production' });
   injectSpeedInsights({});
@@ -47,7 +52,7 @@
 <Navigation {links} title="Binoy Patel" />
 
 <main class="min-h-full min-w-full">
-  <slot />
+  {@render children?.()}
 </main>
 
 <Footer />

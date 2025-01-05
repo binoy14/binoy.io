@@ -2,7 +2,7 @@
   import BlockContent from '$lib/blockContent/BlockContent.svelte';
   import { type InputValue } from '@portabletext/svelte';
 
-  export let data;
+  let { data } = $props();
 
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString('en-US', {
@@ -12,7 +12,7 @@
     });
   }
 
-  $: blogBody = data.blog.body as InputValue;
+  let blogBody = $derived(data.blog.body as InputValue);
 </script>
 
 <div class="container mb-10 grid gap-5">
