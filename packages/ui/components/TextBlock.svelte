@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let header: string;
-  export let subtext: string | null = null;
+  interface Props {
+    header: string;
+    subtext?: string | null;
+  }
+
+  let { header, subtext = null }: Props = $props();
 </script>
 
 <div class="my-5">
