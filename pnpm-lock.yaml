@@ -125,7 +125,7 @@ importers:
         specifier: 2.15.1
         version: 2.15.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.16.1)(vite@5.4.11(@types/node@20.17.11)(terser@5.37.0)))(svelte@5.16.1)(vite@5.4.11(@types/node@20.17.11)(terser@5.37.0))
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^4.0.0
+        specifier: 4.0.4
         version: 4.0.4(svelte@5.16.1)(vite@5.4.11(@types/node@20.17.11)(terser@5.37.0))
       '@tailwindcss/typography':
         specifier: 0.5.15
