@@ -14,7 +14,7 @@
     "@binoy/eslint-config": "workspace:*",
     "eslint": "9.17.0",
     "husky": "9.1.7",
-    "lint-staged": "15.2.11",
+    "lint-staged": "15.3.0",
     "prettier": "3.4.2",
     "prettier-plugin-svelte": "3.3.2",
     "turbo": "2.3.3"
@@ -22,7 +22,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,json,html,md}": "prettier --write"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.2",
   "engines": {
     "pnpm": ">=9"
   }
