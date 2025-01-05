@@ -3,7 +3,7 @@
   import { imageBuilder } from '$lib/sanityClient.js';
   import { Image } from '@unpic/svelte';
 
-  export let data;
+  let { data } = $props();
 </script>
 
 <div class="container mb-10 grid gap-5">

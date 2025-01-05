@@ -3,12 +3,16 @@
   import { HighlightAuto } from 'svelte-highlight';
   import ashes from 'svelte-highlight/styles/ashes';
 
-  export let portableText: CustomBlockComponentProps<{
+  interface Props {
+    portableText: CustomBlockComponentProps<{
     code: string;
     language: string;
   }>;
+  }
 
-  $: ({ code } = portableText.value);
+  let { portableText }: Props = $props();
+
+  let { code } = $derived(portableText.value);
 </script>
 
 <svelte:head>

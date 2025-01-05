@@ -1,21 +1,26 @@
 <script lang="ts">
   import type { MarkComponentProps } from '@portabletext/svelte';
 
-  export let portableText: MarkComponentProps<{
+  interface Props {
+    portableText: MarkComponentProps<{
     href?: string;
     slug?: { current: string };
     text?: string;
     blank?: boolean;
   }>;
+    children?: import('svelte').Snippet;
+  }
 
-  $: ({ value, markType } = portableText);
-  $: ({ href, blank, slug } = value);
+  let { portableText, children }: Props = $props();
+
+  let { value, markType } = $derived(portableText);
+  let { href, blank, slug } = $derived(value);
 </script>
 
 {#if markType === 'internalLink'}
-  <a href={`/blogs/${slug?.current}`}><slot /></a>
+  <a href={`/blogs/${slug?.current}`}>{@render children?.()}</a>
 {:else if blank}
-  <a {href} target="_blank" rel="noopener noreferrer"><slot /></a>
+  <a {href} target="_blank" rel="noopener noreferrer">{@render children?.()}</a>
 {:else}
-  <a {href}><slot /></a>
+  <a {href}>{@render children?.()}</a>
 {/if}

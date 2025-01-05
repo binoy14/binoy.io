@@ -2,7 +2,7 @@
   import { Card, Section, TextBlock } from '@binoy/ui';
   import { Image } from '@unpic/svelte';
 
-  export let data;
+  let { data } = $props();
 </script>
 
 <Section type="light">

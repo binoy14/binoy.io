@@ -5,10 +5,14 @@
   import MdClose from '~icons/mdi/close';
   import MdMenu from '~icons/mdi/menu';
 
-  export let links: NavLinks[] = [];
-  export let title: string | undefined;
+  interface Props {
+    links?: NavLinks[];
+    title: string | undefined;
+  }
 
-  let navOpen: boolean = false;
+  let { links = [], title }: Props = $props();
+
+  let navOpen: boolean = $state(false);
 
   function onNavClick() {
     navOpen = !navOpen;
@@ -41,7 +45,7 @@
         class="inline-flex items-center justify-center rounded-md p-2 text-white hover:text-yellow-400"
         aria-controls="mobile-menu"
         aria-expanded="false"
-        on:click={onNavClick}
+        onclick={onNavClick}
       >
         <span class="sr-only">Open Main Menu</span>
         {#if navOpen}

@@ -3,12 +3,16 @@
   import { Image } from '@unpic/svelte';
   import type { SanityImageAsset } from '$lib/groq/sanity.types';
 
-  export let portableText: CustomBlockComponentProps<{
+  interface Props {
+    portableText: CustomBlockComponentProps<{
     asset: SanityImageAsset;
     alt: string;
   }>;
+  }
 
-  $: ({ value } = portableText);
+  let { portableText }: Props = $props();
+
+  let { value } = $derived(portableText);
 </script>
 
 {#if value.asset.url}

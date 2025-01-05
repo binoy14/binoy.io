@@ -3,8 +3,13 @@
 
   type SectionType = 'dark' | 'light';
 
-  export let type: SectionType;
-  export let className: string = '';
+  interface Props {
+    type: SectionType;
+    className?: string;
+    children?: import('svelte').Snippet;
+  }
+
+  let { type, className = '', children }: Props = $props();
 </script>
 
 <div
@@ -17,5 +22,5 @@
     className
   )}
 >
-  <slot />
+  {@render children?.()}
 </div>
