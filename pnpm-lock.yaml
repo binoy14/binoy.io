@@ -210,8 +210,8 @@ importers:
         specifier: 1.50.1
         version: 1.50.1
       '@portabletext/svelte':
-        specifier: 2.1.11
-        version: 2.1.11(svelte@5.19.6)
+        specifier: 3.0.0
+        version: 3.0.0(svelte@5.19.6)
       '@sveltejs/adapter-vercel':
         specifier: 5.5.3
         version: 5.5.3(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.19.6)(vite@5.4.14(@types/node@22.13.0)(terser@5.37.0)))(svelte@5.19.6)(vite@5.4.14(@types/node@22.13.0)(terser@5.37.0)))(rollup@4.28.1)
@@ -1675,17 +1675,17 @@ packages:
     peerDependencies:
       react: ^17 || ^18
 
-  '@portabletext/svelte@2.1.11':
-    resolution: {integrity: sha512-ecatiEd80Mw72XXya1swRnzZePuMnrbRf3OGgjTFe1iePcyQ89n8PMpfO3Dpn6bXvjMkIq9yvqB4b9oLLlGOfA==}
+  '@portabletext/svelte@3.0.0':
+    resolution: {integrity: sha512-1PTbasjgyYdA/vpt4BCs3Nc0Fr8pqJQRuI6llhpNe+JgZ1EoSstzzjkSSGn9TtPW7yPls5i/7QksqhYTjUDocw==}
     peerDependencies:
-      svelte: '>=3.47.0 <5.0.0'
+      svelte: ^5.0.0
 
   '@portabletext/to-html@2.0.13':
     resolution: {integrity: sha512-T3zL+2RcPCPGCp7rRrGrNJnGAqkdlpiOZnb/wh4tjDYJevteGY+5hmA0/5idLXzLiPv6vT8Gld852Sc0aFXwUA==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@portabletext/toolkit@2.0.16':
-    resolution: {integrity: sha512-aBvnD8MscoAlEIuZBn0Aksd+oCuoMGFOT3CtHIgRBaac0Vu4YnnMUF45xo/B/T5vmwWcnDXoJEJdn+SKDg1m+A==}
+  '@portabletext/toolkit@2.0.17':
+    resolution: {integrity: sha512-5wj+oUaCmHm9Ay1cytPmT1Yc0SrR1twwUIc0qNQ3MtaXaNMPw99Gjt1NcA34yfyKmEf/TAB2NiiT72jFxdddIQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
   '@portabletext/types@2.0.13':
@@ -7643,21 +7643,21 @@ snapshots:
 
   '@portabletext/react@3.0.18(react@18.3.1)':
     dependencies:
-      '@portabletext/toolkit': 2.0.16
+      '@portabletext/toolkit': 2.0.17
       '@portabletext/types': 2.0.13
       react: 18.3.1
 
-  '@portabletext/svelte@2.1.11(svelte@5.19.6)':
+  '@portabletext/svelte@3.0.0(svelte@5.19.6)':
     dependencies:
-      '@portabletext/toolkit': 2.0.16
+      '@portabletext/toolkit': 2.0.17
       svelte: 5.19.6
 
   '@portabletext/to-html@2.0.13':
     dependencies:
-      '@portabletext/toolkit': 2.0.16
+      '@portabletext/toolkit': 2.0.17
       '@portabletext/types': 2.0.13
 
-  '@portabletext/toolkit@2.0.16':
+  '@portabletext/toolkit@2.0.17':
     dependencies:
       '@portabletext/types': 2.0.13
 
@@ -11369,7 +11369,7 @@ snapshots:
       '@portabletext/block-tools': 1.1.4(@sanity/types@3.72.1(@types/react@18.3.8)(debug@4.4.0))(@types/react@18.3.8)
       '@portabletext/editor': 1.27.0(@sanity/schema@3.72.1(@types/react@18.3.8)(debug@4.4.0))(@sanity/types@3.72.1(@types/react@18.3.8)(debug@4.4.0))(@types/react@18.3.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)
       '@portabletext/react': 3.0.18(react@18.3.1)
-      '@portabletext/toolkit': 2.0.16
+      '@portabletext/toolkit': 2.0.17
       '@rexxars/react-json-inspector': 9.0.1(react@18.3.1)
       '@sanity/asset-utils': 2.2.0
       '@sanity/bifur-client': 0.4.1
