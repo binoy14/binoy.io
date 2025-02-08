@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "eslint": "9.19.0",
+    "eslint": "9.20.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
     "prettier": "3.4.2",
@@ -23,7 +23,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,json,html,md}": "prettier --write"
   },
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@9.15.5",
   "engines": {
     "pnpm": ">=9"
   }
