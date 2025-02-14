@@ -23,7 +23,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,css,json,html,md}": "prettier --write"
   },
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.4.0",
   "engines": {
     "pnpm": ">=9"
   }
