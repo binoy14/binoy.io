@@ -21,6 +21,7 @@
     height={400}
     priority={false}
     class="m-auto"
+    fit="fill"
     src={value.asset.url}
     background={value.asset.metadata?.lqip}
     alt={value.alt}

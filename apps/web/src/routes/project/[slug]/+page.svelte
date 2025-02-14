@@ -15,15 +15,14 @@
   {#if data.project.projectImages}
     {#each data?.project?.projectImages as projectImage}
       <div class="grid justify-center gap-5">
-        <h3 class="text-lg font-bold">{projectImage.caption}</h3>
+        <h3 class="text-lg font-bold text-center">{projectImage.caption}</h3>
         <Image
           width={800}
           height={600}
           priority={false}
-          class="w-full"
-          layout="constrained"
-          src={imageBuilder.image(projectImage.image).url().toString()}
-          background={projectImage.image.asset?.metadata?.lqip}
+          class="w-full !object-contain"
+          layout="fixed"
+          src={imageBuilder.image(projectImage.image).fit("max").url().toString()}
           alt={projectImage.alt || ''}
         />
       </div>
