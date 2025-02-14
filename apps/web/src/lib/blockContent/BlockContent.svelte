@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   import Image from './Image.svelte';
   import { PortableText, type InputValue } from '@portabletext/svelte';
   import Link from './Link.svelte';
@@ -18,17 +17,17 @@
     {value}
     components={{
       listItem: {
-        bullet: ListItem as any,
-        number: ListItem as any,
-        normal: ListItem as any,
+        bullet: ListItem,
+        number: ListItem,
+        normal: ListItem,
       },
       types: {
-        image: Image as any,
-        code: Code as any,
+        image: Image,
+        code: Code,
       },
       marks: {
-        internalLink: Link as any,
-        link: Link as any,
+        internalLink: Link,
+        link: Link,
       },
     }}
     onMissingComponent={(component) => {
