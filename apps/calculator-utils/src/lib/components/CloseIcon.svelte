@@ -6,6 +6,6 @@
 
 <style>
   svg {
-    @apply fill-gray-400;
+    fill: var(--color-gray-400);
   }
 </style>

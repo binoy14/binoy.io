@@ -3,7 +3,7 @@
 exports[`renders the button input 1`] = `
 <div>
   <div
-    class="mt-4 w-full shadow"
+    class="mt-4 w-full shadow-sm"
   >
     <div
       class="w-full rounded-t border bg-white pl-2 text-amber-700"
@@ -15,7 +15,7 @@ exports[`renders the button input 1`] = `
       class="inline-flex w-full"
     >
       <button
-        class="border-r bg-white px-2 py-4 font-bold svelte-xe4hn8 first-item active"
+        class="border-r bg-white px-2 py-4 font-bold svelte-qck4md first-item active"
         data-testid="button-1"
       >
         1
@@ -44,7 +44,7 @@ exports[`renders the button input 1`] = `
           class="rounded-br bg-white px-2"
         >
           <svg
-            class="svelte-r5w73o"
+            class="svelte-arg3b9"
             height="18"
             viewBox="0 -960 960 960"
             width="18"
