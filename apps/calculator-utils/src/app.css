@@ -30,6 +30,15 @@
   }
 }
 
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--color-purple-700),
+    var(--color-pink-500),
+    var(--color-pink-400)
+  );
+}
+
 input {
   background-color: var(--color-white);
 }
