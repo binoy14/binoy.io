@@ -34,7 +34,7 @@
   }
 </script>
 
-<div class="mt-4 w-full shadow">
+<div class="mt-4 w-full shadow-sm">
   <div class="w-full rounded-t border bg-white pl-2 text-amber-700">{title}:</div>
   <div class="inline-flex w-full">
     {#each items as item, i}
@@ -65,10 +65,10 @@
 
 <style lang="postcss">
   .first-item {
-    @apply rounded-bl;
+    border-bottom-left-radius: var(--radius-sm);
   }
 
   .active {
-    @apply bg-gray-200;
+    background-color: var(--color-gray-200);
   }
 </style>

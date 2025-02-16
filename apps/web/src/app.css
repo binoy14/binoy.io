@@ -47,5 +47,6 @@
 }
 
 body {
-  @apply bg-black text-white;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }

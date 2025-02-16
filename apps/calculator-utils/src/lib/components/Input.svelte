@@ -22,10 +22,10 @@
     bind:this={input}
     bind:value
     {oninput}
-    class="w-full appearance-none rounded-l px-2 py-4 shadow"
+    class="w-full appearance-none rounded-l px-2 py-4 shadow-sm"
     min="0"
   />
-  <button class="rounded-r bg-white px-2" {onclick}>
+  <button class="rounded-r-sm bg-white px-2" {onclick}>
     <CloseIcon />
   </button>
 </div>

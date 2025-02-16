@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="relative mt-4 grid h-40 min-h-[10rem] w-full overflow-hidden rounded bg-white p-2 shadow-md"
+  class="relative mt-4 grid h-40 min-h-[10rem] w-full overflow-hidden rounded-sm bg-white p-2 shadow-md"
 >
   <span class="absolute right-2 top-2 text-amber-700">{title}</span>
   <span
