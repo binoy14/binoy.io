@@ -12,7 +12,7 @@
   let { value }: Props = $props();
 </script>
 
-<div class="prose prose-invert !max-w-md md:!max-w-2xl lg:!max-w-none">
+<div class="prose prose-invert max-w-md! md:max-w-2xl! lg:max-w-none!">
   <PortableText
     {value}
     components={{
