@@ -20,25 +20,25 @@
   <Section type="dark" className="sm:grid-cols-projects mt-5 sm:grid sm:gap-10">
     {#each data.projects as project}
       <Card>
-        <h3 class="text-lg font-bold">{project.title}</h3>
-        <div
-          class="flex h-full min-h-[390px] flex-col items-center sm:grid sm:grid-cols-projectContent"
-        >
-          <a href={`/project/${project.slug.current}`} class="sm:mr-8">
-            {#if project.featuredImage.asset?.url}
-              <Image
-                src={project.featuredImage.asset?.url}
-                alt={project.featuredImage?.asset?.altText || ''}
-                layout="fullWidth"
-                background={project.featuredImage.asset.metadata?.lqip}
-                class="rounded-md"
-              />
-            {/if}
-          </a>
-          <a href={`/project/${project.slug.current}`} class="my-8">
-            <p>{project.featuredDescription}</p>
-          </a>
-        </div>
+        <a href={`/project/${project.slug.current}`}>
+          <h3 class="text-lg font-bold">{project.title}</h3>
+          <div
+            class="sm:grid-cols-project-content flex h-full min-h-[390px] flex-col items-center sm:grid"
+          >
+            <div class="sm:mr-8">
+              {#if project.featuredImage.asset?.url}
+                <Image
+                  src={project.featuredImage.asset?.url}
+                  alt={project.featuredImage?.asset?.altText || ''}
+                  layout="fullWidth"
+                  background={project.featuredImage.asset.metadata?.lqip}
+                  class="rounded-sm"
+                />
+              {/if}
+            </div>
+            <p class="my-8">{project.featuredDescription}</p>
+          </div>
+        </a>
       </Card>
     {/each}
   </Section>

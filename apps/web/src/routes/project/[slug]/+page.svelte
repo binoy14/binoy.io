@@ -20,7 +20,7 @@
           width={800}
           height={600}
           priority={false}
-          class="w-full !object-contain"
+          class="w-full object-contain!"
           layout="fixed"
           src={imageBuilder.image(projectImage.image).fit("max").url().toString()}
           alt={projectImage.alt || ''}

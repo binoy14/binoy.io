@@ -1,12 +1,13 @@
 <script lang="ts">
   import classnames from 'classnames';
+  import type { Snippet } from 'svelte';
 
   type SectionType = 'dark' | 'light';
 
   interface Props {
     type: SectionType;
     className?: string;
-    children?: import('svelte').Snippet;
+    children?: Snippet;
   }
 
   let { type, className = '', children }: Props = $props();
