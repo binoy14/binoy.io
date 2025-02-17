@@ -47,7 +47,7 @@
     "@fontsource/roboto": "5.1.1",
     "@vercel/analytics": "1.5.0"
   },
-  "packageManager": "pnpm@10.4.0",
+  "packageManager": "pnpm@10.4.1",
   "engines": {
     "pnpm": ">=9"
   }
