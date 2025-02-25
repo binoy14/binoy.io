@@ -13,10 +13,10 @@
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "eslint": "9.20.1",
+    "eslint": "9.21.0",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
-    "prettier": "3.5.1",
+    "prettier": "3.5.2",
     "prettier-plugin-svelte": "3.3.3",
     "turbo": "2.4.2"
   },

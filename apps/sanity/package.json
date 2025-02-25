@@ -13,20 +13,20 @@
     "typegen": "pnpm run extract && sanity typegen generate"
   },
   "dependencies": {
-    "@sanity/client": "6.28.0",
+    "@sanity/client": "6.28.1",
     "@sanity/code-input": "5.1.2",
     "@sanity/image-url": "1.1.0",
-    "@sanity/vision": "3.75.1",
-    "groq": "3.75.1",
+    "@sanity/vision": "3.77.1",
+    "groq": "3.77.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-icons": "5.4.0",
-    "sanity": "3.75.1",
+    "react-icons": "5.5.0",
+    "sanity": "3.77.1",
     "styled-components": "6.1.15"
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "@sanity/cli": "3.75.1",
-    "@types/node": "22.13.4"
+    "@sanity/cli": "3.77.1",
+    "@types/node": "22.13.5"
   }
 }
