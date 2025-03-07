@@ -49,6 +49,6 @@
   },
   "packageManager": "pnpm@10.4.1",
   "engines": {
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   }
 }
