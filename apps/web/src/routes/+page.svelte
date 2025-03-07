@@ -9,7 +9,7 @@
   <div class="container">
     <TextBlock
       header="Hey 👋, I'm Binoy"
-      subtext="Full Stack Developer, React Groupie and GraphQL Enthusiast"
+      subtext="Full Stack Engineer crafting scalable, user-centric software solutions with 10+ years of hands-on expertise."
     />
   </div>
 </Section>
