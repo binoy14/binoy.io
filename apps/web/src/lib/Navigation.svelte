@@ -28,7 +28,7 @@
     </a>
     <!-- Desktop Nav -->
     <ul class="hidden sm:flex">
-      {#each links as navLink}
+      {#each links as navLink (navLink.link)}
         <li
           class={classnames(linkClasses, 'mr-6', 'last:mr-0', {
             'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
@@ -75,7 +75,7 @@
   )}
 >
   {#if navOpen}
-    {#each links as navLink}
+    {#each links as navLink (navLink.link)}
       <li
         class={classnames(linkClasses, 'mb-6', {
           'text-yellow-400': $page.url.pathname === `/${navLink.link}`,

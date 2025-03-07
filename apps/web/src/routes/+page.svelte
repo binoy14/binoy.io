@@ -18,7 +18,7 @@
   <h2 class="mt-10 text-xl font-bold">Projects</h2>
 
   <Section type="dark" className="sm:grid-cols-projects mt-5 sm:grid sm:gap-10">
-    {#each data.projects as project}
+    {#each data.projects as project (project._id)}
       <Card>
         <a href={`/project/${project.slug.current}`}>
           <h3 class="text-lg font-bold">{project.title}</h3>

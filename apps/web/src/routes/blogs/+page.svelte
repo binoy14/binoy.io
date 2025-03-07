@@ -22,7 +22,7 @@
 </svelte:head>
 
 <div class="container">
-  {#each data.blogs as blog}
+  {#each data.blogs as blog (blog.slug)}
     <Card className="my-10 py-10 px-10 first:mt-0">
       <a href={`/blogs/${blog.slug.current}`}>
         <h1 class="text-xl font-bold">{blog.title}</h1>
