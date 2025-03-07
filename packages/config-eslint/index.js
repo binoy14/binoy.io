@@ -3,18 +3,8 @@ import tsLint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginSvelte from 'eslint-plugin-svelte';
 import svelteParser from 'svelte-eslint-parser';
+import turboConfig from 'eslint-config-turbo/flat';
 import globals from 'globals';
-import { FlatCompat } from '@eslint/eslintrc';
-
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
 
 export default [
   js.configs.recommended,
@@ -22,7 +12,7 @@ export default [
   eslintConfigPrettier,
   ...eslintPluginSvelte.configs['flat/prettier'],
   ...tsLint.configs.recommended,
-  ...compat.extends('eslint-config-turbo'),
+  ...turboConfig,
   {
     languageOptions: {
       globals: {
