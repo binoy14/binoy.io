@@ -2,7 +2,7 @@
 
 @plugin '@tailwindcss/typography';
 
-@source '../../../packages/ui/components*.{html,js,svelte,ts}';
+@source '../../../packages/ui/components';
 
 @theme {
   --grid-template-columns-projects: repeat(auto-fit, minmax(450px, 1fr));
