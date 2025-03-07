@@ -33,7 +33,7 @@
   const seoData = {
     title: 'Binoy Patel',
     description:
-      'Tangential is a consulting company that helps companies with Web and Mobile Applications.',
+      'Full Stack Engineer crafting scalable, user-centric software solutions with 10+ years of hands-on expertise.',
     canonical: 'https://www.binoy.io',
   };
 </script>
