@@ -37,7 +37,7 @@
 <div class="mt-4 w-full shadow-sm">
   <div class="w-full rounded-t border bg-white pl-2 text-amber-700">{title}:</div>
   <div class="inline-flex w-full">
-    {#each items as item, i}
+    {#each items as item, i (i)}
       <button
         class="border-r bg-white px-2 py-4 font-bold"
         class:first-item={i === 0}

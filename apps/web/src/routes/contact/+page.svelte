@@ -6,7 +6,7 @@
   import FaYoutube from 'virtual:icons/fa/youtube';
   import MdEmail from 'virtual:icons/mdi/email';
 
-  export const contactIcons = {
+  const contactIcons = {
     Twitter: FaTwitter,
     Youtube: FaYoutube,
     Email: MdEmail,
@@ -25,7 +25,7 @@
   <Card>
     <h1 class="text-2xl font-bold">Say Hello!</h1>
     <div class="my-10 flex flex-wrap justify-center">
-      {#each data.contacts as { link, title }}
+      {#each data.contacts as { link, title } (link)}
         {@const SvelteComponent = getIcon(title)}
         <a href={link} target="_blank" rel="noreferrer noopener" class="mb-8 ml-8 first:ml-0">
           <SvelteComponent class="h-11 w-11" />
