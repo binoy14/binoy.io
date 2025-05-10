@@ -5,4 +5,5 @@ export default defineCliConfig({
     projectId: '4t7pp8z5',
     dataset: 'production',
   },
+  autoUpdates: true,
 });
