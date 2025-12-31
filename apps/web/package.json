@@ -23,7 +23,7 @@
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
     "classnames": "2.5.1",
-    "groq": "3.88.3",
+    "groq": "5.1.0",
     "unplugin-icons": "22.1.0"
   },
   "devDependencies": {
