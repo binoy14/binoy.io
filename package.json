@@ -15,7 +15,7 @@
     "@binoy/eslint-config": "workspace:*",
     "eslint": "9.27.0",
     "husky": "9.1.7",
-    "lint-staged": "15.5.2",
+    "lint-staged": "16.2.7",
     "prettier": "3.5.3",
     "prettier-plugin-svelte": "3.4.0",
     "turbo": "2.5.3"
