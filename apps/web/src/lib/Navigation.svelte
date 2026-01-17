@@ -4,6 +4,7 @@
   import { type NavLinks } from './navigationTypes';
   import MdClose from '~icons/mdi/close';
   import MdMenu from '~icons/mdi/menu';
+  import { resolve } from '$app/paths';
 
   interface Props {
     links?: NavLinks[];
@@ -23,7 +24,7 @@
 
 <nav class="container">
   <div class="flex h-24 w-full items-center bg-black text-white transition-all sm:h-36">
-    <a class="flex-1" href="/">
+    <a class="flex-1" href={resolve("/")}>
       <h2 class="text-4xl">{title}</h2>
     </a>
     <!-- Desktop Nav -->
@@ -34,7 +35,7 @@
             'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
           })}
         >
-          <a href={`/${navLink.link}`}>{navLink.text}</a>
+          <a href={resolve(`/${navLink.link}` as "/")}>{navLink.text}</a>
         </li>
       {/each}
     </ul>
@@ -81,7 +82,7 @@
           'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
         })}
       >
-        <a class={`mb-6 ${linkClasses}`} href={`/${navLink.link}`}>{navLink.text}</a>
+        <a class={`mb-6 ${linkClasses}`} href={resolve(`/${navLink.link}` as "/")}>{navLink.text}</a>
       </li>
     {/each}
   {/if}

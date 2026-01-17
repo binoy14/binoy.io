@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { MarkComponentProps } from '@portabletext/svelte';
+  import { resolve } from '$app/paths';
 
   interface Props {
     portableText: MarkComponentProps<{
@@ -18,9 +19,9 @@
 </script>
 
 {#if markType === 'internalLink'}
-  <a href={`/blogs/${slug?.current}`}>{@render children?.()}</a>
+  <a href={resolve(`/blogs/${slug?.current}`)}>{@render children?.()}</a>
 {:else if blank}
-  <a {href} target="_blank" rel="noopener noreferrer">{@render children?.()}</a>
+  <a {href} target="_blank" rel="external noopener noreferrer">{@render children?.()}</a>
 {:else}
-  <a {href}>{@render children?.()}</a>
+  <a href={resolve((href || '') as "/")}>{@render children?.()}</a>
 {/if}

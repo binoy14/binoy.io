@@ -27,7 +27,7 @@
     <div class="my-10 flex flex-wrap justify-center">
       {#each data.contacts as { link, title } (link)}
         {@const SvelteComponent = getIcon(title)}
-        <a href={link} target="_blank" rel="noreferrer noopener" class="mb-8 ml-8 first:ml-0">
+        <a href={link} target="_blank" rel="external noreferrer noopener" class="mb-8 ml-8 first:ml-0">
           <SvelteComponent class="h-11 w-11" />
         </a>
       {/each}
