@@ -46,7 +46,7 @@
   <div class="mx-auto grid h-full max-w-lg grid-cols-3 font-medium">
     {#each pages as page (page.path)}
       <a
-        href={resolve(page.path)}
+        href={resolve(page.path as Parameters<typeof resolve>[0])}
         class="group inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 {page.path ===
         path
           ? 'text-blue-600'

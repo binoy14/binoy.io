@@ -23,5 +23,5 @@
 {:else if blank}
   <a {href} target="_blank" rel="external noopener noreferrer">{@render children?.()}</a>
 {:else}
-  <a href={resolve(href || '')}>{@render children?.()}</a>
+  <a href={resolve((href || '') as "/")}>{@render children?.()}</a>
 {/if}

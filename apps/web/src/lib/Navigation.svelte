@@ -35,7 +35,7 @@
             'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
           })}
         >
-          <a href={resolve(`/${navLink.link}`)}>{navLink.text}</a>
+          <a href={resolve(`/${navLink.link}` as "/")}>{navLink.text}</a>
         </li>
       {/each}
     </ul>
@@ -82,7 +82,7 @@
           'text-yellow-400': $page.url.pathname === `/${navLink.link}`,
         })}
       >
-        <a class={`mb-6 ${linkClasses}`} href={resolve(`/${navLink.link}`)}>{navLink.text}</a>
+        <a class={`mb-6 ${linkClasses}`} href={resolve(`/${navLink.link}` as "/")}>{navLink.text}</a>
       </li>
     {/each}
   {/if}
