@@ -7,6 +7,7 @@
   import MoneyInsert from 'virtual:icons/uil/money-insert';
   import { page } from '$app/stores';
   import { dev } from '$app/environment';
+  import { resolve } from '$app/paths';
   interface Props {
     children?: import('svelte').Snippet;
   }
@@ -45,7 +46,7 @@
   <div class="mx-auto grid h-full max-w-lg grid-cols-3 font-medium">
     {#each pages as page (page.path)}
       <a
-        href={page.path}
+        href={resolve(page.path)}
         class="group inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 {page.path ===
         path
           ? 'text-blue-600'

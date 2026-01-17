@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Card } from '@binoy/ui';
+  import { resolve } from '$app/paths';
 
   function getFormattedDate(publishedAt: string) {
     return new Date(publishedAt).toLocaleDateString('en-US', {
@@ -24,7 +25,7 @@
 <div class="container">
   {#each data.blogs as blog (blog.slug)}
     <Card className="my-10 py-10 px-10 first:mt-0">
-      <a href={`/blogs/${blog.slug.current}`}>
+      <a href={resolve(`/blogs/${blog.slug.current}`)}>
         <h1 class="text-xl font-bold">{blog.title}</h1>
       </a>
       <h4 class="mt-2">

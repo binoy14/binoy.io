@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Card, Section, TextBlock } from '@binoy/ui';
   import { Image } from '@unpic/svelte';
+  import { resolve } from '$app/paths';
 
   let { data } = $props();
 </script>
@@ -20,7 +21,7 @@
   <Section type="dark" className="sm:grid-cols-projects mt-5 sm:grid sm:gap-10">
     {#each data.projects as project (project._id)}
       <Card>
-        <a href={`/project/${project.slug.current}`}>
+        <a href={resolve(`/project/${project.slug.current}`)}>
           <h3 class="text-lg font-bold">{project.title}</h3>
           <div
             class="sm:grid-cols-project-content flex h-full min-h-[390px] flex-col items-center sm:grid"
