@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "@sanity/cli": "5.7.0",
     "@types/node": "22.19.7"
   }
 }

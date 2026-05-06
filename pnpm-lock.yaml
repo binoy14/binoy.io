@@ -145,9 +145,6 @@ importers:
       '@binoy/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config-eslint
-      '@sanity/cli':
-        specifier: 5.7.0
-        version: 5.7.0(@types/node@22.19.7)(babel-plugin-react-compiler@1.0.0)(lightningcss@1.30.2)(react@19.2.4)(terser@5.37.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
       '@types/node':
         specifier: 22.19.7
         version: 22.19.7
