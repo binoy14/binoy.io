@@ -1,32 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "rebaseWhen": "conflicted",
-  "schedule": ["before 5am"],
-  "postUpdateOptions": ["pnpmDedupe"],
-  "packageRules": [
-    {
-      "labels": ["📦 deps", "🤖 bot"],
-      "matchPackageNames": ["*"]
-    },
-    {
-      "labels": ["⚠️ major", "📦 deps", "🤖 bot"],
-      "matchUpdateTypes": ["major"]
-    },
-    {
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch",
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["*"]
-    },
-    {
-      "description": "Don't bump engines field in package.json",
-      "matchPackageNames": ["node", "pnpm"],
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["engines"],
-      "rangeStrategy": "auto"
-    }
-  ],
-  "rangeStrategy": "pin",
-  "prConcurrentLimit": 5
+  "extends": ["github>binoy14/renovate"]
 }
