@@ -60,6 +60,5 @@ exports[`renders the button input 1`] = `
     </div>
   </div>
   
-  
 </div>
 `;
