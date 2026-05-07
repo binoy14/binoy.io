@@ -4,11 +4,11 @@
 
   interface Props {
     portableText: MarkComponentProps<{
-    href?: string;
-    slug?: { current: string };
-    text?: string;
-    blank?: boolean;
-  }>;
+      href?: string;
+      slug?: { current: string };
+      text?: string;
+      blank?: boolean;
+    }>;
     children?: import('svelte').Snippet;
   }
 
@@ -23,5 +23,5 @@
 {:else if blank}
   <a {href} target="_blank" rel="external noopener noreferrer">{@render children?.()}</a>
 {:else}
-  <a href={resolve((href || '') as "/")}>{@render children?.()}</a>
+  <a href={resolve((href || '') as '/')}>{@render children?.()}</a>
 {/if}

@@ -5,9 +5,9 @@
 
   interface Props {
     portableText: CustomBlockComponentProps<{
-    asset: SanityImageAsset;
-    alt: string;
-  }>;
+      asset: SanityImageAsset;
+      alt: string;
+    }>;
   }
 
   let { portableText }: Props = $props();

@@ -5,9 +5,9 @@
 
   interface Props {
     portableText: CustomBlockComponentProps<{
-    code: string;
-    language: string;
-  }>;
+      code: string;
+      language: string;
+    }>;
   }
 
   let { portableText }: Props = $props();

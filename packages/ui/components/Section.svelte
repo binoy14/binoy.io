@@ -18,9 +18,9 @@
     'py-6',
     {
       'bg-black text-white': type === 'dark',
-      'bg-white text-black': type === 'light'
+      'bg-white text-black': type === 'light',
     },
-    className
+    className,
   )}
 >
   {@render children?.()}
