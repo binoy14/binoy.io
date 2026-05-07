@@ -39,7 +39,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/roboto": "^5.2.10",
-    "@vercel/analytics": "^1.6.1"
+    "@vercel/analytics": "^2.0.1"
   },
   "packageManager": "pnpm@10.33.4",
   "engines": {

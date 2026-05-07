@@ -39,8 +39,8 @@ importers:
         specifier: ^5.2.10
         version: 5.2.10
       '@vercel/analytics':
-        specifier: ^1.6.1
-        version: 1.6.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))
+        specifier: ^2.0.1
+        version: 2.0.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))
     devDependencies:
       '@binoy/eslint-config':
         specifier: workspace:*
@@ -167,8 +167,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))
       '@vercel/analytics':
-        specifier: ^1.6.1
-        version: 1.6.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))
+        specifier: ^2.0.1
+        version: 2.0.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))
       '@vercel/speed-insights':
         specifier: ^1.3.1
         version: 1.3.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))
@@ -3023,12 +3023,13 @@ packages:
     peerDependencies:
       svelte: ^5
 
-  '@vercel/analytics@1.6.1':
-    resolution: {integrity: sha512-oH9He/bEM+6oKlv3chWuOOcp8Y6fo6/PSro8hEkgCW3pu9/OiCXiUpRUogDh3Fs3LH2sosDrx8CxeOLBEE+afg==}
+  '@vercel/analytics@2.0.1':
+    resolution: {integrity: sha512-MTQG6V9qQrt1tsDeF+2Uoo5aPjqbVPys1xvnIftXSJYG2SrwXRHnqEvVoYID7BTruDz4lCd2Z7rM1BdkUehk2g==}
     peerDependencies:
       '@remix-run/react': ^2
       '@sveltejs/kit': ^1 || ^2
       next: '>= 13'
+      nuxt: '>= 3'
       react: ^18 || ^19 || ^19.0.0-rc
       svelte: '>= 4'
       vue: ^3
@@ -3039,6 +3040,8 @@ packages:
       '@sveltejs/kit':
         optional: true
       next:
+        optional: true
+      nuxt:
         optional: true
       react:
         optional: true
@@ -9583,7 +9586,7 @@ snapshots:
       style-object-to-css-string: 1.1.3
       svelte: 5.55.5(@typescript-eslint/types@8.59.2)
 
-  '@vercel/analytics@1.6.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))':
+  '@vercel/analytics@2.0.1(@sveltejs/kit@2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(react@19.2.6)(svelte@5.55.5(@typescript-eslint/types@8.59.2))':
     optionalDependencies:
       '@sveltejs/kit': 2.59.1(@sveltejs/vite-plugin-svelte@7.1.1(svelte@5.55.5(@typescript-eslint/types@8.59.2))(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4)))(svelte@5.55.5(@typescript-eslint/types@8.59.2))(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)(esbuild@0.27.2)(jiti@2.6.1)(terser@5.37.0)(tsx@4.21.0)(yaml@2.8.4))
       react: 19.2.6
