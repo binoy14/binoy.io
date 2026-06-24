@@ -14,11 +14,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "classnames": "^2.5.1"
+    "classnames": "catalog:"
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "prettier-plugin-tailwindcss": "^0.8.0",
-    "svelte": "^5.56.4"
+    "prettier-plugin-tailwindcss": "catalog:",
+    "svelte": "catalog:"
   }
 }
