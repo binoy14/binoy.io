@@ -1,5 +1,6 @@
 import groq from 'groq';
 
-export const getProjectSlugs = groq`*[_type == "project" && !(_id in path("drafts.**"))] {
+// Only projects listed on the homepage are reachable.
+export const getProjectSlugs = groq`*[_type == "homepage"][0].projects[]-> {
   slug
 }`;

@@ -1,6 +1,7 @@
 import groq from 'groq';
 
-export const getProjects = groq`*[_type == "project" && !(_id in path("drafts.**"))] {
+// Order follows the homepage's curated array. Projects not listed are excluded.
+export const getProjects = groq`*[_type == "homepage"][0].projects[]-> {
   _id,
   featuredImage {
     asset -> {
@@ -9,6 +10,5 @@ export const getProjects = groq`*[_type == "project" && !(_id in path("drafts.**
   },
   featuredDescription,
   title,
-  slug,
-  order
-} | order(order asc)`;
+  slug
+}`;

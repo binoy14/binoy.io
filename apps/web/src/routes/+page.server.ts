@@ -5,5 +5,5 @@ import { sanityClient } from '$lib/sanityClient';
 export async function load() {
   const projects = await sanityClient.fetch<GetProjectsResult>(getProjects);
 
-  return { projects };
+  return { projects: projects ?? [] };
 }
