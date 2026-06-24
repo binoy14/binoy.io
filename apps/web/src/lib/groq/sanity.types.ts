@@ -12,60 +12,27 @@
  * ---------------------------------------------------------------------------------
  */
 
-// Source: schema.json
-export type SanityImagePaletteSwatch = {
-  _type: 'sanity.imagePaletteSwatch';
-  background?: string;
-  foreground?: string;
-  population?: number;
-  title?: string;
+export declare const internalGroqTypeReferenceTo: unique symbol;
+
+// Source: ../web/src/lib/groq/sanity-schema.json
+export type ProjectReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'project';
 };
 
-export type SanityImagePalette = {
-  _type: 'sanity.imagePalette';
-  darkMuted?: SanityImagePaletteSwatch;
-  lightVibrant?: SanityImagePaletteSwatch;
-  darkVibrant?: SanityImagePaletteSwatch;
-  vibrant?: SanityImagePaletteSwatch;
-  dominant?: SanityImagePaletteSwatch;
-  lightMuted?: SanityImagePaletteSwatch;
-  muted?: SanityImagePaletteSwatch;
-};
-
-export type SanityImageDimensions = {
-  _type: 'sanity.imageDimensions';
-  height?: number;
-  width?: number;
-  aspectRatio?: number;
-};
-
-export type SanityFileAsset = {
+export type Homepage = {
   _id: string;
-  _type: 'sanity.fileAsset';
+  _type: 'homepage';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  originalFilename?: string;
-  label?: string;
-  title?: string;
-  description?: string;
-  altText?: string;
-  sha1hash?: string;
-  extension?: string;
-  mimeType?: string;
-  size?: number;
-  assetId?: string;
-  uploadId?: string;
-  path?: string;
-  url?: string;
-  source?: SanityAssetSourceData;
-};
-
-export type Geopoint = {
-  _type: 'geopoint';
-  lat?: number;
-  lng?: number;
-  alt?: number;
+  projects?: Array<
+    {
+      _key: string;
+    } & ProjectReference
+  >;
 };
 
 export type Contact = {
@@ -78,6 +45,13 @@ export type Contact = {
   link: string;
 };
 
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+};
+
 export type ProjectImage = {
   _id: string;
   _type: 'projectImage';
@@ -87,16 +61,35 @@ export type ProjectImage = {
   alt: string;
   caption: string;
   image: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
+    asset?: SanityImageAssetReference;
+    media?: unknown;
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     _type: 'image';
   };
+};
+
+export type SanityImageCrop = {
+  _type: 'sanity.imageCrop';
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+};
+
+export type SanityImageHotspot = {
+  _type: 'sanity.imageHotspot';
+  x: number;
+  y: number;
+  height: number;
+  width: number;
+};
+
+export type ProjectImageReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'projectImage';
 };
 
 export type Project = {
@@ -108,59 +101,13 @@ export type Project = {
   title: string;
   featuredDescription: string;
   slug: Slug;
-  featuredImage: {
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    caption?: string;
-    _type: 'imageInfo';
-  };
-  description: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: 'span';
+  featuredImage: ImageInfo;
+  description: Description;
+  projectImages?: Array<
+    {
       _key: string;
-    }>;
-    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
-    listItem?: 'bullet' | 'number';
-    markDefs?: Array<{
-      href?: string;
-      _type: 'link';
-      _key: string;
-    }>;
-    level?: number;
-    _type: 'block';
-    _key: string;
-  }>;
-  projectImages?: Array<{
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: 'projectImage';
-  }>;
-  order: number;
-};
-
-export type ImageInfo = {
-  _type: 'imageInfo';
-  asset?: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-  };
-  hotspot?: SanityImageHotspot;
-  crop?: SanityImageCrop;
-  alt?: string;
-  caption?: string;
+    } & ProjectImageReference
+  >;
 };
 
 export type Description = Array<{
@@ -182,6 +129,29 @@ export type Description = Array<{
   _key: string;
 }>;
 
+export type ImageInfo = {
+  _type: 'imageInfo';
+  asset?: SanityImageAssetReference;
+  media?: unknown;
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  alt?: string;
+  caption?: string;
+};
+
+export type Slug = {
+  _type: 'slug';
+  current: string;
+  source?: string;
+};
+
+export type BlogReference = {
+  _ref: string;
+  _type: 'reference';
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: 'blog';
+};
+
 export type BlogBody = Array<
   | {
       children?: Array<{
@@ -194,12 +164,7 @@ export type BlogBody = Array<
       listItem?: 'bullet';
       markDefs?: Array<
         | {
-            reference?: {
-              _ref: string;
-              _type: 'reference';
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: 'blog';
-            };
+            reference?: BlogReference;
             _type: 'internalLink';
             _key: string;
           }
@@ -215,12 +180,8 @@ export type BlogBody = Array<
       _key: string;
     }
   | {
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
+      asset?: SanityImageAssetReference;
+      media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
       alt?: string;
@@ -245,20 +206,79 @@ export type Blog = {
   body: BlogBody;
 };
 
-export type SanityImageCrop = {
-  _type: 'sanity.imageCrop';
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
+export type Code = {
+  _type: 'code';
+  language?: string;
+  filename?: string;
+  code?: string;
+  highlightedLines?: Array<number>;
 };
 
-export type SanityImageHotspot = {
-  _type: 'sanity.imageHotspot';
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
+export type SanityImagePaletteSwatch = {
+  _type: 'sanity.imagePaletteSwatch';
+  background?: string;
+  foreground?: string;
+  population?: number;
+  title?: string;
+};
+
+export type SanityImagePalette = {
+  _type: 'sanity.imagePalette';
+  darkMuted?: SanityImagePaletteSwatch;
+  lightVibrant?: SanityImagePaletteSwatch;
+  darkVibrant?: SanityImagePaletteSwatch;
+  vibrant?: SanityImagePaletteSwatch;
+  dominant?: SanityImagePaletteSwatch;
+  lightMuted?: SanityImagePaletteSwatch;
+  muted?: SanityImagePaletteSwatch;
+};
+
+export type SanityImageDimensions = {
+  _type: 'sanity.imageDimensions';
+  height: number;
+  width: number;
+  aspectRatio: number;
+};
+
+export type SanityImageMetadata = {
+  _type: 'sanity.imageMetadata';
+  location?: Geopoint;
+  dimensions?: SanityImageDimensions;
+  palette?: SanityImagePalette;
+  lqip?: string;
+  blurHash?: string;
+  thumbHash?: string;
+  hasAlpha?: boolean;
+  isOpaque?: boolean;
+};
+
+export type SanityFileAsset = {
+  _id: string;
+  _type: 'sanity.fileAsset';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  originalFilename?: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  altText?: string;
+  sha1hash: string;
+  extension: string;
+  mimeType: string;
+  size: number;
+  assetId: string;
+  uploadId?: string;
+  path: string;
+  url: string;
+  source?: SanityAssetSourceData;
+};
+
+export type SanityAssetSourceData = {
+  _type: 'sanity.assetSourceData';
+  name?: string;
+  id?: string;
+  url?: string;
 };
 
 export type SanityImageAsset = {
@@ -272,51 +292,50 @@ export type SanityImageAsset = {
   title?: string;
   description?: string;
   altText?: string;
-  sha1hash?: string;
-  extension?: string;
-  mimeType?: string;
-  size?: number;
-  assetId?: string;
+  sha1hash: string;
+  extension: string;
+  mimeType: string;
+  size: number;
+  assetId: string;
   uploadId?: string;
-  path?: string;
-  url?: string;
+  path: string;
+  url: string;
   metadata?: SanityImageMetadata;
   source?: SanityAssetSourceData;
 };
 
-export type SanityAssetSourceData = {
-  _type: 'sanity.assetSourceData';
-  name?: string;
-  id?: string;
-  url?: string;
+export type Geopoint = {
+  _type: 'geopoint';
+  lat?: number;
+  lng?: number;
+  alt?: number;
 };
 
-export type SanityImageMetadata = {
-  _type: 'sanity.imageMetadata';
-  location?: Geopoint;
-  dimensions?: SanityImageDimensions;
-  palette?: SanityImagePalette;
-  lqip?: string;
-  blurHash?: string;
-  hasAlpha?: boolean;
-  isOpaque?: boolean;
-};
-
-export type Slug = {
-  _type: 'slug';
-  current: string;
-  source?: string;
-};
-
-export type Code = {
-  _type: 'code';
-  language?: string;
-  filename?: string;
-  code?: string;
-  highlightedLines?: Array<number>;
-};
-export declare const internalGroqTypeReferenceTo: unique symbol;
-
+export type AllSanitySchemaTypes =
+  | ProjectReference
+  | Homepage
+  | Contact
+  | SanityImageAssetReference
+  | ProjectImage
+  | SanityImageCrop
+  | SanityImageHotspot
+  | ProjectImageReference
+  | Project
+  | Description
+  | ImageInfo
+  | Slug
+  | BlogReference
+  | BlogBody
+  | Blog
+  | Code
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityImageMetadata
+  | SanityFileAsset
+  | SanityAssetSourceData
+  | SanityImageAsset
+  | Geopoint;
 
 // Source: ../web/src/lib/groq/getBlogBySlug.ts
 // Variable: getBlogBySlug
@@ -326,7 +345,39 @@ export type GetBlogBySlugResult = {
   publishedAt: string;
   body: Array<
     | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
+        listItem?: 'bullet';
+        markDefs: Array<
+          | {
+              reference?: BlogReference;
+              _type: 'internalLink';
+              _key: string;
+              slug: Slug | null;
+            }
+          | {
+              href?: string;
+              blank?: boolean;
+              _type: 'link';
+              _key: string;
+            }
+        > | null;
+        level?: number;
+        _type: 'block';
         _key: string;
+      }
+    | {
+        _key: string;
+        _type: 'code';
+        language?: string;
+        filename?: string;
+        code?: string;
+        highlightedLines?: Array<number>;
         markDefs: null;
       }
     | {
@@ -341,55 +392,27 @@ export type GetBlogBySlugResult = {
           title?: string;
           description?: string;
           altText?: string;
-          sha1hash?: string;
-          extension?: string;
-          mimeType?: string;
-          size?: number;
-          assetId?: string;
+          sha1hash: string;
+          extension: string;
+          mimeType: string;
+          size: number;
+          assetId: string;
           uploadId?: string;
-          path?: string;
-          url?: string;
+          path: string;
+          url: string;
           metadata?: SanityImageMetadata;
           source?: SanityAssetSourceData;
         } | null;
+        media?: unknown;
         hotspot?: SanityImageHotspot;
         crop?: SanityImageCrop;
         alt?: string;
         _type: 'image';
+        _key: string;
         markDefs: null;
-      }
-    | {
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: 'span';
-          _key: string;
-        }>;
-        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
-        listItem?: 'bullet';
-        markDefs: Array<
-          | {
-              href?: string;
-              blank?: boolean;
-              _type: 'link';
-            }
-          | {
-              reference?: {
-                _ref: string;
-                _type: 'reference';
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: 'blog';
-              };
-              _type: 'internalLink';
-              slug: Slug | null;
-            }
-        > | null;
-        level?: number;
-        _type: 'block';
       }
   >;
 } | null;
-
 
 // Source: ../web/src/lib/groq/getBlogs.ts
 // Variable: getBlogs
@@ -399,9 +422,8 @@ export type GetBlogsResult = Array<{
   excerpt: string;
   slug: Slug;
   publishedAt: string;
-  readingTime: unknown;
+  readingTime: number;
 }>;
-
 
 // Source: ../web/src/lib/groq/getContacts.ts
 // Variable: getContacts
@@ -411,31 +433,13 @@ export type GetContactsResult = Array<{
   title: 'Email' | 'Github' | 'Linkedin' | 'Twitter' | 'Youtube';
 }>;
 
-
 // Source: ../web/src/lib/groq/getProjectBySlug.ts
 // Variable: getProjectBySlug
-// Query: *[_type == "project" && slug.current == $slug && !(_id in path("drafts.**"))] {  _id,  title,  description,  slug,  "projectImages": projectImages[]-> {    _id,    alt,    caption,    image {      asset->{        ...,      }    }  }}[0]
+// Query: *[  _type == "project"  && slug.current == $slug  && !(_id in path("drafts.**"))  && _id in *[_type == "homepage"][0].projects[]._ref] {  _id,  title,  description,  slug,  "projectImages": projectImages[]-> {    _id,    alt,    caption,    image {      asset->{        ...,      }    }  }}[0]
 export type GetProjectBySlugResult = {
   _id: string;
   title: string;
-  description: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: 'span';
-      _key: string;
-    }>;
-    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
-    listItem?: 'bullet' | 'number';
-    markDefs?: Array<{
-      href?: string;
-      _type: 'link';
-      _key: string;
-    }>;
-    level?: number;
-    _type: 'block';
-    _key: string;
-  }>;
+  description: Description;
   slug: Slug;
   projectImages: Array<{
     _id: string;
@@ -453,14 +457,14 @@ export type GetProjectBySlugResult = {
         title?: string;
         description?: string;
         altText?: string;
-        sha1hash?: string;
-        extension?: string;
-        mimeType?: string;
-        size?: number;
-        assetId?: string;
+        sha1hash: string;
+        extension: string;
+        mimeType: string;
+        size: number;
+        assetId: string;
         uploadId?: string;
-        path?: string;
-        url?: string;
+        path: string;
+        url: string;
         metadata?: SanityImageMetadata;
         source?: SanityAssetSourceData;
       } | null;
@@ -468,10 +472,9 @@ export type GetProjectBySlugResult = {
   }> | null;
 } | null;
 
-
 // Source: ../web/src/lib/groq/getProjects.ts
 // Variable: getProjects
-// Query: *[_type == "project" && !(_id in path("drafts.**"))] {  _id,  featuredImage {    asset -> {      ...,    }  },  featuredDescription,  title,  slug,  order} | order(order asc)
+// Query: *[_type == "homepage"][0].projects[]-> {  _id,  featuredImage {    asset -> {      ...,    }  },  featuredDescription,  title,  slug}
 export type GetProjectsResult = Array<{
   _id: string;
   featuredImage: {
@@ -486,14 +489,14 @@ export type GetProjectsResult = Array<{
       title?: string;
       description?: string;
       altText?: string;
-      sha1hash?: string;
-      extension?: string;
-      mimeType?: string;
-      size?: number;
-      assetId?: string;
+      sha1hash: string;
+      extension: string;
+      mimeType: string;
+      size: number;
+      assetId: string;
       uploadId?: string;
-      path?: string;
-      url?: string;
+      path: string;
+      url: string;
       metadata?: SanityImageMetadata;
       source?: SanityAssetSourceData;
     } | null;
@@ -501,15 +504,24 @@ export type GetProjectsResult = Array<{
   featuredDescription: string;
   title: string;
   slug: Slug;
-  order: number;
-}>;
-
+}> | null;
 
 // Source: ../web/src/lib/groq/getProjectsSlugs.ts
 // Variable: getProjectSlugs
-// Query: *[_type == "project" && !(_id in path("drafts.**"))] {  slug}
+// Query: *[_type == "homepage"][0].projects[]-> {  slug}
 export type GetProjectSlugsResult = Array<{
   slug: Slug;
-}>;
+}> | null;
 
-
+// Query TypeMap
+import '@sanity/client';
+declare module '@sanity/client' {
+  interface SanityQueries {
+    '*[_type == "blog" && slug.current == $slug] {\n  title,\n  publishedAt,\n  body[]{\n    ...,\n    _type == "image" => {\n      "asset": @.asset->{\n        ...\n      }\n    },\n    markDefs[]{\n      ...,\n      _type == "internalLink" => {\n        "slug": @.reference->slug\n      }\n    }\n  }\n}[0]': GetBlogBySlugResult;
+    '*[_type == "blog"] {\n  title,\n  excerpt,\n  slug,\n  publishedAt,\n  "readingTime": round(length(pt::text(body)) / 5 / 200 )\n} | order(publishedAt desc)': GetBlogsResult;
+    '*[_type == "contact" && !(_id in path("drafts.**"))] {\n  link,\n  title\n} | order(title asc)': GetContactsResult;
+    '*[\n  _type == "project"\n  && slug.current == $slug\n  && !(_id in path("drafts.**"))\n  && _id in *[_type == "homepage"][0].projects[]._ref\n] {\n  _id,\n  title,\n  description,\n  slug,\n  "projectImages": projectImages[]-> {\n    _id,\n    alt,\n    caption,\n    image {\n      asset->{\n        ...,\n      }\n    }\n  }\n}[0]': GetProjectBySlugResult;
+    '*[_type == "homepage"][0].projects[]-> {\n  _id,\n  featuredImage {\n    asset -> {\n      ...,\n    }\n  },\n  featuredDescription,\n  title,\n  slug\n}': GetProjectsResult;
+    '*[_type == "homepage"][0].projects[]-> {\n  slug\n}': GetProjectSlugsResult;
+  }
+}

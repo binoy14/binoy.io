@@ -46,12 +46,6 @@ export default defineType({
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'projectImage' }] }],
     }),
-    defineField({
-      name: 'order',
-      title: 'Order',
-      type: 'number',
-      validation: (Rule) => Rule.required().integer().positive(),
-    }),
   ],
   preview: {
     select: {
