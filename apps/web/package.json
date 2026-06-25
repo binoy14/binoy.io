@@ -33,12 +33,10 @@
     "@sveltejs/adapter-vercel": "catalog:",
     "@sveltejs/kit": "catalog:",
     "@sveltejs/vite-plugin-svelte": "catalog:",
-    "@tailwindcss/vite": "catalog:",
     "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "catalog:",
     "eslint": "catalog:",
     "highlight.js": "^11.11.1",
-    "prettier-plugin-svelte": "catalog:",
-    "prettier-plugin-tailwindcss": "catalog:",
     "svelte": "catalog:",
     "svelte-check": "catalog:",
     "svelte-highlight": "^7.12.0",
@@ -48,8 +46,8 @@
     "vite": "catalog:",
     "vitest": "catalog:"
   },
-  "packageManager": "pnpm@10.34.3",
   "engines": {
     "pnpm": ">=10"
-  }
+  },
+  "packageManager": "pnpm@10.34.3"
 }
