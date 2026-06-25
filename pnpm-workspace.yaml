@@ -6,7 +6,7 @@ catalog:
   '@sanity/client': '^7.23.0'
   '@sanity/image-url': '^2.1.1'
   '@sveltejs/adapter-vercel': '^6.3.4'
-  '@sveltejs/kit': '^2.67.0'
+  '@sveltejs/kit': '^2.68.0'
   '@sveltejs/vite-plugin-svelte': '^7.1.2'
   '@tailwindcss/vite': '^4.3.1'
   '@vercel/analytics': '^2.0.1'
