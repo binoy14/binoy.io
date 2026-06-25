@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "printWidth": 100,
+  "svelte": true,
+  "sortPackageJson": true,
+  "sortTailwindcss": {},
+  "ignorePatterns": [
+    "pnpm-lock.yaml",
+    "apps/web/src/lib/groq/sanity-schema.json",
+    "apps/web/src/lib/groq/sanity.types.ts"
+  ]
+}

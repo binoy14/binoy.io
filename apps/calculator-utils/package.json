@@ -1,8 +1,9 @@
 {
   "name": "calculators",
   "version": "0.0.1",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -10,8 +11,11 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vitest run",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.2.10",
+    "@vercel/analytics": "catalog:"
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
@@ -24,25 +28,17 @@
     "@testing-library/svelte": "^5.4.2",
     "@typescript-eslint/eslint-plugin": "^8.62.0",
     "@typescript-eslint/parser": "^8.62.0",
+    "eslint": "catalog:",
     "globals": "catalog:",
-    "prettier-plugin-svelte": "catalog:",
-    "prettier-plugin-tailwindcss": "catalog:",
     "svelte": "catalog:",
     "svelte-check": "catalog:",
     "tailwindcss": "catalog:",
-    "eslint": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:",
     "unplugin-icons": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"
   },
-  "type": "module",
-  "dependencies": {
-    "@fontsource/roboto": "^5.2.10",
-    "@vercel/analytics": "catalog:"
-  },
-  "packageManager": "pnpm@10.34.3",
   "engines": {
     "pnpm": ">=10"
   }
