@@ -45,8 +45,5 @@
     "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:"
-  },
-  "engines": {
-    "pnpm": ">=10"
   }
 }

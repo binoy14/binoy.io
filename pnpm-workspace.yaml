@@ -2,6 +2,44 @@ packages:
   - 'apps/*'
   - 'packages/*'
 
+minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  - '@sanity/*'
+  - 'sanity'
+  - '@portabletext/*'
+  - '@rolldown/*'
+  - 'rolldown'
+  - '@tybys/wasm-util'
+  - '@sentry/*'
+  - '@oclif/*'
+  - '@napi-rs/*'
+  - '@oxfmt/*'
+  - '@turbo/*'
+  - '@typescript-eslint/*'
+  - '@testing-library/*'
+  - '@sveltejs/*'
+  - '@playwright/*'
+  - '@vitejs/*'
+  - '@iconify/*'
+  - 'happy-dom'
+  - 'svelte'
+  - 'svelte-check'
+  - 'svelte-highlight'
+  - 'vite'
+  - 'turbo'
+  - 'oxfmt'
+  - 'playwright'
+  - 'playwright-core'
+  - 'typescript-eslint'
+  - 'eslint-config-turbo'
+  - 'eslint-plugin-turbo'
+  - 'globals'
+  - 'groq'
+  - 'styled-components'
+
+allowBuilds:
+  esbuild: false
+
 catalog:
   '@sanity/client': '^7.23.0'
   '@sanity/image-url': '^2.1.1'
