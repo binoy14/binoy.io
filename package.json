@@ -23,7 +23,7 @@
     "*.{js,jsx,ts,tsx,svelte,css,json,md}": "oxfmt --no-error-on-unmatched-pattern"
   },
   "engines": {
-    "pnpm": ">=10"
+    "pnpm": ">=11"
   },
-  "packageManager": "pnpm@10.34.3"
+  "packageManager": "pnpm@11.9.0"
 }
