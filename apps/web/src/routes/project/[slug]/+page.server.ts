@@ -1,20 +1,21 @@
 import { getProjectBySlug } from '$lib/groq/getProjectBySlug';
 import type { GetProjectBySlugResult } from '$lib/groq/sanity.types.js';
-import { sanityClient } from '$lib/sanityClient';
 import { error } from '@sveltejs/kit';
 
-export async function load({ params }) {
-  const project = await sanityClient.fetch<GetProjectBySlugResult>(getProjectBySlug, {
+export async function load({ locals, params }) {
+  const initial = await locals.sanity.loadQuery<GetProjectBySlugResult>(getProjectBySlug, {
     slug: params.slug,
   });
 
-  if (!project) {
+  if (!initial.data) {
     return error(404, {
       message: 'Project not found',
     });
   }
 
   return {
-    project,
+    query: getProjectBySlug,
+    params: { slug: params.slug },
+    options: { initial },
   };
 }

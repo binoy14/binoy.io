@@ -2,9 +2,14 @@ import { codeInput } from '@sanity/code-input';
 import { visionTool } from '@sanity/vision';
 import type { DocumentActionComponent, DocumentActionsContext, Template } from 'sanity';
 import { defineConfig } from 'sanity';
+import { presentationTool } from 'sanity/presentation';
 import { structureTool } from 'sanity/structure';
 
 import { schemaTypes } from './src/schemas';
+import { resolve } from './src/presentation/resolve';
+
+// Front-end origin the Presentation tool loads in its iframe.
+const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_ORIGIN || 'http://localhost:5173';
 
 // Documents that should exist exactly once and never be created/deleted/duplicated.
 const SINGLETON_TYPES = new Set(['homepage']);
@@ -54,6 +59,19 @@ export default defineConfig([
     dataset: 'production',
     basePath: '/production',
     ...sharedSettings,
+    // Presentation (live preview) is wired to the production dataset only.
+    plugins: [
+      ...sharedSettings.plugins,
+      presentationTool({
+        resolve,
+        previewUrl: {
+          origin: previewOrigin,
+          previewMode: {
+            enable: '/preview/enable',
+          },
+        },
+      }),
+    ],
   },
   {
     name: 'development',

@@ -19,6 +19,7 @@
     "@iconify-json/mdi": "^1.2.3",
     "@sanity/client": "catalog:",
     "@sanity/image-url": "catalog:",
+    "@sanity/sveltekit": "^2.0.0",
     "@unpic/svelte": "^1.0.1",
     "@vercel/analytics": "catalog:",
     "@vercel/speed-insights": "^2.0.0",

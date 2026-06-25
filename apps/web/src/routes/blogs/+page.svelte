@@ -1,6 +1,8 @@
 <script lang="ts">
   import { Card } from '@binoy/ui';
   import { resolve } from '$app/paths';
+  import { useQuery, stegaClean } from '@sanity/sveltekit';
+  import type { GetBlogsResult } from '$lib/groq/sanity.types';
 
   function getFormattedDate(publishedAt: string) {
     return new Date(publishedAt).toLocaleDateString('en-US', {
@@ -16,6 +18,8 @@
   }
 
   let { data } = $props();
+  const query = $derived(useQuery<GetBlogsResult>(data));
+  const blogs = $derived($query.data ?? []);
 </script>
 
 <svelte:head>
@@ -23,9 +27,9 @@
 </svelte:head>
 
 <div class="container">
-  {#each data.blogs as blog (blog.slug)}
+  {#each blogs as blog (blog.slug)}
     <Card className="my-10 py-10 px-10 first:mt-0">
-      <a href={resolve(`/blogs/${blog.slug.current}`)}>
+      <a href={resolve(`/blogs/${stegaClean(blog.slug.current)}`)}>
         <h1 class="text-xl font-bold">{blog.title}</h1>
       </a>
       <h4 class="mt-2">

@@ -5,6 +5,8 @@
   import FaTwitter from 'virtual:icons/fa/twitter';
   import FaYoutube from 'virtual:icons/fa/youtube';
   import MdEmail from 'virtual:icons/mdi/email';
+  import { useQuery, stegaClean } from '@sanity/sveltekit';
+  import type { GetContactsResult } from '$lib/groq/sanity.types';
 
   const contactIcons = {
     Twitter: FaTwitter,
@@ -15,20 +17,23 @@
   } as const;
 
   function getIcon(title: string) {
-    return contactIcons[title as keyof typeof contactIcons];
+    // Strip stega markers before using the value as an object key.
+    return contactIcons[stegaClean(title) as keyof typeof contactIcons];
   }
 
   let { data } = $props();
+  const query = $derived(useQuery<GetContactsResult>(data));
+  const contacts = $derived($query.data ?? []);
 </script>
 
 <div class="container">
   <Card>
     <h1 class="text-2xl font-bold">Say Hello!</h1>
     <div class="my-10 flex flex-wrap justify-center">
-      {#each data.contacts as { link, title } (link)}
+      {#each contacts as { link, title } (link)}
         {@const SvelteComponent = getIcon(title)}
         <a
-          href={link}
+          href={stegaClean(link)}
           target="_blank"
           rel="external noreferrer noopener"
           class="mb-8 ml-8 first:ml-0"

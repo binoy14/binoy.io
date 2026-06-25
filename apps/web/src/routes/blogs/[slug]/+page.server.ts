@@ -1,20 +1,21 @@
 import { getBlogBySlug } from '$lib/groq/getBlogBySlug';
 import type { GetBlogBySlugResult } from '$lib/groq/sanity.types.js';
-import { sanityClient } from '$lib/sanityClient';
 import { error } from '@sveltejs/kit';
 
-export async function load({ params }) {
-  const blog = await sanityClient.fetch<GetBlogBySlugResult>(getBlogBySlug, {
+export async function load({ locals, params }) {
+  const initial = await locals.sanity.loadQuery<GetBlogBySlugResult>(getBlogBySlug, {
     slug: params.slug,
   });
 
-  if (!blog) {
+  if (!initial.data) {
     return error(404, {
       message: 'Blog not found',
     });
   }
 
   return {
-    blog,
+    query: getBlogBySlug,
+    params: { slug: params.slug },
+    options: { initial },
   };
 }
