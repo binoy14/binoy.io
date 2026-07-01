@@ -5,12 +5,14 @@
   import { dev } from '$app/environment';
   import { inject } from '@vercel/analytics';
   import { injectSpeedInsights } from '@vercel/speed-insights';
+  import { PreviewMode, QueryLoader, VisualEditing } from '@sanity/sveltekit';
+  import { sanityClient } from '$lib/sanityClient';
   import type { NavLinks } from '$lib/navigationTypes';
-  interface Props {
-    children?: import('svelte').Snippet;
-  }
+  import type { LayoutProps } from './$types';
 
-  let { children }: Props = $props();
+  let { children, data }: LayoutProps = $props();
+  // svelte-ignore state_referenced_locally
+  const { previewEnabled } = data;
 
   inject({ mode: dev ? 'development' : 'production' });
   injectSpeedInsights({});
@@ -49,10 +51,16 @@
   <meta property="og:site_name" content={seoData.title} />
 </svelte:head>
 
-<Navigation {links} title="Binoy Patel" />
+<PreviewMode enabled={previewEnabled}>
+  <VisualEditing enabled={previewEnabled}>
+    <QueryLoader enabled={previewEnabled} client={sanityClient}>
+      <Navigation {links} title="Binoy Patel" />
 
-<main class="min-h-full min-w-full">
-  {@render children?.()}
-</main>
+      <main class="min-h-full min-w-full">
+        {@render children?.()}
+      </main>
 
-<Footer />
+      <Footer />
+    </QueryLoader>
+  </VisualEditing>
+</PreviewMode>
