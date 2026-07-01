@@ -100,8 +100,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/config-eslint
       '@iconify/json':
-        specifier: ^2.2.490
-        version: 2.2.490
+        specifier: ^2.2.492
+        version: 2.2.493
       '@sveltejs/adapter-vercel':
         specifier: 'catalog:'
         version: 6.3.4(@sveltejs/kit@2.68.0(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.4(@typescript-eslint/types@8.62.0))(vite@8.1.0(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.37.0)(tsx@4.22.4)(yaml@2.9.0)))(svelte@5.56.4(@typescript-eslint/types@8.62.0))(typescript@6.0.3)(vite@8.1.0(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.37.0)(tsx@4.22.4)(yaml@2.9.0)))(rollup@4.54.0)
@@ -270,8 +270,8 @@ importers:
         specifier: 'catalog:'
         version: 4.7.1(picomatch@4.0.4)(svelte@5.56.4(@typescript-eslint/types@8.62.0))(typescript@6.0.3)
       svelte-highlight:
-        specifier: ^7.12.0
-        version: 7.12.0
+        specifier: ^7.13.0
+        version: 7.13.0
       tailwindcss:
         specifier: 'catalog:'
         version: 4.3.1
@@ -300,8 +300,8 @@ importers:
         specifier: ^2.10.0
         version: 2.10.0(eslint@9.39.4(jiti@2.7.0))(turbo@2.10.0)
       eslint-plugin-svelte:
-        specifier: ^3.19.0
-        version: 3.19.0(eslint@9.39.4(jiti@2.7.0))(svelte@5.56.4(@typescript-eslint/types@8.62.0))
+        specifier: ^3.20.0
+        version: 3.20.0(eslint@9.39.4(jiti@2.7.0))(svelte@5.56.4(@typescript-eslint/types@8.62.0))
       globals:
         specifier: 'catalog:'
         version: 17.7.0
@@ -1361,8 +1361,8 @@ packages:
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
 
-  '@iconify/json@2.2.490':
-    resolution: {integrity: sha512-4hhzvLDCJ+oqkr6Awf5rZvgrAnELX/Jt9yWaQBYpWmh7jCGR76inYOrcMFXZrsTfhsIlJ+d/ziG9Ss/XBRNgXw==}
+  '@iconify/json@2.2.493':
+    resolution: {integrity: sha512-3fycKppFtbaiozIvBOMlaPnimWwq2nBVOjqzXKzTd3oTSOf8W+qfHvzbQLK92gtMfSV/m4GkLaJV/Upj6vACwA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3862,8 +3862,8 @@ packages:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
 
-  eslint-plugin-svelte@3.19.0:
-    resolution: {integrity: sha512-t3rNaZeXz4d2gG4uJyMEYfJCFKf22+SWbSizIIXIWKu4wM+XPLiMWuSSr/C5821JmFeN9ogK+eExbG+z+twyxw==}
+  eslint-plugin-svelte@3.20.0:
+    resolution: {integrity: sha512-AElKLVt7Hjy4d7ljwhrhw9hux60DCxCNkmK8cY/aAXvjs8tpR7PvU4DlyI/SA1PaJww1gh0wPGo2pbyURuEwxQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0 || ^10.0.0
@@ -5745,8 +5745,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-highlight@7.12.0:
-    resolution: {integrity: sha512-yZdcq8WDpi671l0nBdUWL+6ph0iDmAi1+LOYKymJaeYFyvAnyYpyXIDFPhgDMO1n5AaTea/tLza6FwV+PxI2kw==}
+  svelte-highlight@7.13.0:
+    resolution: {integrity: sha512-Acekb8livbcb1nSS2282jWaZcYVCmwsB2OWk/anMm2oBpqLD7Rz//W9HfszzqvYFrFgfB/ltae1k+O2IjkDTWw==}
 
   svelte@5.56.4:
     resolution: {integrity: sha512-/d0QHehmRuJW8gVz395MTkPcPozxzdjBMBE8oEYGz8O3b9KTMzzQ9ZHJQLuFKOHOPQbU6kx/X4iid/EBBzH7iw==}
@@ -7595,7 +7595,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.490':
+  '@iconify/json@2.2.493':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 2.0.3
@@ -10345,7 +10345,7 @@ snapshots:
       eslint-plugin-turbo: 2.10.0(eslint@9.39.4(jiti@2.7.0))(turbo@2.10.0)
       turbo: 2.10.0
 
-  eslint-plugin-svelte@3.19.0(eslint@9.39.4(jiti@2.7.0))(svelte@5.56.4(@typescript-eslint/types@8.62.0)):
+  eslint-plugin-svelte@3.20.0(eslint@9.39.4(jiti@2.7.0))(svelte@5.56.4(@typescript-eslint/types@8.62.0)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(jiti@2.7.0))
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -12324,7 +12324,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.56.4(@typescript-eslint/types@8.62.0)
 
-  svelte-highlight@7.12.0:
+  svelte-highlight@7.13.0:
     dependencies:
       highlight.js: 11.11.1
 
