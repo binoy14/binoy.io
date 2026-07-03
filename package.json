@@ -16,8 +16,8 @@
     "eslint": "catalog:",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
-    "oxfmt": "^0.56.0",
-    "turbo": "^2.10.0"
+    "oxfmt": "^0.57.0",
+    "turbo": "^2.10.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,svelte,css,json,md}": "oxfmt --no-error-on-unmatched-pattern"
