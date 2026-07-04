@@ -51,7 +51,7 @@ catalog:
   classnames: '^2.5.1'
   eslint: '^9.39.4'
   globals: '^17.7.0'
-  groq: '^6.2.0'
+  groq: '^6.3.0'
   svelte: '^5.56.4'
   svelte-check: '^4.7.1'
   tailwindcss: '^4.3.2'
