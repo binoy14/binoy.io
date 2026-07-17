@@ -31,25 +31,7 @@
       link: 'contact',
     },
   ];
-
-  const seoData = {
-    title: 'Binoy Patel',
-    description:
-      'Full Stack Engineer crafting scalable, user-centric software solutions with 10+ years of hands-on expertise.',
-    canonical: 'https://www.binoy.io',
-  };
 </script>
-
-<svelte:head>
-  <title>{seoData.title}</title>
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href={seoData.canonical} />
-  <meta name="description" content={seoData.description} />
-  <meta property="og:title" content={seoData.title} />
-  <meta property="og:description" content={seoData.description} />
-  <meta property="og:url" content={seoData.canonical} />
-  <meta property="og:site_name" content={seoData.title} />
-</svelte:head>
 
 <PreviewMode enabled={previewEnabled}>
   <VisualEditing enabled={previewEnabled}>

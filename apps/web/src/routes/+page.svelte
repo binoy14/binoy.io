@@ -4,11 +4,15 @@
   import { resolve } from '$app/paths';
   import { useQuery, stegaClean } from '@sanity/sveltekit';
   import type { GetProjectsResult } from '$lib/groq/sanity.types';
+  import Seo from '$lib/Seo.svelte';
+  import { personJsonLd, websiteJsonLd } from '$lib/seo';
 
   let { data } = $props();
   const query = $derived(useQuery<GetProjectsResult>(data));
   const projects = $derived($query.data ?? []);
 </script>
+
+<Seo jsonLd={[personJsonLd(), websiteJsonLd()]} />
 
 <Section type="light">
   <div class="container">

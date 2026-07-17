@@ -7,6 +7,7 @@
   import MdEmail from 'virtual:icons/mdi/email';
   import { useQuery, stegaClean } from '@sanity/sveltekit';
   import type { GetContactsResult } from '$lib/groq/sanity.types';
+  import Seo from '$lib/Seo.svelte';
 
   const contactIcons = {
     Twitter: FaTwitter,
@@ -25,6 +26,11 @@
   const query = $derived(useQuery<GetContactsResult>(data));
   const contacts = $derived($query.data ?? []);
 </script>
+
+<Seo
+  title="Contact"
+  description="Get in touch with Binoy Patel — find me on GitHub, LinkedIn, X, YouTube, or by email."
+/>
 
 <div class="container">
   <Card>
