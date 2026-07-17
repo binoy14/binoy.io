@@ -10,6 +10,12 @@ export const getProjectBySlug = groq`*[
   _id,
   title,
   description,
+  featuredDescription,
+  featuredImage {
+    asset -> {
+      url,
+    }
+  },
   slug,
   "projectImages": projectImages[]-> {
     _id,

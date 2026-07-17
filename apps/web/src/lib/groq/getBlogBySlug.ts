@@ -2,6 +2,8 @@ import groq from 'groq';
 
 export const getBlogBySlug = groq`*[_type == "blog" && slug.current == $slug] {
   title,
+  excerpt,
+  slug,
   publishedAt,
   body[]{
     ...,
