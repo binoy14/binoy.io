@@ -38,7 +38,7 @@
               {#if project.featuredImage.asset?.url}
                 <Image
                   src={project.featuredImage.asset?.url}
-                  alt={project.featuredImage?.asset?.altText || ''}
+                  alt={project.featuredImage?.alt || project.featuredImage?.asset?.altText || ''}
                   layout="fullWidth"
                   background={project.featuredImage.asset.metadata?.lqip}
                   class="rounded-sm"

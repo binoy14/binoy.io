@@ -4,6 +4,7 @@ import groq from 'groq';
 export const getProjects = groq`*[_type == "homepage"][0].projects[]-> {
   _id,
   featuredImage {
+    alt,
     asset -> {
       ...,
     }

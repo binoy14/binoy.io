@@ -67,6 +67,8 @@ export default defineField({
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
+          description: 'Describe the image for screen readers and search engines.',
+          validation: (Rule) => Rule.required(),
         },
       ],
       options: {

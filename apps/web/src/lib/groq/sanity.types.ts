@@ -135,7 +135,7 @@ export type ImageInfo = {
   media?: unknown;
   hotspot?: SanityImageHotspot;
   crop?: SanityImageCrop;
-  alt?: string;
+  alt: string;
   caption?: string;
 };
 
@@ -184,7 +184,7 @@ export type BlogBody = Array<
       media?: unknown;
       hotspot?: SanityImageHotspot;
       crop?: SanityImageCrop;
-      alt?: string;
+      alt: string;
       _type: "image";
       _key: string;
     }
@@ -408,7 +408,7 @@ export type GetBlogBySlugResult = {
         media?: unknown;
         hotspot?: SanityImageHotspot;
         crop?: SanityImageCrop;
-        alt?: string;
+        alt: string;
         _type: "image";
         _key: string;
         markDefs: null;
@@ -490,10 +490,11 @@ export type GetProjectBySlugResult = {
 
 // Source: ../web/src/lib/groq/getProjects.ts
 // Variable: getProjects
-// Query: *[_type == "homepage"][0].projects[]-> {  _id,  featuredImage {    asset -> {      ...,    }  },  featuredDescription,  title,  slug}
+// Query: *[_type == "homepage"][0].projects[]-> {  _id,  featuredImage {    alt,    asset -> {      ...,    }  },  featuredDescription,  title,  slug}
 export type GetProjectsResult = Array<{
   _id: string;
   featuredImage: {
+    alt: string;
     asset: {
       _id: string;
       _type: "sanity.imageAsset";
@@ -538,7 +539,7 @@ declare module "@sanity/client" {
     '*[_type == "blog"] {\n  title,\n  excerpt,\n  slug,\n  publishedAt,\n  "readingTime": round(length(pt::text(body)) / 5 / 200 )\n} | order(publishedAt desc)': GetBlogsResult;
     '*[_type == "contact" && !(_id in path("drafts.**"))] {\n  link,\n  title\n} | order(title asc)': GetContactsResult;
     '*[\n  _type == "project"\n  && slug.current == $slug\n  && !(_id in path("drafts.**"))\n  && _id in *[_type == "homepage"][0].projects[]._ref\n] {\n  _id,\n  title,\n  description,\n  featuredDescription,\n  featuredImage {\n    asset -> {\n      url,\n    }\n  },\n  slug,\n  "projectImages": projectImages[]-> {\n    _id,\n    alt,\n    caption,\n    image {\n      asset->{\n        ...,\n      }\n    }\n  }\n}[0]': GetProjectBySlugResult;
-    '*[_type == "homepage"][0].projects[]-> {\n  _id,\n  featuredImage {\n    asset -> {\n      ...,\n    }\n  },\n  featuredDescription,\n  title,\n  slug\n}': GetProjectsResult;
+    '*[_type == "homepage"][0].projects[]-> {\n  _id,\n  featuredImage {\n    alt,\n    asset -> {\n      ...,\n    }\n  },\n  featuredDescription,\n  title,\n  slug\n}': GetProjectsResult;
     '*[_type == "homepage"][0].projects[]-> {\n  slug\n}': GetProjectSlugsResult;
   }
 }
