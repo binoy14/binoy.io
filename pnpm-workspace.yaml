@@ -41,7 +41,7 @@ allowBuilds:
   esbuild: false
 
 catalog:
-  '@sanity/client': '^7.23.0'
+  '@sanity/client': '^7.23.2'
   '@sanity/image-url': '^2.1.1'
   '@sveltejs/adapter-vercel': '^6.3.4'
   '@sveltejs/kit': '^2.68.0'
