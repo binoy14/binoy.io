@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "commit-message": {
+      "source": "binoy14/skills",
+      "sourceType": "github",
+      "skillPath": "skills/commit-message/SKILL.md",
+      "computedHash": "c1679a7bebeebcdf0b4ee60212c05db4ec67751878f349cbd1001549cef33fb1"
+    },
+    "using-git-spice": {
+      "source": "binoy14/skills",
+      "sourceType": "github",
+      "skillPath": "skills/using-git-spice/SKILL.md",
+      "computedHash": "b4fac0f75ccd2811b2f707e19fc9b64dde80053666c6e8d0db1d2ef386fba890"
+    }
+  }
+}

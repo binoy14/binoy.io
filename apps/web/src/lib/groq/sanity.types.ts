@@ -445,8 +445,53 @@ export type GetContactsResult = Array<{
 
 // Source: ../web/src/lib/groq/getProjectBySlug.ts
 // Variable: getProjectBySlug
-// Query: *[  _type == "project"  && slug.current == $slug  && !(_id in path("drafts.**"))  && _id in *[_type == "homepage"][0].projects[]._ref] {  _id,  title,  description,  featuredDescription,  featuredImage {    asset -> {      url,    }  },  slug,  "projectImages": projectImages[]-> {    _id,    alt,    caption,    image {      asset->{        ...,      }    }  }}[0]
+// Query: *[  _type == "project"  && slug.current == $slug  && !(_id in path("drafts.**"))  && _id in *[_type == "homepage"][0].projects[]._ref] {    _id,  title,  description,  featuredDescription,  featuredImage {    asset -> {      url,    }  },  slug,  "projectImages": projectImages[]-> {    _id,    alt,    caption,    image {      asset->{        ...,      }    }  }}[0]
 export type GetProjectBySlugResult = {
+  _id: string;
+  title: string;
+  description: Description;
+  featuredDescription: string;
+  featuredImage: {
+    asset: {
+      url: string;
+    } | null;
+  };
+  slug: Slug;
+  projectImages: Array<{
+    _id: string;
+    alt: string;
+    caption: string;
+    image: {
+      asset: {
+        _id: string;
+        _type: "sanity.imageAsset";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        originalFilename?: string;
+        label?: string;
+        title?: string;
+        description?: string;
+        altText?: string;
+        sha1hash: string;
+        extension: string;
+        mimeType: string;
+        size: number;
+        assetId: string;
+        uploadId?: string;
+        path: string;
+        url: string;
+        metadata?: SanityImageMetadata;
+        source?: SanityAssetSourceData;
+      } | null;
+    };
+  }> | null;
+} | null;
+
+// Source: ../web/src/lib/groq/getProjectBySlug.ts
+// Variable: getProjectBySlugPreview
+// Query: *[  _type == "project"  && slug.current == $slug] {    _id,  title,  description,  featuredDescription,  featuredImage {    asset -> {      url,    }  },  slug,  "projectImages": projectImages[]-> {    _id,    alt,    caption,    image {      asset->{        ...,      }    }  }}[0]
+export type GetProjectBySlugPreviewResult = {
   _id: string;
   title: string;
   description: Description;
@@ -538,7 +583,8 @@ declare module "@sanity/client" {
     '*[_type == "blog" && defined(slug.current)] {\n  "slug": slug.current,\n  publishedAt\n} | order(publishedAt desc)': GetBlogSlugsResult;
     '*[_type == "blog"] {\n  title,\n  excerpt,\n  slug,\n  publishedAt,\n  "readingTime": round(length(pt::text(body)) / 5 / 200 )\n} | order(publishedAt desc)': GetBlogsResult;
     '*[_type == "contact" && !(_id in path("drafts.**"))] {\n  link,\n  title\n} | order(title asc)': GetContactsResult;
-    '*[\n  _type == "project"\n  && slug.current == $slug\n  && !(_id in path("drafts.**"))\n  && _id in *[_type == "homepage"][0].projects[]._ref\n] {\n  _id,\n  title,\n  description,\n  featuredDescription,\n  featuredImage {\n    asset -> {\n      url,\n    }\n  },\n  slug,\n  "projectImages": projectImages[]-> {\n    _id,\n    alt,\n    caption,\n    image {\n      asset->{\n        ...,\n      }\n    }\n  }\n}[0]': GetProjectBySlugResult;
+    '*[\n  _type == "project"\n  && slug.current == $slug\n  && !(_id in path("drafts.**"))\n  && _id in *[_type == "homepage"][0].projects[]._ref\n] {\n  \n  _id,\n  title,\n  description,\n  featuredDescription,\n  featuredImage {\n    asset -> {\n      url,\n    }\n  },\n  slug,\n  "projectImages": projectImages[]-> {\n    _id,\n    alt,\n    caption,\n    image {\n      asset->{\n        ...,\n      }\n    }\n  }\n\n}[0]': GetProjectBySlugResult;
+    '*[\n  _type == "project"\n  && slug.current == $slug\n] {\n  \n  _id,\n  title,\n  description,\n  featuredDescription,\n  featuredImage {\n    asset -> {\n      url,\n    }\n  },\n  slug,\n  "projectImages": projectImages[]-> {\n    _id,\n    alt,\n    caption,\n    image {\n      asset->{\n        ...,\n      }\n    }\n  }\n\n}[0]': GetProjectBySlugPreviewResult;
     '*[_type == "homepage"][0].projects[]-> {\n  _id,\n  featuredImage {\n    alt,\n    asset -> {\n      ...,\n    }\n  },\n  featuredDescription,\n  title,\n  slug\n}': GetProjectsResult;
     '*[_type == "homepage"][0].projects[]-> {\n  slug\n}': GetProjectSlugsResult;
   }

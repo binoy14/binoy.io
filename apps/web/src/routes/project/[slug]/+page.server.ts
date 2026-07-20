@@ -1,9 +1,10 @@
-import { getProjectBySlug } from '$lib/groq/getProjectBySlug';
+import { getProjectBySlug, getProjectBySlugPreview } from '$lib/groq/getProjectBySlug';
 import type { GetProjectBySlugResult } from '$lib/groq/sanity.types.js';
 import { error } from '@sveltejs/kit';
 
 export async function load({ locals, params }) {
-  const initial = await locals.sanity.loadQuery<GetProjectBySlugResult>(getProjectBySlug, {
+  const query = locals.sanity.previewEnabled ? getProjectBySlugPreview : getProjectBySlug;
+  const initial = await locals.sanity.loadQuery<GetProjectBySlugResult>(query, {
     slug: params.slug,
   });
 
@@ -14,7 +15,7 @@ export async function load({ locals, params }) {
   }
 
   return {
-    query: getProjectBySlug,
+    query,
     params: { slug: params.slug },
     options: { initial },
   };

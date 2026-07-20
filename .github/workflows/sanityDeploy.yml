@@ -46,5 +46,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Deploy Sanity
-        run: |
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_DEPLOY_TOKEN }}" pnpm sanity:deploy
+        env:
+          SANITY_STUDIO_PREVIEW_ORIGIN: "https://www.binoy.io"
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
+        run: pnpm sanity:deploy
