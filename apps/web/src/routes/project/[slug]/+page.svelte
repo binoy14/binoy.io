@@ -32,7 +32,7 @@
   {/if}
 
   {#if project?.projectImages}
-    {#each project.projectImages as projectImage (projectImage._id)}
+    {#each project.projectImages as projectImage (projectImage._key)}
       <div class="grid justify-center gap-5">
         <h3 class="text-center text-lg font-bold">{projectImage.caption}</h3>
         <Image

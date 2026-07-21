@@ -44,7 +44,7 @@ export default defineType({
       name: 'projectImages',
       title: 'Project Images',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'projectImage' }] }],
+      of: [{ type: 'projectImage' }],
     }),
   ],
   preview: {

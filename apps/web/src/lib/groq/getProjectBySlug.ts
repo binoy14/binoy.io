@@ -11,8 +11,8 @@ const projectFields = `
     }
   },
   slug,
-  "projectImages": projectImages[]-> {
-    _id,
+  projectImages[] {
+    _key,
     alt,
     caption,
     image {
