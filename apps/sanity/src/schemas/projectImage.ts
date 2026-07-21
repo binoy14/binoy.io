@@ -5,7 +5,7 @@ export default defineType({
   name: 'projectImage',
   title: 'Project Image',
   icon: MdImage,
-  type: 'document',
+  type: 'object',
   fields: [
     defineField({
       name: 'alt',
