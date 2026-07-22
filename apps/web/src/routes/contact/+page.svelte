@@ -32,11 +32,11 @@
         href={stegaClean(link)}
         target="_blank"
         rel="external noreferrer noopener"
-        class="group hover:bg-terminal-accent/5 flex gap-2 px-7 py-2.5 no-underline transition-colors"
+        class="group hover:bg-terminal-accent/5 flex flex-wrap gap-x-2 gap-y-1 py-2.5 pr-7 pl-11 no-underline transition-colors"
       >
-        <span class="text-terminal-text">"{stegaClean(title).toLowerCase()}"</span>
-        <span class="text-terminal-muted">:</span>
-        <span class="text-terminal-accent transition-colors group-hover:text-[#8ff2ae]">
+        <span class="text-terminal-text shrink-0">"{stegaClean(title).toLowerCase()}"</span>
+        <span class="text-terminal-muted shrink-0">:</span>
+        <span class="text-terminal-accent break-all transition-colors group-hover:text-[#8ff2ae]">
           "{getDisplayValue(link)}"
         </span>
       </a>
