@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@binoy/ui": "workspace:*",
-    "@fontsource/fira-code": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
     "@iconify-json/fa": "^1.2.2",
     "@iconify-json/mdi": "^1.2.3",
     "@sanity/client": "catalog:",
