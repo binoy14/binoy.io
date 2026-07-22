@@ -1,25 +1,12 @@
 <script lang="ts">
-  import { Card } from '@binoy/ui';
-  import FaGithub from 'virtual:icons/fa/github';
-  import FaLinkedin from 'virtual:icons/fa/linkedin';
-  import FaTwitter from 'virtual:icons/fa/twitter';
-  import FaYoutube from 'virtual:icons/fa/youtube';
-  import MdEmail from 'virtual:icons/mdi/email';
   import { useQuery, stegaClean } from '@sanity/sveltekit';
   import type { GetContactsResult } from '$lib/groq/sanity.types';
   import Seo from '$lib/Seo.svelte';
 
-  const contactIcons = {
-    Twitter: FaTwitter,
-    Youtube: FaYoutube,
-    Email: MdEmail,
-    Github: FaGithub,
-    Linkedin: FaLinkedin,
-  } as const;
-
-  function getIcon(title: string) {
-    // Strip stega markers before using the value as an object key.
-    return contactIcons[stegaClean(title) as keyof typeof contactIcons];
+  function getDisplayValue(link: string) {
+    return stegaClean(link)
+      .replace(/^mailto:/, '')
+      .replace(/^https?:\/\//, '');
   }
 
   let { data } = $props();
@@ -32,21 +19,28 @@
   description="Get in touch with Binoy Patel — find me on GitHub, LinkedIn, X, YouTube, or by email."
 />
 
-<div class="container">
-  <Card>
-    <h1 class="text-2xl font-bold">Say Hello!</h1>
-    <div class="my-10 flex flex-wrap justify-center">
-      {#each contacts as { link, title } (link)}
-        {@const SvelteComponent = getIcon(title)}
-        <a
-          href={stegaClean(link)}
-          target="_blank"
-          rel="external noreferrer noopener"
-          class="mb-8 ml-8 first:ml-0"
-        >
-          <SvelteComponent class="h-11 w-11" />
-        </a>
-      {/each}
-    </div>
-  </Card>
+<div class="container max-w-2xl pt-16 pb-10">
+  <p class="text-terminal-accent font-mono text-sm">$ cat contact.json</p>
+  <h1 class="mt-3.5 font-mono text-4xl font-bold">Say hello 👋</h1>
+</div>
+
+<div class="container max-w-2xl pb-16">
+  <div class="border-terminal-border bg-terminal-panel rounded-lg border py-2 font-mono text-sm">
+    <p class="text-terminal-muted px-7 py-1.5">{'{'}</p>
+    {#each contacts as { link, title } (link)}
+      <a
+        href={stegaClean(link)}
+        target="_blank"
+        rel="external noreferrer noopener"
+        class="group hover:bg-terminal-accent/5 flex gap-2 px-7 py-2.5 no-underline transition-colors"
+      >
+        <span class="text-terminal-text">"{stegaClean(title).toLowerCase()}"</span>
+        <span class="text-terminal-muted">:</span>
+        <span class="text-terminal-accent transition-colors group-hover:text-[#8ff2ae]">
+          "{getDisplayValue(link)}"
+        </span>
+      </a>
+    {/each}
+    <p class="text-terminal-muted px-7 py-1.5">&#125;</p>
+  </div>
 </div>

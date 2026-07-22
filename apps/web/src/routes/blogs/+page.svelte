@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { Card } from '@binoy/ui';
   import { resolve } from '$app/paths';
   import { useQuery, stegaClean } from '@sanity/sveltekit';
   import type { GetBlogsResult } from '$lib/groq/sanity.types';
   import Seo from '$lib/Seo.svelte';
+
+  const description =
+    'Articles on full stack engineering, software architecture, and building for the web.';
 
   function getFormattedDate(publishedAt: string) {
     return new Date(publishedAt).toLocaleDateString('en-US', {
@@ -23,22 +25,34 @@
   const blogs = $derived($query.data ?? []);
 </script>
 
-<Seo
-  title="Blog"
-  description="Articles on full stack engineering, software architecture, and building for the web."
-/>
+<Seo title="Blog" {description} />
 
-<div class="container">
-  <h1 class="mt-10 mb-5 text-2xl font-bold">Blog</h1>
-  {#each blogs as blog (blog.slug)}
-    <Card className="my-10 py-10 px-10 first:mt-0">
-      <a href={resolve(`/blogs/${stegaClean(blog.slug.current)}`)}>
-        <h2 class="text-xl font-bold">{blog.title}</h2>
-      </a>
-      <h4 class="mt-2">
-        {getFormattedDate(blog.publishedAt)} - {getFormattedReadingTime(blog.readingTime)}
-      </h4>
-      <p class="mt-4 text-lg">{blog.excerpt}</p>
-    </Card>
+<div class="container max-w-4xl pt-16 pb-8">
+  <p class="text-terminal-accent font-mono text-sm">$ ls ./blogs</p>
+  <h1 class="mt-3.5 font-mono text-4xl font-bold">Blog</h1>
+  <p class="text-terminal-muted mt-4 max-w-lg font-mono text-sm leading-relaxed">
+    // {description}
+  </p>
+</div>
+
+<div class="container max-w-4xl pb-16">
+  {#each blogs as blog, i (blog.slug.current)}
+    <a
+      class="group border-terminal-border hover:bg-terminal-accent/5 -mx-4 block rounded-md border-t px-4 py-5.5 no-underline transition-colors"
+      class:border-b={i === blogs.length - 1}
+      href={resolve(`/blogs/${stegaClean(blog.slug.current)}`)}
+    >
+      <h2
+        class="text-terminal-text group-hover:text-terminal-accent font-mono text-base font-semibold transition-colors"
+      >
+        {stegaClean(blog.slug.current)}.md
+      </h2>
+      <p class="text-terminal-muted mt-1.5 font-mono text-xs">
+        {getFormattedDate(blog.publishedAt)} · {getFormattedReadingTime(blog.readingTime)}
+      </p>
+      <p class="text-terminal-muted mt-2 max-w-2xl text-sm leading-relaxed">
+        {blog.excerpt}
+      </p>
+    </a>
   {/each}
 </div>
