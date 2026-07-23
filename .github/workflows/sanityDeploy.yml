@@ -47,6 +47,6 @@ jobs:
 
       - name: Deploy Sanity
         env:
-          SANITY_STUDIO_PREVIEW_ORIGIN: "https://www.binoy.io"
+          SANITY_STUDIO_PREVIEW_ORIGIN: 'https://www.binoy.io'
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_DEPLOY_TOKEN }}
         run: pnpm sanity:deploy
