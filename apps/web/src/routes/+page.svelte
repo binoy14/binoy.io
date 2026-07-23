@@ -35,7 +35,7 @@
 
 <div class="container pb-16">
   <p class="text-terminal-accent mb-2 font-mono text-sm">
-    <span class="typed-cmd">$ mcp call get_projects</span>
+    <span class="typed-cmd">$ mcp call get_projects()</span>
   </p>
   <p class="gen-line text-terminal-muted mb-5 h-4 font-mono text-xs">
     &gt; resolving {projects.length} project{projects.length === 1 ? '' : 's'}<span

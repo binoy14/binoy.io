@@ -90,7 +90,7 @@ body {
     width: 0;
   }
   to {
-    width: 26ch;
+    width: 25ch;
   }
 }
 
@@ -134,10 +134,10 @@ body {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  width: 26ch;
+  width: 25ch;
   border-right: 2px solid var(--color-terminal-accent);
   animation:
-    typing 1.3s steps(26, end) forwards,
+    typing 1.3s steps(25, end) forwards,
     caret 0.7s step-end infinite;
 }
 
