@@ -1,9 +1,12 @@
 @import 'tailwindcss';
 
-@import '@fontsource/fira-code/latin-400.css';
-@import '@fontsource/fira-code/latin-500.css';
-@import '@fontsource/fira-code/latin-600.css';
-@import '@fontsource/fira-code/latin-700.css';
+@import '@fontsource/ibm-plex-sans/latin-400.css';
+@import '@fontsource/ibm-plex-sans/latin-500.css';
+@import '@fontsource/ibm-plex-sans/latin-600.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
+@import '@fontsource/ibm-plex-mono/latin-700.css';
 
 @plugin '@tailwindcss/typography';
 
@@ -13,7 +16,14 @@
   --grid-template-columns-projects: repeat(auto-fit, minmax(450px, 1fr));
   --grid-template-columns-project-content: 250px 1fr;
 
-  --font-sans: var(--font-fira-code);
+  --color-terminal-bg: #0d0e10;
+  --color-terminal-panel: #111318;
+  --color-terminal-border: #22262c;
+  --color-terminal-text: #eef1ee;
+  --color-terminal-muted: #8b9290;
+  --color-terminal-accent: #6ee796;
+
+  --font-sans: var(--font-ibm-plex-sans);
   --font-sans--0: ui-sans-serif;
   --font-sans--1: system-ui;
   --font-sans--2: sans-serif;
@@ -22,6 +32,13 @@
   --font-sans--5: 'Segoe UI Symbol';
   --font-sans--6: 'Noto Color Emoji';
   --font-sans--length: 7;
+
+  --font-mono: var(--font-ibm-plex-mono);
+  --font-mono--0: ui-monospace;
+  --font-mono--1: SFMono-Regular;
+  --font-mono--2: Menlo;
+  --font-mono--3: monospace;
+  --font-mono--length: 4;
 }
 
 @utility container {
@@ -48,10 +65,103 @@
 }
 
 :root {
-  --font-fira-code: 'Fira Code';
+  --font-ibm-plex-sans: 'IBM Plex Sans';
+  --font-ibm-plex-mono: 'IBM Plex Mono';
 }
 
 body {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25ch;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes gen-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typed-cmd {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 25ch;
+  border-right: 2px solid var(--color-terminal-accent);
+  animation:
+    typing 1.3s steps(25, end) forwards,
+    caret 0.7s step-end infinite;
+}
+
+.gen-line {
+  opacity: 0;
+  animation: gen-fade 0.3s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.gen-dot {
+  animation: dot-pulse 0.35s ease-in-out 4;
+}
+
+.project-card {
+  opacity: 0;
+  animation: fadeUp 0.55s ease forwards;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow:
+    0 0 0 1px var(--color-terminal-accent),
+    0 20px 40px rgb(110 231 150 / 15%);
 }

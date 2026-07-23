@@ -17,8 +17,8 @@
   class={classnames(
     'py-6',
     {
-      'bg-black text-white': type === 'dark',
-      'bg-white text-black': type === 'light',
+      'bg-terminal-bg text-terminal-text': type === 'dark',
+      'bg-terminal-panel text-terminal-text': type === 'light',
     },
     className,
   )}

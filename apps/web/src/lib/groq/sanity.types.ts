@@ -327,12 +327,13 @@ export type AllSanitySchemaTypes =
 
 // Source: ../web/src/lib/groq/getBlogBySlug.ts
 // Variable: getBlogBySlug
-// Query: *[_type == "blog" && slug.current == $slug] {  title,  excerpt,  slug,  publishedAt,  body[]{    ...,    _type == "image" => {      "asset": @.asset->{        ...      }    },    markDefs[]{      ...,      _type == "internalLink" => {        "slug": @.reference->slug      }    }  }}[0]
+// Query: *[_type == "blog" && slug.current == $slug] {  title,  excerpt,  slug,  publishedAt,  "readingTime": round(length(pt::text(body)) / 5 / 200 ),  body[]{    ...,    _type == "image" => {      "asset": @.asset->{        ...      }    },    markDefs[]{      ...,      _type == "internalLink" => {        "slug": @.reference->slug      }    }  }}[0]
 export type GetBlogBySlugResult = {
   title: string;
   excerpt: string;
   slug: Slug;
   publishedAt: string;
+  readingTime: number;
   body: Array<
     | {
         children?: Array<{
@@ -567,7 +568,7 @@ export type GetProjectSlugsResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "blog" && slug.current == $slug] {\n  title,\n  excerpt,\n  slug,\n  publishedAt,\n  body[]{\n    ...,\n    _type == "image" => {\n      "asset": @.asset->{\n        ...\n      }\n    },\n    markDefs[]{\n      ...,\n      _type == "internalLink" => {\n        "slug": @.reference->slug\n      }\n    }\n  }\n}[0]': GetBlogBySlugResult;
+    '*[_type == "blog" && slug.current == $slug] {\n  title,\n  excerpt,\n  slug,\n  publishedAt,\n  "readingTime": round(length(pt::text(body)) / 5 / 200 ),\n  body[]{\n    ...,\n    _type == "image" => {\n      "asset": @.asset->{\n        ...\n      }\n    },\n    markDefs[]{\n      ...,\n      _type == "internalLink" => {\n        "slug": @.reference->slug\n      }\n    }\n  }\n}[0]': GetBlogBySlugResult;
     '*[_type == "blog" && defined(slug.current)] {\n  "slug": slug.current,\n  publishedAt\n} | order(publishedAt desc)': GetBlogSlugsResult;
     '*[_type == "blog"] {\n  title,\n  excerpt,\n  slug,\n  publishedAt,\n  "readingTime": round(length(pt::text(body)) / 5 / 200 )\n} | order(publishedAt desc)': GetBlogsResult;
     '*[_type == "contact" && !(_id in path("drafts.**"))] {\n  link,\n  title\n} | order(title asc)': GetContactsResult;
