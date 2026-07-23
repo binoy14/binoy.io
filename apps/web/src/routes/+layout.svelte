@@ -36,13 +36,15 @@
 <PreviewMode enabled={previewEnabled}>
   <VisualEditing enabled={previewEnabled}>
     <QueryLoader enabled={previewEnabled} client={sanityClient}>
-      <Navigation {links} title="Binoy Patel" />
+      <div class="flex min-h-screen flex-col">
+        <Navigation {links} title="Binoy Patel" />
 
-      <main class="min-h-full min-w-full">
-        {@render children?.()}
-      </main>
+        <main class="min-w-full flex-1">
+          {@render children?.()}
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </QueryLoader>
   </VisualEditing>
 </PreviewMode>
