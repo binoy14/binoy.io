@@ -29,10 +29,7 @@
 
 <div class="container max-w-4xl pt-16 pb-8">
   <p class="text-terminal-accent font-mono text-sm">$ ls ./blogs</p>
-  <h1 class="mt-3.5 font-mono text-4xl font-bold">Blog</h1>
-  <p class="text-terminal-muted mt-4 max-w-lg font-mono text-sm leading-relaxed">
-    // {description}
-  </p>
+  <h1 class="mt-3.5 font-mono text-4xl font-bold">Blogs</h1>
 </div>
 
 <div class="container max-w-4xl pb-16">
