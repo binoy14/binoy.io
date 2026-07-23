@@ -28,6 +28,10 @@
       'text-terminal-muted hover:text-terminal-text': !isActive,
     });
   }
+
+  let bashPath = $derived(
+    $page.url.pathname === '/' ? '/Users/binoy' : `/Users/binoy${$page.url.pathname}`,
+  );
 </script>
 
 <nav class="border-terminal-border bg-terminal-bg sticky top-0 z-10 border-b transition-all">
@@ -36,7 +40,7 @@
       <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
       <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
       <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
-      <span class="text-terminal-muted ml-2 font-mono text-xs">bash — {title}</span>
+      <span class="text-terminal-muted ml-2 font-mono text-xs">bash — {bashPath}</span>
     </a>
     <!-- Desktop Nav -->
     <ul class="hidden gap-6 sm:flex">
