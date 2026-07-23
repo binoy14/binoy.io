@@ -51,7 +51,7 @@
     {#each projects as project, i (project._id)}
       <a
         class="project-card border-terminal-border bg-terminal-panel flex flex-col overflow-hidden rounded-lg border text-inherit no-underline"
-        style="animation-delay:{1600 + i * 100}ms"
+        style="animation-delay:{3200 + i * 100}ms"
         href={resolve(`/project/${stegaClean(project.slug.current)}`)}
       >
         <div class="bg-terminal-bg aspect-video w-full overflow-hidden">

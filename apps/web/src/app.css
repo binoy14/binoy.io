@@ -101,27 +101,21 @@ body {
 }
 
 @keyframes gen-fade {
-  0% {
+  from {
     opacity: 0;
   }
-  20% {
+  to {
     opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
 @keyframes dot-pulse {
   0%,
   100% {
-    opacity: 0.25;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
+    opacity: 0.3;
   }
 }
 
@@ -149,13 +143,12 @@ body {
 
 .gen-line {
   opacity: 0;
-  animation: gen-fade 0.9s ease forwards;
+  animation: gen-fade 0.3s ease forwards;
   animation-delay: 1.3s;
 }
 
 .gen-dot {
-  animation: dot-pulse 0.3s ease-in-out 3;
-  animation-delay: 1.3s;
+  animation: dot-pulse 0.35s ease-in-out 4;
 }
 
 .project-card {
