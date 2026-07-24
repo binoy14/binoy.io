@@ -42,7 +42,7 @@
     "highlight.js": "^11.11.1",
     "svelte": "catalog:",
     "svelte-check": "catalog:",
-    "svelte-highlight": "^7.14.1",
+    "svelte-highlight": "^7.16.0",
     "tailwindcss": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:",
