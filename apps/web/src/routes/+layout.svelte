@@ -4,7 +4,7 @@
   import Navigation from '$lib/Navigation.svelte';
   import { dev } from '$app/environment';
   import { inject } from '@vercel/analytics';
-  import { injectSpeedInsights } from '@vercel/speed-insights';
+  import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
   import { PreviewMode, QueryLoader, VisualEditing } from '@sanity/sveltekit';
   import { sanityClient } from '$lib/sanityClient';
   import type { NavLinks } from '$lib/navigationTypes';
