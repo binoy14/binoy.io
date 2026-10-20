@@ -14,6 +14,21 @@
       "semanticCommitType": "fix"
     },
     {
+      "description": "Group svelte related packages",
+      "groupName": "svelte",
+      "matchPackageNames": [
+        "svelte",
+        "svelte-*",
+        "@sveltejs/*",
+        "vite-plugin-svelte",
+        "@testing-library/svelte"
+      ],
+      "group": {
+        "semanticCommitType": "chore"
+      },
+      "semanticCommitType": "chore"
+    },
+    {
       "description": "Group eslint related deps in a single PR, as they often have to update together",
       "groupName": "eslint-tooling",
       "matchPackageNames": [
