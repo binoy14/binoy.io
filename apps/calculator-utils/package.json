@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@binoy/eslint-config": "workspace:*",
-    "@iconify/json": "^2.2.544",
+    "@iconify/json": "^2.2.548",
     "@sveltejs/adapter-vercel": "catalog:",
     "@sveltejs/kit": "catalog:",
     "@sveltejs/vite-plugin-svelte": "catalog:",
