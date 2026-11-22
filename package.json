@@ -15,9 +15,9 @@
     "@binoy/eslint-config": "workspace:*",
     "eslint": "catalog:",
     "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
-    "oxfmt": "^0.74.0",
-    "turbo": "^2.11.10"
+    "lint-staged": "^17.6.1",
+    "oxfmt": "^0.79.0",
+    "turbo": "^2.11.13"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,svelte,css,json,md}": "oxfmt --no-error-on-unmatched-pattern"
